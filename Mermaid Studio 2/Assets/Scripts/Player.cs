@@ -20,8 +20,6 @@ public class Player : MonoBehaviour
 
     [SerializeField] LayerMask layerMask;
 
-    [SerializeField] GameObject Tab4Keybinds;
-    [SerializeField] GameObject ControlMenu;
     [SerializeField] GameObject CollectTrashUI;
 
     // Start is called before the first frame update
@@ -65,18 +63,6 @@ public class Player : MonoBehaviour
             timer = timer - Time.deltaTime;
             timer = 0f;
         }
-        
-        bool seeTutorial = Input.GetKeyDown(KeyCode.Tab);
-        if (seeTutorial)
-        {
-            Tab4Keybinds.SetActive(false);
-            ControlMenu.SetActive(true);
-        }
-        else if (!Tab4Keybinds && ControlMenu && seeTutorial)
-        {
-            Tab4Keybinds.SetActive(true);
-            ControlMenu.SetActive(false);
-        }
         */
 
 
@@ -118,22 +104,24 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Sprint()
+    private void Sprint()
     {
-        // sprint function
-            bool sprintInput = Input.GetKey(KeyCode.LeftShift);
-
-            if (sprintInput)
-            {
-                moveSpeed = 7f;
-                moveSpeedUpDown = 4f;
-            } 
-            else if (!sprintInput)
-            {
-                moveSpeed = 3f;
-                moveSpeedUpDown = 2f;
-            }
+        bool sprintInput = Input.GetKey(KeyCode.LeftShift);
+        if (sprintInput)
+        {
+            moveSpeed = 7f;
+            moveSpeedUpDown = 4f;
+        }
+        if (!sprintInput)
+        {
+            moveSpeed = 3f;
+            moveSpeedUpDown = 2f;
+        }
     }
+    // private void NormalizeSpeed(float speed)
+    // {
+    //     moveSpeed = startMoveSpeed;
+    // }
     void RaycastManager()
     {
         bool mouseClick = Input.GetKey(KeyCode.Mouse0);
