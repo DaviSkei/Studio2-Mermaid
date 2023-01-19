@@ -5,10 +5,10 @@ using Cinemachine;
 
 public class CameraManager : MonoBehaviour
 {
-    public CinemachineFreeLook cinemachineFree;
+    [SerializeField] CinemachineFreeLook cinemachineFree;
     CinemachineComponentBase componentBase;
     float camDistance;
-    float sensitivity = 7f;
+    float sensitivity = 10f;
 
     // Update is called once per frame
     void Update()

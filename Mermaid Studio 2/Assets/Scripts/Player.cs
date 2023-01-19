@@ -1,18 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] CharacterController controller;
+    CharacterController controller;
 
     [SerializeField] Transform mainCam;
 
     [SerializeField] InventoryObject inventory;
 
-    float moveSpeed = 3f;
+    float moveSpeedXZ = 3f;
 
-    float moveSpeedUpDown = 2f;
+    float moveSpeedY = 2f;
 
     float rotationTime = 0.1f;
 
@@ -27,6 +28,9 @@ public class Player : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        controller = GetComponent<CharacterController>();
+        
+        Debug.Log(inventory.name);
     }
 
     // Update is called once per frame
@@ -75,23 +79,24 @@ public class Player : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         float forwardInput = Input.GetAxisRaw("Forward");
 
-        Vector3 movementDirection = new Vector3(horizontal, vertical, forwardInput).normalized;
+        // movement direction vector uses the inputs to determine the new X, Y and Z positions
+        Vector3 movementXZ = new Vector3(horizontal, vertical, forwardInput).normalized;
 
-        Vector3 MovementUpDown = new Vector3(0f, vertical, 0f);
+        Vector3 movementY = new Vector3(0f, vertical, 0f);
 
-        // movement for vertical
-        if (MovementUpDown != Vector3.zero)
+        // if movement on x or z axis is not nothing
+        if (movementY != Vector3.zero)
         {
-            controller.Move(MovementUpDown * moveSpeedUpDown * Time.deltaTime);
+            // tell the controller move function to return the vector 3 value of the Y input
+            controller.Move(movementY * moveSpeedY * Time.deltaTime);
         }
         
-        // movement for horizontal + forward
-        if (movementDirection != Vector3.zero)
+        // if movement on x or z axis is not nothing
+        if (movementXZ != Vector3.zero)
         {
 
             // ability to shift movement direction based on camera direction
-            // was x then z, changing now
-            float targetAngle = Mathf.Atan2(movementDirection.x, movementDirection.z)
+            float targetAngle = Mathf.Atan2(movementXZ.x, movementXZ.z)
             * Mathf.Rad2Deg + mainCam.eulerAngles.y;
 
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref rotationSpeed, rotationTime);
@@ -99,8 +104,8 @@ public class Player : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
             
 
-            Vector3 camDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.Move(camDirection.normalized * moveSpeed * Time.deltaTime);
+            Vector3 camDirection = Quaternion.Euler(0f, targetAngle, targetAngle) * Vector3.forward;
+            controller.Move(camDirection.normalized * moveSpeedXZ * Time.deltaTime);
         }
     }
 
@@ -109,18 +114,18 @@ public class Player : MonoBehaviour
         bool sprintInput = Input.GetKey(KeyCode.LeftShift);
         if (sprintInput)
         {
-            moveSpeed = 7f;
-            moveSpeedUpDown = 4f;
+            moveSpeedXZ = 7f;
+            moveSpeedY = 4f;
         }
         if (!sprintInput)
         {
-            moveSpeed = 3f;
-            moveSpeedUpDown = 2f;
+            moveSpeedXZ = 3f;
+            moveSpeedY = 2f;
         }
     }
     // private void NormalizeSpeed(float speed)
     // {
-    //     moveSpeed = startMoveSpeed;
+    //     moveSpeedXZ = startMoveSpeedXZ;
     // }
     void RaycastManager()
     {
