@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 19
+  controlID: 71
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 75
+  controlID: 129
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 76
+  controlID: 130
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -338,9 +338,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 74740000
-      m_LastClickedID: 0
-      m_ExpandedIDs: e8faffff9272000038730000
+      m_SelectedIDs: 46730000
+      m_LastClickedID: 29510
+      m_ExpandedIDs: e8faffff9872000046730000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -651,9 +651,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -7.584052, y: -5.5359335, z: -0.4873352}
+    m_Target: {x: 0.15844274, y: 0.410056, z: -0.79101515}
     speed: 2
-    m_Value: {x: -7.584052, y: -5.5359335, z: -0.4873352}
+    m_Value: {x: 0.15844274, y: 0.410056, z: -0.79101515}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -700,13 +700,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.265
   m_Rotation:
-    m_Target: {x: 0.18284787, y: -0.68881506, z: 0.18618074, w: 0.6763915}
+    m_Target: {x: 0.051216353, y: -0.6496126, z: 0.043892957, w: 0.7573131}
     speed: 2
-    m_Value: {x: 0.18284164, y: -0.6887916, z: 0.1861744, w: 0.6763684}
+    m_Value: {x: 0.051214576, y: -0.6495901, z: 0.043891434, w: 0.7572868}
   m_Size:
-    m_Target: 8.105145
+    m_Target: 4.4880137
     speed: 2
-    m_Value: 8.105145
+    m_Value: 4.4880137
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -962,13 +962,13 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/ScriptableObjects/Inventory
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/ScriptableObjects/Inventory
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Power\OneDrive\Documents\GitHub\Studio2-Mermaid\Mermaid
     Studio 2
@@ -976,9 +976,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 40880000
-    m_LastClickedID: 34880
-    m_ExpandedIDs: 00000000e6750000e8750000ea750000ec7500008e770000f486000000ca9a3b
+    m_SelectedIDs: 24760000
+    m_LastClickedID: 30244
+    m_ExpandedIDs: 000000000a7600000c7600000e76000010760000247600003476000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1006,7 +1006,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e6750000e8750000ea750000ec750000
+    m_ExpandedIDs: 000000000a7600000c7600000e76000010760000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1122,7 +1122,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 29330
+  m_LastSelectedObjectID: 29510
 --- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
