@@ -11,14 +11,14 @@ public class Player : MonoBehaviour
 
     [SerializeField] InventoryObject inventory;
 
-    [SerializeField] float defaultSpeed = 1f;
+    float defaultSpeed = 1.5f;
     float startSpeed;
     
     float moveSpeedXZ = 3f;
 
     float moveSpeedY = 2f;
 
-    float rotationTime = 0.25f;
+    float rotationTime = 0.2f;
 
     float rotationSpeed;
 
@@ -33,8 +33,6 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         controller = GetComponent<CharacterController>();
-        
-        Debug.Log(inventory.name);
     }
 
     // Update is called once per frame
@@ -64,12 +62,9 @@ public class Player : MonoBehaviour
 
         // movement direction vector uses the inputs to determine the new X and Z positions
         // if i add in the Y component, it moves forward while also moving on Y
-        Vector3 movementXZ = new Vector3(horizontal, 0f, forwardInput).normalized;
+        Vector3 movementZX = new Vector3(horizontal, 0f, forwardInput).normalized;
 
-        Vector3 movementY = new Vector3(0f, vertical, 0f);
-
-        // movementXZ += mainCam.TransformDirection(movementY);
-
+        Vector3 movementY = new Vector3(0f, vertical, 0f).normalized;
 
         // if movement does not equal zero, that means we are recieving input to move
         if (movementY != Vector3.zero)
@@ -79,11 +74,11 @@ public class Player : MonoBehaviour
         }
         
         // if movement on x or z axis is not nothing
-        if (movementXZ != Vector3.zero)
+        if (movementZX != Vector3.zero)
         {
 
             // ability to rotate the players movement direction
-            float targetAngle = Mathf.Atan2(movementXZ.x, movementXZ.z)
+            float targetAngle = Mathf.Atan2(movementZX.x, movementZX.z)
             * Mathf.Rad2Deg + mainCam.eulerAngles.y;
 
             // smooths the rotation movement on the player between its current rotation, to its intended rotation
@@ -92,17 +87,21 @@ public class Player : MonoBehaviour
 
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
-            Vector3 camDirection = Quaternion.Euler(mainCam.rotation.x, targetAngle, 0f) * Vector3.forward;
+            Vector3 camDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(camDirection.normalized * defaultSpeed * Time.deltaTime);
 
+
+
+            // movespeed increases over time
             defaultSpeed += moveSpeedXZ * Time.deltaTime;
 
+            // once the speed reaches the limit we want, then set it to become that limit
             if (defaultSpeed > moveSpeedXZ)
             {
                 defaultSpeed = moveSpeedXZ;
             }
         }
-        else if ( movementXZ == Vector3.zero)
+        else if ( movementZX == Vector3.zero)
         {
             defaultSpeed = startSpeed;
         }
@@ -122,10 +121,7 @@ public class Player : MonoBehaviour
             moveSpeedY = 2f;
         }
     }
-    // private void NormalizeSpeed(float speed)
-    // {
-    //     moveSpeedXZ = defaultSpeedXZ;
-    // }
+    
     void RaycastManager()
     {
         bool mouseClick = Input.GetKey(KeyCode.Mouse0);
