@@ -145,6 +145,8 @@ public class MovePlayer : Movement
             // store info of the hit gameobject if it has "item" script attached
             var item = hit.transform.GetComponent<Item>();
             gameObj = hit.transform.gameObject;
+
+            Debug.Log("player hit " + gameObj);
     
             // if hit gameobject has "Item" script attached show UI
             if (item)

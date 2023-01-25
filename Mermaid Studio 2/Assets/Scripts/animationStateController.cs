@@ -27,7 +27,10 @@ public class animationStateController : MonoBehaviour
             YBotAnimator.SetBool("isSwimmingUp", false);
         }
 
-        if (Input.GetKey(KeyCode.Mouse1) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.Mouse1)
+         || Input.GetKey(KeyCode.Space) 
+         || Input.GetKey(KeyCode.A) 
+         || Input.GetKey(KeyCode.D))
          {
             YBotAnimator.SetBool("isSwimming", true);
          }

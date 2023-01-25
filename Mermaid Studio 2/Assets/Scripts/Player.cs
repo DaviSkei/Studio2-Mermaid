@@ -145,6 +145,8 @@ public class Player : MonoBehaviour
             // store gameobject being hit by raycast
             GameObject gameObj = hit.transform.gameObject;
 
+            Debug.Log("player hit " + gameObj);
+
             // if hit gameobject has "Item" script attached show UI
             if (item)
             {
