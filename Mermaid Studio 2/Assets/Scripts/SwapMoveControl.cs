@@ -7,86 +7,79 @@ using Cinemachine;
 public class SwapMoveControl : MonoBehaviour
 {
     [SerializeField] GameObject player;
-    Movement playerScript;
+    MovePlayer playerScript;
 
-    GameObject defaultPlayer;
-    Movement defaultScript;
+    // GameObject defaultPlayer;
+    // MovePlayer defaultScript;
 
     [SerializeField] GameObject[] swappableBodies;
-    Movement fishScript;
+    MoveFish[] fishScript;
 
     [SerializeField] CinemachineFreeLook cam;
 
-    private bool swapped;
+    private bool swapped = false;
     public bool Swapped {get{return swapped;}}
     int charDesignation;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerScript = player.GetComponent<Movement>();
+        playerScript = player.GetComponent<MovePlayer>();
         swappableBodies = GameObject.FindGameObjectsWithTag("Fish");
-        defaultPlayer = player;
+        // defaultPlayer = player;
         // fishScript =  player.GetComponent<Movement>();
-        defaultScript = playerScript;
+        // defaultScript = playerScript;
 
-        cam.LookAt = defaultScript.transform;
-        cam.Follow = defaultScript.transform;
+        cam.LookAt = player.transform;
+        cam.Follow = player.transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // foreach (GameObject body in swappableBodies)
-        //     {
-        //         fishScript = body.GetComponent<Movement>();
-        //     }
-
         for (int i = 0; i < swappableBodies.Length; i++)
         {
-            fishScript = swappableBodies[i].GetComponent<Movement>();
+            // fishScript[i] = swappableBodies[i].GetComponent<MoveFish>();
             charDesignation = i;
 
-            if (fishScript.RayCastManager(swappableBodies[i]) && Input.GetKeyDown(KeyCode.Q))
+            if (playerScript.RayCastManager(swappableBodies[i]) && Input.GetKeyDown(KeyCode.Q))
             {
                 swapped = true;
+                Debug.Log("Swapped once");
+                
+                cam.LookAt = swappableBodies[i].transform;
+                cam.Follow = swappableBodies[i].transform;
             }
-            if (fishScript.RayCastManager(player) && Input.GetKeyDown(KeyCode.Q))
+            if (swapped && Input.GetKeyDown(KeyCode.F))
             {
                 swapped = false;
-            }
-            if (swapped)
-            {
-                Swap();
-            }
-            if (!swapped)
-            {
-                SwapBack();
+                cam.LookAt = player.transform;
+                cam.Follow = player.transform;
             }
         }
     }
 
     void Swap()
     {
-        Debug.Log("Swapped once");
-        player = swappableBodies[charDesignation];
-        playerScript =  player.GetComponent<Movement>();
-        cam.LookAt = playerScript.transform;
-        cam.Follow = playerScript.transform;
+        // Debug.Log("Swapped once");
+        // player = swappableBodies[charDesignation];
+        // playerScript =  player.GetComponent<Movement>();
+        // cam.LookAt = playerScript.transform;
+        // cam.Follow = playerScript.transform;
     }
     void SwapBack()
     {
-        Debug.Log("Swapped twice");
-        player = defaultPlayer;
-        playerScript = defaultScript;
-        cam.LookAt = defaultScript.transform;
-        cam.Follow = defaultScript.transform;
+        // Debug.Log("Swapped twice");
+        // player = defaultPlayer;
+        // playerScript = defaultScript;
+        // cam.LookAt = defaultScript.transform;
+        // cam.Follow = defaultScript.transform;
     }
     void OnApplicationQuit()
     {
-        player = defaultPlayer;
-        playerScript = defaultScript;
-        cam.LookAt = defaultScript.transform;
-        cam.Follow = defaultScript.transform;
+        // player = defaultPlayer;
+        // playerScript = defaultScript;
+        // cam.LookAt = defaultScript.transform;
+        // cam.Follow = defaultScript.transform;
     }
 }

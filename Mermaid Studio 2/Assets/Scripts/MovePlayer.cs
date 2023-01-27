@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
-public class MovePlayer : Movement
+public class MovePlayer : MonoBehaviour
 {
     CharacterController controller;
-
-    CapsuleCollider playerColl;
 
     [SerializeField] Transform mainCam;
 
     [SerializeField] InventoryObject inventory;
 
     GameObject gameObj;
+    GameObject hitObj;
 
     float defaultSpeed = 1.5f;
     float startSpeed;
@@ -33,7 +33,6 @@ public class MovePlayer : Movement
     // Start is called before the first frame update
     void Start()
     {
-        playerColl = GetComponent<CapsuleCollider>();
         startSpeed = defaultSpeed;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -53,12 +52,12 @@ public class MovePlayer : Movement
 
         Sprint();
 
-        RayCastManager(gameObj);
+        RayCastManager(hitObj);
 
 
     }
 
-    public override Vector3 Move(Vector3 direction)
+    private Vector3 Move(Vector3 direction)
     {
         //Get movement key input
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -128,7 +127,7 @@ public class MovePlayer : Movement
         }
     }
     
-    public override GameObject RayCastManager(GameObject gameObj)
+    public GameObject RayCastManager(GameObject gameObj)
     {
         bool mouseClick = Input.GetKey(KeyCode.Mouse0);
         // ray from camera origin, pointing forwards
@@ -144,7 +143,11 @@ public class MovePlayer : Movement
             Debug.DrawRay(transform.position, mainCam.forward * distance, Color.red);
             // store info of the hit gameobject if it has "item" script attached
             var item = hit.transform.GetComponent<Item>();
+
+            hitObj = new GameObject();
             gameObj = hit.transform.gameObject;
+
+            hitObj = gameObj;
 
             Debug.Log("player hit " + gameObj);
     
@@ -161,7 +164,7 @@ public class MovePlayer : Movement
                 }
             }
         }
-        return gameObj;
+        return hitObj;
     }
 
     private void OnApplicationQuit()

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class MoveFish : Movement
+public class MoveFish : MonoBehaviour
 {
     GameObject thisObj;
     Vector3 fishVector;
@@ -17,16 +17,14 @@ public class MoveFish : Movement
     [SerializeField] InventoryObject inventory;
 
     GameObject gameObj;
-    // GameObject swapManager;
 
     float moveSpeed = 1f;
 
     void Start()
     {
-        // swapManager =  GameObject.FindWithTag("SwapManager");
-        // swapManager.GetComponent<SwapMoveControl>();
+        
     }
-    public override Vector3 Move(Vector3 direction)
+    private Vector3 Move(Vector3 direction)
     {
         // Vector3 move = Vector3.zero;
         // move += transform.forward;
@@ -36,7 +34,7 @@ public class MoveFish : Movement
 
         if ((cam.LookAt = transform) && (cam.Follow = transform))
         {
-            RayCastManager(gameObj);
+            RayCastManager();
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
             float forwardInput = Input.GetAxisRaw("Forward");
@@ -62,13 +60,14 @@ public class MoveFish : Movement
     void Update()
     {
         Move(fishVector);
+        RayCastManager();
     }
 
-    public override GameObject RayCastManager(GameObject gameObj)
+    private void RayCastManager()
     {
         bool mouseClick = Input.GetKey(KeyCode.Mouse0);
         // ray from camera origin, pointing forwards
-        Ray ray = new Ray (transform.position, cam.transform.forward);
+        Ray ray = new Ray (transform.position, transform.forward);
         RaycastHit hit;
         // ray distance
         float distance = 3f;
@@ -76,12 +75,10 @@ public class MoveFish : Movement
         if (Physics.Raycast(ray, out hit, distance, layerMask))
         {
             // visual line for ray
-            Debug.DrawRay(transform.position, cam.transform.forward * distance, Color.red);
+            Debug.DrawRay(transform.position, hit.point * distance, Color.red);
             // store info of the hit gameobject if it has "item" script attached
             var item = hit.transform.GetComponent<Item>();
             gameObj = hit.transform.gameObject;
-
-            Debug.Log("fish hit " + gameObj);
     
             // if hit gameobject has "Item" script attached show UI
             if (item)
@@ -96,6 +93,5 @@ public class MoveFish : Movement
                 }
             }
         }
-        return gameObj;
     }
 }
