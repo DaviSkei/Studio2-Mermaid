@@ -10,21 +10,52 @@ public class MoveFish : MonoBehaviour
     Vector3 movementZX;
     Vector3 movementY;
 
-    [SerializeField] CinemachineFreeLook cam;
+    // CinemachineFreeLook cam;
+
+    Camera mainCam;
 
     [SerializeField] LayerMask layerMask;
 
     [SerializeField] InventoryObject inventory;
 
-    GameObject gameObj;
+    GameObject itemObj;
 
-    float moveSpeed = 1f;
+    // vars for player control
+    float moveSpeed = 5f;
+    float rotationSpeed;
+    float rotationTime = 0.2f;
+
+    public bool ctrlByPlayer = false;
 
     void Start()
     {
-        
+        // cam = Transform.FindObjectOfType<CinemachineFreeLook>();
+
+        mainCam = Camera.main;
+
+        // delete later
+        FishMove();
     }
-    private Vector3 Move(Vector3 direction)
+
+    // Update is called once per frame
+    void Update()
+    {
+        bool return2Player = Input.GetKeyDown(KeyCode.F);
+
+        if (ctrlByPlayer == true)
+        {
+            Debug.Log(ctrlByPlayer);
+            ControlMove();
+        }
+        if (return2Player)
+        {
+            ctrlByPlayer = false;
+            Debug.Log(ctrlByPlayer);
+            // boid control later
+            FishMove();
+        }
+    }
+    private void ControlMove()
     {
         // Vector3 move = Vector3.zero;
         // move += transform.forward;
@@ -32,8 +63,6 @@ public class MoveFish : MonoBehaviour
         // RayCastManager(gameObj);      
         // return move;
 
-        if ((cam.LookAt = transform) && (cam.Follow = transform))
-        {
             RayCastManager();
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
@@ -44,23 +73,31 @@ public class MoveFish : MonoBehaviour
             movementZX = new Vector3(horizontal, 0f, forwardInput).normalized;
 
             movementY = new Vector3(0f, vertical, 0f).normalized;
+
             if (movementZX != Vector3.zero)
             {
-                movementZX *= moveSpeed * Time.deltaTime;
+                // ability to rotate the players movement direction
+                float targetAngle = Mathf.Atan2(movementZX.x, movementZX.z)
+                * Mathf.Rad2Deg + mainCam.transform.eulerAngles.y;
+
+                // smooths the rotation movement on the player between its current rotation, to its intended rotation
+                // which is based on the movement inputs
+                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref rotationSpeed, rotationTime);
+
+                transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+                Vector3 camDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+                
+                transform.position += camDirection.normalized * moveSpeed * Time.deltaTime;
             }
             if (movementY != Vector3.zero)
             {
-                movementY *= moveSpeed * Time.deltaTime;
+                transform.position += movementY * moveSpeed * Time.deltaTime;
             }
-        }
-        return movementZX;
     }
-
-    // Update is called once per frame
-    void Update()
+    void FishMove()
     {
-        Move(fishVector);
-        RayCastManager();
+        transform.position += transform.forward * Time.deltaTime;
     }
 
     private void RayCastManager()
@@ -78,7 +115,7 @@ public class MoveFish : MonoBehaviour
             Debug.DrawRay(transform.position, hit.point * distance, Color.red);
             // store info of the hit gameobject if it has "item" script attached
             var item = hit.transform.GetComponent<Item>();
-            gameObj = hit.transform.gameObject;
+            itemObj = hit.transform.gameObject;
     
             // if hit gameobject has "Item" script attached show UI
             if (item)
@@ -89,7 +126,7 @@ public class MoveFish : MonoBehaviour
                 if (mouseClick)
                 {
                     inventory.AddItem(item.item, 1);
-                    Destroy(gameObj);
+                    Destroy(itemObj);
                 }
             }
         }

@@ -35,29 +35,29 @@ public class SwapMoveControl : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        for (int i = 0; i < swappableBodies.Length; i++)
-        {
-            // fishScript[i] = swappableBodies[i].GetComponent<MoveFish>();
-            charDesignation = i;
+    // void Update()
+    // {
+    //     for (int i = 0; i < swappableBodies.Length; i++)
+    //     {
+    //         // fishScript[i] = swappableBodies[i].GetComponent<MoveFish>();
+    //         charDesignation = i;
 
-            if (playerScript.RayCastManager(swappableBodies[i]) && Input.GetKeyDown(KeyCode.Q))
-            {
-                swapped = true;
-                Debug.Log("Swapped once");
+    //         if (playerScript.RayCastManager(swappableBodies[i]) && Input.GetKeyDown(KeyCode.Q))
+    //         {
+    //             swapped = true;
+    //             Debug.Log("Swapped once");
                 
-                cam.LookAt = swappableBodies[i].transform;
-                cam.Follow = swappableBodies[i].transform;
-            }
-            if (swapped && Input.GetKeyDown(KeyCode.F))
-            {
-                swapped = false;
-                cam.LookAt = player.transform;
-                cam.Follow = player.transform;
-            }
-        }
-    }
+    //             cam.LookAt = swappableBodies[i].transform;
+    //             cam.Follow = swappableBodies[i].transform;
+    //         }
+    //         if (swapped && Input.GetKeyDown(KeyCode.F))
+    //         {
+    //             swapped = false;
+    //             cam.LookAt = player.transform;
+    //             cam.Follow = player.transform;
+    //         }
+    //     }
+    // }
 
     void Swap()
     {

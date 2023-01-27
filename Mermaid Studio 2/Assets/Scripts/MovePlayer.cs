@@ -5,14 +5,16 @@ using Cinemachine;
 
 public class MovePlayer : MonoBehaviour
 {
+    // player related
     CharacterController controller;
 
     [SerializeField] Transform mainCam;
 
+    [SerializeField] CinemachineFreeLook camFreeLook;
+
     [SerializeField] InventoryObject inventory;
 
-    GameObject gameObj;
-    GameObject hitObj;
+    Animator playerAnims;
 
     float defaultSpeed = 1.5f;
     float startSpeed;
@@ -24,40 +26,69 @@ public class MovePlayer : MonoBehaviour
     float rotationTime = 0.2f;
 
     float rotationSpeed;
-    Vector3 thisVector;
 
     [SerializeField] LayerMask layerMask;
+    //////////////////////////
 
+    // UI
     [SerializeField] GameObject CollectTrashUI;
+
+    // Variables to swap movement with fish
+    public bool swapped;
+    GameObject[] swappableBodies;
+    MoveFish control;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerAnims = GetComponentInChildren<Animator>();
         startSpeed = defaultSpeed;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         controller = GetComponent<CharacterController>();
+
+        camFreeLook.LookAt = this.transform;
+        camFreeLook.Follow = this.transform;
+
+        swappableBodies = GameObject.FindGameObjectsWithTag("Fish");
+        Debug.Log("amount of fish = " + swappableBodies.Length);
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        bool return2Player = Input.GetKeyDown(KeyCode.F);
 
         //Change later
         if (Input.GetKey(KeyCode.Escape))
         {
             Application.Quit();
         }
-        Move(thisVector);
+        if (!swapped)
+        {
+            Move();
+            playerAnims.enabled = true;
+        }
+        if (return2Player)
+        {
+            camFreeLook.LookAt = this.transform;
+            camFreeLook.Follow = this.transform;
+            swapped = false;
+        }
+        if (swapped)
+        {
+            playerAnims.enabled = false;
+        }
 
         Sprint();
 
-        RayCastManager(hitObj);
+        RayCastManager();
 
 
     }
 
-    private Vector3 Move(Vector3 direction)
+    private void Move()
     {
         //Get movement key input
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -94,8 +125,6 @@ public class MovePlayer : MonoBehaviour
             Vector3 camDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(camDirection.normalized * defaultSpeed * Time.deltaTime);
 
-
-
             // movespeed increases over time
             defaultSpeed += moveSpeedXZ * Time.deltaTime;
 
@@ -109,7 +138,6 @@ public class MovePlayer : MonoBehaviour
         {
             defaultSpeed = startSpeed;
         }
-        return movementZX;
     }
     
     private void Sprint()
@@ -127,14 +155,14 @@ public class MovePlayer : MonoBehaviour
         }
     }
     
-    public GameObject RayCastManager(GameObject gameObj)
+    public void RayCastManager()
     {
         bool mouseClick = Input.GetKey(KeyCode.Mouse0);
         // ray from camera origin, pointing forwards
         Ray ray = new Ray (transform.position, mainCam.forward);
         RaycastHit hit;
         // ray distance
-        float distance = 3f;
+        float distance = 3.5f;
 
         // CollectTrashUI.SetActive(false);
         if (Physics.Raycast(ray, out hit, distance, layerMask))
@@ -143,14 +171,21 @@ public class MovePlayer : MonoBehaviour
             Debug.DrawRay(transform.position, mainCam.forward * distance, Color.red);
             // store info of the hit gameobject if it has "item" script attached
             var item = hit.transform.GetComponent<Item>();
+            GameObject itemObj = hit.transform.gameObject;
 
-            hitObj = new GameObject();
-            gameObj = hit.transform.gameObject;
-
-            hitObj = gameObj;
-
-            Debug.Log("player hit " + gameObj);
-    
+            for (int i = 0; i < swappableBodies.Length; i++)
+            {
+                if (hit.transform.gameObject == swappableBodies[i] && Input.GetKeyDown(KeyCode.Q))
+                {
+                    // camera is going to correct char
+                    camFreeLook.LookAt = swappableBodies[i].transform;
+                    camFreeLook.Follow = swappableBodies[i].transform;
+                    swapped = true;
+                    
+                    control = swappableBodies[i].GetComponent<MoveFish>();
+                    control.ctrlByPlayer = true;
+                }
+            }
             // if hit gameobject has "Item" script attached show UI
             if (item)
             {
@@ -160,11 +195,10 @@ public class MovePlayer : MonoBehaviour
                 if (mouseClick)
                 {
                     inventory.AddItem(item.item, 1);
-                    Destroy(gameObj);
+                    Destroy(itemObj);
                 }
             }
         }
-        return hitObj;
     }
 
     private void OnApplicationQuit()

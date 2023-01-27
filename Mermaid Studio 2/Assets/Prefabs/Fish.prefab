@@ -300,11 +300,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de42160bf970f1d4cb5d587b368a9f57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
   layerMask:
     serializedVersion: 2
     m_Bits: 133
   inventory: {fileID: 11400000, guid: 7fa36c03a9df3654d89097edc22d2d0c, type: 2}
+  ctrlByPlayer: 0
 --- !u!136 &490969162
 CapsuleCollider:
   m_ObjectHideFlags: 0
