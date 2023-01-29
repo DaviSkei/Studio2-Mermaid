@@ -27,14 +27,15 @@ public class MoveFish : MonoBehaviour
 
     public bool ctrlByPlayer = false;
 
+    FishBoid fishBoid;
+
     void Start()
     {
         // cam = Transform.FindObjectOfType<CinemachineFreeLook>();
 
         mainCam = Camera.main;
 
-        // delete later
-        FishMove();
+        fishBoid = GetComponent<FishBoid>();
     }
 
     // Update is called once per frame
@@ -46,23 +47,18 @@ public class MoveFish : MonoBehaviour
         {
             Debug.Log(ctrlByPlayer);
             ControlMove();
+            fishBoid.enabled = false;
         }
         if (return2Player)
         {
             ctrlByPlayer = false;
             Debug.Log(ctrlByPlayer);
             // boid control later
-            FishMove();
+            fishBoid.enabled = true;
         }
     }
     private void ControlMove()
     {
-        // Vector3 move = Vector3.zero;
-        // move += transform.forward;
-        // transform.position += move * moveSpeed * Time.deltaTime;  
-        // RayCastManager(gameObj);      
-        // return move;
-
             RayCastManager();
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
@@ -95,10 +91,6 @@ public class MoveFish : MonoBehaviour
                 transform.position += movementY * moveSpeed * Time.deltaTime;
             }
     }
-    void FishMove()
-    {
-        transform.position += transform.forward * Time.deltaTime;
-    }
 
     private void RayCastManager()
     {
@@ -130,5 +122,9 @@ public class MoveFish : MonoBehaviour
                 }
             }
         }
+    }
+    void FishMove()
+    {
+        
     }
 }

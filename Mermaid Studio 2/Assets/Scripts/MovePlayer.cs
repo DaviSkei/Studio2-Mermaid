@@ -96,7 +96,6 @@ public class MovePlayer : MonoBehaviour
         float forwardInput = Input.GetAxisRaw("Forward");
 
         // movement direction vector uses the inputs to determine the new X and Z positions
-        // if i add in the Y component, it moves forward while also moving on Y
         Vector3 movementZX = new Vector3(horizontal, 0f, forwardInput).normalized;
 
         Vector3 movementY = new Vector3(0f, vertical, 0f).normalized;
@@ -112,7 +111,7 @@ public class MovePlayer : MonoBehaviour
         if (movementZX != Vector3.zero)
         {
 
-            // ability to rotate the players movement direction
+            
             float targetAngle = Mathf.Atan2(movementZX.x, movementZX.z)
             * Mathf.Rad2Deg + mainCam.eulerAngles.y;
 

@@ -83,6 +83,53 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &3132822211924537612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6655750067320285549}
+  - component: {fileID: 5581689115277643715}
+  m_Layer: 8
+  m_Name: AvoidObstacle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6655750067320285549
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3132822211924537612}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4021323074619731909}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5581689115277643715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3132822211924537612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75298c6ca383cc847810bdc66a14c77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  avoidMask:
+    serializedVersion: 2
+    m_Bits: 83
 --- !u!1 &3210106378207447493
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,6 +306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4021323074619731909}
   - component: {fileID: 490969161}
+  - component: {fileID: 7468170106984137700}
   - component: {fileID: 490969162}
   m_Layer: 8
   m_Name: Fish
@@ -285,6 +333,7 @@ Transform:
   - {fileID: 6378069087300285351}
   - {fileID: 3628638278652541755}
   - {fileID: 5209478887100797544}
+  - {fileID: 6655750067320285549}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -305,6 +354,26 @@ MonoBehaviour:
     m_Bits: 133
   inventory: {fileID: 11400000, guid: 7fa36c03a9df3654d89097edc22d2d0c, type: 2}
   ctrlByPlayer: 0
+--- !u!114 &7468170106984137700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4360976112968938879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b0bc1289ee4a614c931a65199d1b528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flock: {fileID: 0}
+  cohesionFactor: 0.2
+  separationFactor: 6
+  allignFactor: 1
+  constrainFactor: 2
+  avoidFactor: 2
+  collisionDistance: 6
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!136 &490969162
 CapsuleCollider:
   m_ObjectHideFlags: 0

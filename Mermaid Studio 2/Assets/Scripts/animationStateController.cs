@@ -6,24 +6,27 @@ public class animationStateController : MonoBehaviour
 {
     Animator YBotAnimator;
 
-    bool isMoving;
+    bool isSwimming;
+    bool isSwimmingUp;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         YBotAnimator = GetComponent<Animator>();
+
+        isSwimming = YBotAnimator.GetBool("isSwimming");
+        isSwimmingUp = YBotAnimator.GetBool("isSwimmingUp");
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
         {
+            isSwimmingUp = true;
             YBotAnimator.SetBool("isSwimmingUp", true);
         }
         else
         {
+            isSwimmingUp = false;
             YBotAnimator.SetBool("isSwimmingUp", false);
         }
 
@@ -32,35 +35,13 @@ public class animationStateController : MonoBehaviour
          || Input.GetKey(KeyCode.A) 
          || Input.GetKey(KeyCode.D))
          {
+            isSwimming = true;
             YBotAnimator.SetBool("isSwimming", true);
          }
          else
          {
+            isSwimming = false;
             YBotAnimator.SetBool("isSwimming", false);
          }
-    }
-    private bool CheckMovement(bool isMoving)
-    {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        float forwardInput = Input.GetAxisRaw("Forward");
-
-        Vector3 moveXY = new Vector3(horizontal, 0f, forwardInput);
-        Vector3 moveY = new Vector3(0f, vertical, 0f);
-
-        if (moveXY != Vector3.zero)
-        {
-            isMoving = true;
-        }
-        if (moveY != Vector3.zero)
-        {
-            isMoving = true;
-        }
-        if (moveXY == Vector3.zero || moveY == Vector3.zero)
-        {
-            isMoving = false;
-        }
-        return isMoving;
-
     }
 }
