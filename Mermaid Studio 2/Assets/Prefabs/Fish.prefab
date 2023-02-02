@@ -367,13 +367,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flock: {fileID: 0}
-  cohesionFactor: 0.2
-  separationFactor: 6
-  allignFactor: 1
-  constrainFactor: 2
-  avoidFactor: 2
+  cohesionFactor: 2
+  separationFactor: 7
+  allignFactor: 3.5
+  constrainFactor: 3.5
+  avoidFactor: 4
   collisionDistance: 6
-  velocity: {x: 0, y: 0, z: 0}
+  velocity: {x: 0.31974933, y: 0.80580306, z: 0.49843925}
 --- !u!136 &490969162
 CapsuleCollider:
   m_ObjectHideFlags: 0

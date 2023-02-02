@@ -8,6 +8,8 @@ public class MovePlayer : MonoBehaviour
     // player related
     CharacterController controller;
 
+    Rigidbody rbPlayer;
+
     [SerializeField] Transform mainCam;
 
     [SerializeField] CinemachineFreeLook camFreeLook;
@@ -41,6 +43,8 @@ public class MovePlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rbPlayer = GetComponent<Rigidbody>();
+
         playerAnims = GetComponentInChildren<Animator>();
         startSpeed = defaultSpeed;
         Cursor.lockState = CursorLockMode.Locked;
@@ -57,6 +61,12 @@ public class MovePlayer : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        Sprint();
+
+        RayCastManager();
+    }
+    void FixedUpdate()
     {
         bool return2Player = Input.GetKeyDown(KeyCode.F);
 
@@ -80,12 +90,6 @@ public class MovePlayer : MonoBehaviour
         {
             playerAnims.enabled = false;
         }
-
-        Sprint();
-
-        RayCastManager();
-
-
     }
 
     private void Move()
@@ -104,7 +108,8 @@ public class MovePlayer : MonoBehaviour
         if (movementY != Vector3.zero)
         {
             // tell the controller move function to return the vector 3 value of the Y input
-            controller.Move(movementY * moveSpeedY * Time.deltaTime);
+            // controller.Move(movementY * moveSpeedY * Time.deltaTime);
+            rbPlayer.AddForce(movementY * moveSpeedY * Time.deltaTime, ForceMode.VelocityChange);
         }
         
         // if movement on x or z axis is not nothing
@@ -122,7 +127,8 @@ public class MovePlayer : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 camDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.Move(camDirection.normalized * defaultSpeed * Time.deltaTime);
+            // controller.Move(camDirection.normalized * defaultSpeed * Time.deltaTime);
+            rbPlayer.AddForce(camDirection.normalized * defaultSpeed * Time.deltaTime, ForceMode.VelocityChange);
 
             // movespeed increases over time
             defaultSpeed += moveSpeedXZ * Time.deltaTime;
