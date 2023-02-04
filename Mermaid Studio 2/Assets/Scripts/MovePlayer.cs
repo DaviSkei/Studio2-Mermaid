@@ -6,7 +6,6 @@ using Cinemachine;
 public class MovePlayer : MonoBehaviour
 {
     // player related
-    CharacterController controller;
 
     Rigidbody rbPlayer;
 
@@ -36,7 +35,7 @@ public class MovePlayer : MonoBehaviour
     [SerializeField] GameObject CollectTrashUI;
 
     // Variables to swap movement with fish
-    public bool swapped;
+    bool swapped;
     GameObject[] swappableBodies;
     MoveFish control;
 
@@ -49,7 +48,6 @@ public class MovePlayer : MonoBehaviour
         startSpeed = defaultSpeed;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        controller = GetComponent<CharacterController>();
 
         camFreeLook.LookAt = this.transform;
         camFreeLook.Follow = this.transform;
@@ -188,7 +186,7 @@ public class MovePlayer : MonoBehaviour
                     swapped = true;
                     
                     control = swappableBodies[i].GetComponent<MoveFish>();
-                    control.ctrlByPlayer = true;
+                    control.SetBool(swapped);
                 }
             }
             // if hit gameobject has "Item" script attached show UI

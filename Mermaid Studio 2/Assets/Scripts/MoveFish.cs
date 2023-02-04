@@ -10,6 +10,8 @@ public class MoveFish : MonoBehaviour
     Vector3 movementZX;
     Vector3 movementY;
 
+    Rigidbody rbFish;
+
     // CinemachineFreeLook cam;
 
     Camera mainCam;
@@ -25,7 +27,7 @@ public class MoveFish : MonoBehaviour
     float rotationSpeed;
     float rotationTime = 0.2f;
 
-    public bool ctrlByPlayer = false;
+    bool ctrlByPlayer = false;
 
     FishBoid fishBoid;
 
@@ -45,51 +47,60 @@ public class MoveFish : MonoBehaviour
 
         if (ctrlByPlayer == true)
         {
-            Debug.Log(ctrlByPlayer);
             ControlMove();
             fishBoid.enabled = false;
         }
         if (return2Player)
         {
+            Destroy(rbFish);
             ctrlByPlayer = false;
-            Debug.Log(ctrlByPlayer);
-            // boid control later
             fishBoid.enabled = true;
         }
     }
     private void ControlMove()
     {
-            RayCastManager();
-            float horizontal = Input.GetAxisRaw("Horizontal");
-            float vertical = Input.GetAxisRaw("Vertical");
-            float forwardInput = Input.GetAxisRaw("Forward");
+        RayCastManager();
+        gameObject.AddComponent<Rigidbody>();
+        rbFish = GetComponent<Rigidbody>();
 
-            // movement direction vector uses the inputs to determine the new X and Z positions
-            // if i add in the Y component, it moves forward while also moving on Y
-            movementZX = new Vector3(horizontal, 0f, forwardInput).normalized;
+        rbFish.drag = 1f;
+        rbFish.useGravity = false;
+        rbFish.freezeRotation = true;
+        rbFish.interpolation = RigidbodyInterpolation.Interpolate;
+        rbFish.collisionDetectionMode = CollisionDetectionMode.Continuous;
 
-            movementY = new Vector3(0f, vertical, 0f).normalized;
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+        float forwardInput = Input.GetAxisRaw("Forward");
 
-            if (movementZX != Vector3.zero)
-            {
-                // ability to rotate the players movement direction
-                float targetAngle = Mathf.Atan2(movementZX.x, movementZX.z)
-                * Mathf.Rad2Deg + mainCam.transform.eulerAngles.y;
+        // movement direction vector uses the inputs to determine the new X and Z positions
+        // if i add in the Y component, it moves forward while also moving on Y
+        movementZX = new Vector3(horizontal, 0f, forwardInput).normalized;
 
-                // smooths the rotation movement on the player between its current rotation, to its intended rotation
-                // which is based on the movement inputs
-                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref rotationSpeed, rotationTime);
+        movementY = new Vector3(0f, vertical, 0f).normalized;
 
-                transform.rotation = Quaternion.Euler(0f, angle, 0f);
+        if (movementZX != Vector3.zero)
+        {
+            // ability to rotate the players movement direction
+            float targetAngle = Mathf.Atan2(movementZX.x, movementZX.z)
+            * Mathf.Rad2Deg + mainCam.transform.eulerAngles.y;
 
-                Vector3 camDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            // smooths the rotation movement on the player between its current rotation, to its intended rotation
+            // which is based on the movement inputs
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref rotationSpeed, rotationTime);
+
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+            Vector3 camDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+
+            rbFish.AddForce(camDirection.normalized * moveSpeed * Time.deltaTime, ForceMode.VelocityChange);
                 
-                transform.position += camDirection.normalized * moveSpeed * Time.deltaTime;
-            }
-            if (movementY != Vector3.zero)
-            {
-                transform.position += movementY * moveSpeed * Time.deltaTime;
-            }
+            // transform.position += camDirection.normalized * moveSpeed * Time.deltaTime;
+        }
+        if (movementY != Vector3.zero)
+        {
+            rbFish.AddForce(movementY.normalized * moveSpeed * Time.deltaTime, ForceMode.VelocityChange);
+        }
     }
 
     private void RayCastManager()
@@ -123,8 +134,9 @@ public class MoveFish : MonoBehaviour
             }
         }
     }
-    void FishMove()
+    public bool SetBool(bool x)
     {
-        
+        ctrlByPlayer = x;
+        return ctrlByPlayer;
     }
 }
