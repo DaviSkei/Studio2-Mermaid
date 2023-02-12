@@ -6,6 +6,7 @@ using Cinemachine;
 public class MovePlayer : MonoBehaviour
 {
     // player related
+    // test
 
     Rigidbody rbPlayer;
 
