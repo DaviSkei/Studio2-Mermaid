@@ -5,43 +5,20 @@ using UnityEngine;
 public class animationStateController : MonoBehaviour
 {
     Animator YBotAnimator;
+    MovePlayer player;
 
-    bool isSwimming;
-    bool isSwimmingUp;
+    string isSwimming = "isSwimming";
+    string isSwimmingUp = "isSwimmingUp";
 
     void Start()
     {
+        player = transform.parent.GetComponent<MovePlayer>();
         YBotAnimator = GetComponent<Animator>();
-
-        isSwimming = YBotAnimator.GetBool("isSwimming");
-        isSwimmingUp = YBotAnimator.GetBool("isSwimmingUp");
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
-        {
-            isSwimmingUp = true;
-            YBotAnimator.SetBool("isSwimmingUp", true);
-        }
-        else
-        {
-            isSwimmingUp = false;
-            YBotAnimator.SetBool("isSwimmingUp", false);
-        }
-
-        if (Input.GetKey(KeyCode.Mouse1)
-         || Input.GetKey(KeyCode.Space) 
-         || Input.GetKey(KeyCode.A) 
-         || Input.GetKey(KeyCode.D))
-         {
-            isSwimming = true;
-            YBotAnimator.SetBool("isSwimming", true);
-         }
-         else
-         {
-            isSwimming = false;
-            YBotAnimator.SetBool("isSwimming", false);
-         }
+        YBotAnimator.SetBool(isSwimming, player.IsSwimming());
+        YBotAnimator.SetBool(isSwimmingUp, player.IsSwimmingUp());
     }
 }

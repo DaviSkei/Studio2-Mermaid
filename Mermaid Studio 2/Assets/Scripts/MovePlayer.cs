@@ -15,8 +15,6 @@ public class MovePlayer : MonoBehaviour
 
     [SerializeField] InventoryObject inventory;
 
-    Animator playerAnims;
-
     float defaultSpeed = 1.5f;
     float startSpeed;
     
@@ -29,6 +27,9 @@ public class MovePlayer : MonoBehaviour
     float rotationSpeed;
 
     [SerializeField] LayerMask layerMask;
+
+    bool isSwimming;
+    bool isSwimmingUp;
     //////////////////////////
 
     // UI
@@ -44,7 +45,6 @@ public class MovePlayer : MonoBehaviour
     {
         rbPlayer = GetComponent<Rigidbody>();
 
-        playerAnims = GetComponentInChildren<Animator>();
         startSpeed = defaultSpeed;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -76,7 +76,6 @@ public class MovePlayer : MonoBehaviour
         if (!swapped)
         {
             Move();
-            playerAnims.enabled = true;
         }
         if (return2Player)
         {
@@ -86,7 +85,7 @@ public class MovePlayer : MonoBehaviour
         }
         if (swapped)
         {
-            playerAnims.enabled = false;
+            
         }
     }
 
@@ -105,15 +104,20 @@ public class MovePlayer : MonoBehaviour
         // if movement does not equal zero, that means we are recieving input to move
         if (movementY != Vector3.zero)
         {
+            isSwimmingUp = true;
             // tell the controller move function to return the vector 3 value of the Y input
             // controller.Move(movementY * moveSpeedY * Time.deltaTime);
             rbPlayer.AddForce(movementY * moveSpeedY * Time.deltaTime, ForceMode.VelocityChange);
+        }
+        else if (movementY == Vector3.zero)
+        {
+            isSwimmingUp = false;
         }
         
         // if movement on x or z axis is not nothing
         if (movementZX != Vector3.zero)
         {
-
+            isSwimming = true;
             
             float targetAngle = Mathf.Atan2(movementZX.x, movementZX.z)
             * Mathf.Rad2Deg + mainCam.eulerAngles.y;
@@ -139,6 +143,7 @@ public class MovePlayer : MonoBehaviour
         }
         else if ( movementZX == Vector3.zero)
         {
+            isSwimming = false;
             defaultSpeed = startSpeed;
         }
     }
@@ -148,11 +153,13 @@ public class MovePlayer : MonoBehaviour
         bool sprintInput = Input.GetKey(KeyCode.LeftShift);
         if (sprintInput)
         {
+            // fast swim animation bool true
             moveSpeedXZ = 7f;
             moveSpeedY = 4f;
         }
         if (!sprintInput)
         {
+            // fast swim animation bool false
             moveSpeedXZ = 3f;
             moveSpeedY = 2f;
         }
@@ -202,6 +209,14 @@ public class MovePlayer : MonoBehaviour
                 }
             }
         }
+    }
+    public bool IsSwimming()
+    {
+        return isSwimming;
+    }
+    public bool IsSwimmingUp()
+    {
+        return isSwimmingUp;
     }
 
     private void OnApplicationQuit()
