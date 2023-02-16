@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: TempRock_Mat
-  m_Shader: {fileID: -6465566751694194690, guid: 795b0105540eb964c82fb9450a41f52a,
+  m_Shader: {fileID: -6465566751694194690, guid: da5efadae1ea8214d9678990ed7cb667,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -105,6 +105,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _Dissolve_Amount: 0
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _Float: 0
@@ -122,6 +123,10 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
+    - _Wobble_Distance: 0
+    - _Wobble_Force_Y: 0
+    - _Wobble_Force_Z: 0
+    - _Wobble_Speed: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
