@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Water_Mat
-  m_Shader: {fileID: -6465566751694194690, guid: 38c30f82d883c4942bae978c4281ce86,
+  m_Shader: {fileID: -6465566751694194690, guid: e2ad8580fa11ee848be1ab3a4c51c9a4,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -49,17 +49,37 @@ Material:
     m_Floats:
     - _Depth: -1.94
     - _Displacement: 0.56
+    - _Foam_Offset: 0.4
+    - _Metalic: 1.17
     - _NormalStrength: 0.811
+    - _Normal_Strenght: 100
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Riple_Scale: 17.3
+    - _Ripple_Dissolver: 4.44
+    - _Ripple_Intensity: 4
+    - _Ripple_Speed: 3
     - _Smootheness: 1
+    - _Smoothness: 1.29
     - _Strength: 0.21
     - _TilingScale: 0.05
+    - _Transparency: 4
     - _WaterTiling: 0.04
+    - _WaveScale: 1
+    - _WaveSpeed: 0.5
     - _WaveTiling: 1
+    - _Wave_Frequency: 0.554
+    - _Wave_Intensity: 0
+    - _Wave_Speed: 5.25
+    - _Wave_Strength: 0.701
+    - _metal: 1.7
+    - _smooth: 1
     m_Colors:
     - _DeepColor: {r: 0.05228728, g: 0.21105425, b: 0.4433962, a: 0.84313726}
+    - _Foam_Color: {r: 181.83842, g: 0, b: 194.0117, a: 0}
+    - _Ripple_Color: {r: 0, g: 1, b: 0.7387755, a: 1}
     - _ShallowColor: {r: 0.17777678, g: 0.4433962, b: 0.44131294, a: 0}
+    - _WaterColor: {r: 0, g: 0.6320327, b: 1.3393537, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6583458981428523572
 MonoBehaviour:
