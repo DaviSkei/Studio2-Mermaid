@@ -67,7 +67,7 @@ Material:
     - _TilingScale: 0.05
     - _Transparency: 2.5
     - _WaterTiling: 0.04
-    - _WaveScale: 2.24
+    - _WaveScale: 1
     - _WaveSpeed: 0.5
     - _WaveTiling: 0.334
     - _Wave_Frequency: 0.554
