@@ -131,6 +131,7 @@ Material:
     - _SrcBlend: 1
     - _Surface: 0
     - _Wobble_Distance: 0.3
+    - _Wobble_Force_X: 0
     - _Wobble_Force_Y: 0.15
     - _Wobble_Force_Z: 1
     - _Wobble_Speed: 4
