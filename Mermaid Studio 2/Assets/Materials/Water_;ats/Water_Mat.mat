@@ -47,13 +47,20 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Contrast: 75.91
     - _Depth: 1
     - _Depth_Amount: 1
     - _Depth_Strength: 0.5
     - _Displacement: 0.56
-    - _Float: 0
+    - _Float: 25
+    - _Foam_Density: 3
     - _Foam_Offset: 1
+    - _Foam_Power: 26.52
+    - _Foam_Scale: 140
+    - _Foam_Speed: 25
+    - _Foam_Thickness: 60
     - _Metalic: 1.17
+    - _Noise: 2
     - _NormalStrength: 0.811
     - _Normal_Strenght: 100
     - _QueueControl: 0
@@ -65,6 +72,7 @@ Material:
     - _Smootheness: 1
     - _Smoothness: 1.29
     - _Strength: 0.21
+    - _Subtract_Foam: 50
     - _TilingScale: 0.05
     - _Transparency: 2.5
     - _WaterTiling: 0.04
@@ -81,7 +89,7 @@ Material:
     - _smooth: 1
     m_Colors:
     - _DeepColor: {r: 0.05228728, g: 0.21105425, b: 0.4433962, a: 0.84313726}
-    - _Foam_Color: {r: 181.83842, g: 0, b: 194.0117, a: 0}
+    - _Foam_Color: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 0}
     - _Ripple_Color: {r: 0, g: 1, b: 0.7387755, a: 1}
     - _ShallowColor: {r: 0.17777678, g: 0.4433962, b: 0.44131294, a: 0}
     - _WaterColor: {r: 0, g: 0.6320327, b: 1.3393537, a: 0}

@@ -49,37 +49,43 @@ Material:
     m_Floats:
     - _Depth: 1
     - _Depth_Amount: 1
-    - _Depth_Strength: 0.04
+    - _Depth_Strength: 0.5
     - _Displacement: 0.56
+    - _Foam_Density: 3
     - _Foam_Offset: 0.4
+    - _Foam_Scale: 700
+    - _Foam_Speed: 180
+    - _Foam_Thickness: 60
     - _Metalic: 1.17
     - _NormalStrength: 0.811
     - _Normal_Strenght: 100
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Riple_Scale: 3.3
+    - _Riple_Scale: 7
     - _Ripple_Dissolver: 4.44
     - _Ripple_Intensity: 4
-    - _Ripple_Speed: 10
+    - _Ripple_Speed: 5
     - _Smootheness: 1
     - _Smoothness: 1.29
     - _Strength: 0.21
+    - _Subtract_Foam: 300
     - _TilingScale: 0.05
     - _Transparency: 2.5
     - _WaterTiling: 0.04
-    - _WaveScale: 0.1
-    - _WaveSpeed: 1
+    - _WaveScale: 0
+    - _WaveSpeed: 0.454
     - _WaveTiling: 1
     - _Wave_Frequency: 0.554
     - _Wave_Intensity: 0
     - _Wave_Speed: 5.25
     - _Wave_Strength: 0.701
+    - _fresnel: 0
     - _metal: 1.7
     - _offset: 0.6
     - _smooth: 1
     m_Colors:
     - _DeepColor: {r: 0.05228728, g: 0.21105425, b: 0.4433962, a: 0.84313726}
-    - _Foam_Color: {r: 181.83842, g: 0, b: 194.0117, a: 0}
+    - _Foam_Color: {r: 0.8113207, g: 0.8113207, b: 0.8113207, a: 0}
     - _Ripple_Color: {r: 0, g: 1, b: 0.7387755, a: 1}
     - _ShallowColor: {r: 0.17777678, g: 0.4433962, b: 0.44131294, a: 0}
     - _WaterColor: {r: 0, g: 0.6320327, b: 1.3393537, a: 0}
