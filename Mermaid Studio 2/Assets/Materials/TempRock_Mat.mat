@@ -128,7 +128,7 @@ Material:
     - _Wobble_Force_Z: 0
     - _Wobble_Speed: 0
     - _WorkflowMode: 1
-    - _Y_Constraint: 0.724
+    - _Y_Constraint: 0.513
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 0.8584906, g: 0.125534, b: 0.125534, a: 1}

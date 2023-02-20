@@ -75,6 +75,7 @@ Material:
     - _Wave_Speed: 5.25
     - _Wave_Strength: 0.701
     - _metal: 1.7
+    - _offset: 0.6
     - _smooth: 1
     m_Colors:
     - _DeepColor: {r: 0.05228728, g: 0.21105425, b: 0.4433962, a: 0.84313726}
