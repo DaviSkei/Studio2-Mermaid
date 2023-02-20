@@ -19,11 +19,11 @@ public class MaterialManager : MonoBehaviour
     // SET LAYERMASK TO A NUMBER INSTEAD SO WE DONT HAVE TO DO THIS FOR EVERY SINGLE FUCKING TRASH SCRIPT
     // set it equal to trash number later
 
-    public float timer = 1f;
-    private float revealTime;
+    public float visibleTimer = 3f;
 
-    public float timer2 = 0f;
-    private float concealTime;
+    public float invisTimer = -3f;
+
+    private float slowedTime;
 
     // Start is called before the first frame update
     void Start()
@@ -39,8 +39,7 @@ public class MaterialManager : MonoBehaviour
             materials = skinnedMeshRend.materials;
         }
 
-        revealTime = Time.deltaTime/25;
-        concealTime = Time.deltaTime/20;
+        slowedTime = Time.deltaTime/15;
     }
     private void Update()
     {
@@ -54,22 +53,21 @@ public class MaterialManager : MonoBehaviour
         {
             if (!inRange)
             {
-                timer2 -= concealTime;
-                timer2 -= timer2;
-                timer2 = 0f;
+                visibleTimer -= slowedTime;
+                materials[i].SetFloat(dissolveAmount, visibleTimer);
 
-                timer -= revealTime;
-                materials[i].SetFloat(dissolveAmount, timer);
+                invisTimer -= invisTimer;
+                invisTimer = -3f;
+
             }
-            else if (inRange)
-            {
-                timer -= revealTime;
-                timer -= timer;
-                timer = 1f;
+            if (inRange)
+            {  
+                invisTimer += slowedTime;
+                materials[i].SetFloat(dissolveAmount, invisTimer);
 
-                timer2 += concealTime;
-                materials[i].SetFloat(dissolveAmount, timer2);
-            }      
+                visibleTimer -= visibleTimer;
+                visibleTimer = 3f;
+            }
         }     
     }
 }

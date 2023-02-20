@@ -75,7 +75,7 @@ public class MoveFish : MonoBehaviour
 
         // movement direction vector uses the inputs to determine the new X and Z positions
         // if i add in the Y component, it moves forward while also moving on Y
-        movementZX = new Vector3(horizontal, 0f, forwardInput).normalized;
+        movementZX = new Vector3(0f, 0f, forwardInput).normalized;
 
         movementY = new Vector3(0f, vertical, 0f).normalized;
 
