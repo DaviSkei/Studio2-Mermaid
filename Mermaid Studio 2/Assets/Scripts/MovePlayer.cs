@@ -14,7 +14,8 @@ public class MovePlayer : MonoBehaviour
 
     [SerializeField] CinemachineFreeLook camFreeLook;
 
-    [SerializeField] InventoryObject inventory;
+    // [SerializeField] InventoryObject inventory;
+    [SerializeField] Inventory playerInventory;
 
     float defaultSpeed = 1.5f;
     float startSpeed;
@@ -181,7 +182,7 @@ public class MovePlayer : MonoBehaviour
             // visual line for ray
             Debug.DrawRay(transform.position, mainCam.forward * distance, Color.red);
             // store info of the hit gameobject if it has "item" script attached
-            var item = hit.transform.GetComponent<Item>();
+            var item = hit.transform.GetComponent<InventoryItem>();
             GameObject itemObj = hit.transform.gameObject;
 
             for (int i = 0; i < swappableBodies.Length; i++)
@@ -200,13 +201,16 @@ public class MovePlayer : MonoBehaviour
             // if hit gameobject has "Item" script attached show UI
             if (item)
             {
+                Debug.Log(item.name);
     
                 // if player inputs left mouse click, add item data to inventory data
                 // and destroy gameobject with the "item" script attached
                 if (mouseClick)
                 {
-                    inventory.AddItem(item.item, 1);
-                    Destroy(itemObj);
+                    // inventory.AddItem(item.item, 1);
+                    // Destroy(itemObj);
+                    playerInventory.inventory.Add(item);
+                    Destroy(item);
                 }
             }
         }
@@ -222,6 +226,7 @@ public class MovePlayer : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        inventory.Container.Clear();
+        // inventory.Container.Clear();
+        playerInventory.inventory.Clear();
     }
 }
