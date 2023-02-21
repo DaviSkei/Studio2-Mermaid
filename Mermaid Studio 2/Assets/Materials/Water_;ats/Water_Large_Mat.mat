@@ -51,14 +51,18 @@ Material:
     - _Depth_Amount: 1
     - _Depth_Strength: 0.5
     - _Displacement: 0.56
-    - _Foam_Density: 3
+    - _Float: 1
+    - _Foam_Amount: 0.29
+    - _Foam_Animation: 265.4
+    - _Foam_Density: 7.5
     - _Foam_Offset: 0.4
-    - _Foam_Scale: 700
-    - _Foam_Speed: 180
-    - _Foam_Thickness: 60
+    - _Foam_Scale: 68.4
+    - _Foam_Speed: 266
+    - _Foam_Thickness: 64.9
     - _Metalic: 1.17
     - _NormalStrength: 0.811
     - _Normal_Strenght: 100
+    - _Object_Scale: 0.05
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Riple_Scale: 7
@@ -72,8 +76,8 @@ Material:
     - _TilingScale: 0.05
     - _Transparency: 2.5
     - _WaterTiling: 0.04
-    - _WaveScale: 0
-    - _WaveSpeed: 0.454
+    - _WaveScale: 0.35
+    - _WaveSpeed: 1
     - _WaveTiling: 1
     - _Wave_Frequency: 0.554
     - _Wave_Intensity: 0
