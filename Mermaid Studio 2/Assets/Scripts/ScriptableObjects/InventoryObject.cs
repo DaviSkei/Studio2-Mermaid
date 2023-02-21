@@ -8,7 +8,7 @@ public class InventoryObject : ScriptableObject
 {
     // List for items stored by a certain amount in a list called Container
     public List<InventorySlot> Container = new List<InventorySlot>();
-    public void AddItem(ItemObject _storedItem, int _amount)
+    public void AddItem(ItemObject _storedItemObJ, int _amount)
     {
         // check if inventory has item or not
         bool hasItem = false;
@@ -17,7 +17,7 @@ public class InventoryObject : ScriptableObject
         for (int i = 0; i < Container.Count; i++)
         {
             // if there are any number of stored items in container list, has item becomes true
-            if (Container[i].storedItem == _storedItem)
+            if (Container[i].storedItemObj == _storedItemObJ)
             {
                 Container[i].AddAmount(_amount);
                 hasItem = true;
@@ -25,10 +25,10 @@ public class InventoryObject : ScriptableObject
                 break;
             }
         }
-        // if 
+        // if inventory does not have the item, add a new slot for it
         if (!hasItem)
         {
-            Container.Add(new InventorySlot(_storedItem, _amount));
+            Container.Add(new InventorySlot(_storedItemObJ, _amount));
         }
     }
 }
@@ -37,13 +37,13 @@ public class InventoryObject : ScriptableObject
 public class InventorySlot
 {
     // variable for the item being stored in a slot
-    public ItemObject storedItem;
+    public ItemObject storedItemObj;
     // amount of slots
     public int amount;
     // setting values for when the inventory slots are created
-    public InventorySlot(ItemObject _storedItem, int _amount)
+    public InventorySlot(ItemObject _storedItemObJ, int _amount)
     {
-        storedItem = _storedItem;
+        storedItemObj = _storedItemObJ;
         amount = _amount;
 
     }

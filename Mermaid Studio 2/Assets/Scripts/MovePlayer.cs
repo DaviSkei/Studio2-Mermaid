@@ -182,7 +182,8 @@ public class MovePlayer : MonoBehaviour
             // visual line for ray
             Debug.DrawRay(transform.position, mainCam.forward * distance, Color.red);
             // store info of the hit gameobject if it has "item" script attached
-            var item = hit.transform.GetComponent<InventoryItem>();
+            
+            var item = hit.transform.GetComponent<Item>();
             GameObject itemObj = hit.transform.gameObject;
 
             for (int i = 0; i < swappableBodies.Length; i++)
@@ -198,7 +199,7 @@ public class MovePlayer : MonoBehaviour
                     control.SetBool(swapped);
                 }
             }
-            // if hit gameobject has "Item" script attached show UI
+            // if hit gameobject has "Item" script attached, show UI
             if (item)
             {
                 Debug.Log(item.name);
@@ -209,8 +210,8 @@ public class MovePlayer : MonoBehaviour
                 {
                     // inventory.AddItem(item.item, 1);
                     // Destroy(itemObj);
-                    playerInventory.inventory.Add(item);
-                    Destroy(item);
+                    playerInventory.AddItem(item.inventoryItem, item.inventoryItem.itemWeight);
+                    Destroy(itemObj);
                 }
             }
         }
@@ -228,5 +229,6 @@ public class MovePlayer : MonoBehaviour
     {
         // inventory.Container.Clear();
         playerInventory.inventory.Clear();
+        playerInventory.ClearWeight();
     }
 }

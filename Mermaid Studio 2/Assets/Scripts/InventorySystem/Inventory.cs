@@ -3,59 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName ="New Inventory", menuName = "Inventory System/InventoryDavid")]
-public class Inventory : MonoBehaviour
+
+public class Inventory : ScriptableObject
 {
     public List<InventoryItem> inventory = new List<InventoryItem>();
 
-    public int defaultWeight = 0;
-    public int maxWeight = 100;
-
-    Transform playerTrans;
+    public float defaultWeight = 0;
+    public float maxWeight = 100;
 
     void Awake()
     {
-        playerTrans = this.transform;
-        inventory.Capacity = maxWeight;
+        inventory.Capacity = (int)maxWeight;
     }
-    public void GetItemType()
+    public void AddItem(InventoryItem item, float weight)
     {
-        for (int i = 0; i < inventory.Count; i++)
+        inventory.Add(item);
+        weight = item.itemWeight;
+        defaultWeight += weight;
+    }
+    public void Overencumbered()
+    {
+        if (defaultWeight >= maxWeight)
         {
-            
+            inventory.TrimExcess();
         }
     }
-    public void GetItemWeight()
+    public void ClearWeight()
     {
-        foreach (InventoryItem item in inventory)
-        {
-            defaultWeight += item.itemWeight;
-            if (defaultWeight >= maxWeight)
-            {
-                playerTrans.GetComponent<Rigidbody>().useGravity = true;
-            }
-            else
-            {
-                playerTrans.GetComponent<Rigidbody>().useGravity = false;
-            }
-        }
-    }
-
-    // public void AddItem(TrashItem trash)
-    // {
-    //     for (int i = 0; i < inventory.Count; i++)
-    //     {
-    //         if (inventory[i])
-    //         {
-                
-    //         }
-            
-    //     }
-    // }
-    // Start is called before the first frame update
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        defaultWeight = 0;
     }
 }

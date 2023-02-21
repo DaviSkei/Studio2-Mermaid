@@ -18,7 +18,7 @@ public class MoveFish : MonoBehaviour
 
     [SerializeField] LayerMask layerMask;
 
-    [SerializeField] InventoryObject inventory;
+    [SerializeField] Inventory playerInventory;
 
     GameObject itemObj;
 
@@ -126,9 +126,12 @@ public class MoveFish : MonoBehaviour
     
                 // if player inputs left mouse click, add item data to inventory data
                 // and destroy gameobject with the "item" script attached
+
                 if (mouseClick)
                 {
-                    inventory.AddItem(item.item, 1);
+                    // inventory.AddItem(item.item, 1);
+                    // Destroy(itemObj);
+                    playerInventory.inventory.Add(item.inventoryItem);
                     Destroy(itemObj);
                 }
             }

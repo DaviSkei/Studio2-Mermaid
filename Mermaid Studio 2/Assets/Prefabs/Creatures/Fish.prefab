@@ -355,7 +355,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 133
-  inventory: {fileID: 11400000, guid: 7fa36c03a9df3654d89097edc22d2d0c, type: 2}
+  playerInventory: {fileID: 0}
 --- !u!114 &7468170106984137700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,7 +383,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4360976112968938879}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 87e41e496bfe35748b5054f0c6674ce0, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 1.0607698

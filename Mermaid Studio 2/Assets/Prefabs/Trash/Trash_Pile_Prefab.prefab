@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2308947564703704542}
   - component: {fileID: 2308947564703704543}
   - component: {fileID: 3326723919531890484}
-  - component: {fileID: 6270155922149596897}
   - component: {fileID: 465939849}
   - component: {fileID: 465939850}
   - component: {fileID: -4081986130962278556}
@@ -511,7 +510,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 387
+  m_VersionIndex: 423
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -601,25 +600,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2308947564703704529}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b4deaf0f1034b34da9e4b970dacd795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: e7c397c370f43a541907124c26e3a511, type: 2}
-  thisObj: {fileID: 2308947564703704529}
---- !u!114 &6270155922149596897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2308947564703704529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c4b3d7d7af77844c9b1a4a0b12878c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  inventoryItem: {fileID: 11400000, guid: bab6a9efa363c52449b0aa80df18630d, type: 2}
 --- !u!65 &465939849
 BoxCollider:
   m_ObjectHideFlags: 0

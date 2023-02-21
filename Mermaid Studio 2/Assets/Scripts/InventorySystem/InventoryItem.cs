@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,11 +10,11 @@ public enum ItemVariant
     Trash_Miscellaneous
 
 }
-public abstract class InventoryItem : MonoBehaviour
+public abstract class InventoryItem : ScriptableObject
 {
-    public GameObject itemPrefab;
+    // public GameObject itemPrefab;
 
     public ItemVariant itemVariant;
 
-    public int itemWeight;
+    public float itemWeight;
 }
