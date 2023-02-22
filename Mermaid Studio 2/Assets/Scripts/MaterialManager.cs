@@ -20,10 +20,11 @@ public class MaterialManager : MonoBehaviour
     // Set this to trash layer later
 
     // timer properties
-    [SerializeField] float visibleTimer = 3f;
-    [SerializeField] float invisTimer = -3f;
-    [SerializeField] float timer = -3f;
-    private float slowedTime;
+    float visibleTimer = 2f;
+    float invisTimer = -2f;
+    float timer = -2f;
+    private float slowedTime; 
+    private float scaleTime;
 
     // scale properties
     Vector3 minScale;
@@ -43,9 +44,11 @@ public class MaterialManager : MonoBehaviour
             materials = skinnedMeshRend.materials;
         }
 
-        slowedTime = Time.deltaTime/10;
+        slowedTime = Time.deltaTime/6;
         maxScale = transform.localScale;
         minScale = maxScale/10f;
+        scaleTime = Time.deltaTime/5;
+
     }
     private void Update()
     {
@@ -55,8 +58,8 @@ public class MaterialManager : MonoBehaviour
     {
         inRange = Physics.CheckSphere(transform.position, distance, layerMask.value);
 
-        Vector3 scaleDecrease = Vector3.Lerp(transform.localScale, minScale, slowedTime);
-        Vector3 scaleIncrease = Vector3.Lerp(transform.localScale, maxScale, slowedTime);
+        Vector3 scaleDecrease = Vector3.Lerp(transform.localScale, minScale, scaleTime);
+        Vector3 scaleIncrease = Vector3.Lerp(transform.localScale, maxScale, scaleTime);
 
         timer = Mathf.Clamp(timer, invisTimer, visibleTimer);
         // visToInvis = Mathf.Clamp(timer, visibleTimer, invisTimer);

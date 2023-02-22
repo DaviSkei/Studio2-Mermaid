@@ -105,7 +105,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _Dissolve_Amount: -3
+    - _Dissolve_Amount: -2
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
@@ -127,7 +127,7 @@ Material:
     - _Wobble_Force_Z: 0
     - _Wobble_Speed: 0
     - _WorkflowMode: 1
-    - _Y_Constraint: 1.5
+    - _Y_Constraint: 0
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
