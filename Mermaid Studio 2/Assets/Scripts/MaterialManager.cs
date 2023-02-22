@@ -22,9 +22,8 @@ public class MaterialManager : MonoBehaviour
     // timer properties
     [SerializeField] float visibleTimer = 3f;
     [SerializeField] float invisTimer = -3f;
+    [SerializeField] float timer = -3f;
     private float slowedTime;
-
-    [SerializeField] float clampTime;
 
     // scale properties
     Vector3 minScale;
@@ -59,19 +58,24 @@ public class MaterialManager : MonoBehaviour
         Vector3 scaleDecrease = Vector3.Lerp(transform.localScale, minScale, slowedTime);
         Vector3 scaleIncrease = Vector3.Lerp(transform.localScale, maxScale, slowedTime);
 
-        clampTime = Mathf.Clamp(slowedTime, invisTimer, visibleTimer);
+        timer = Mathf.Clamp(timer, invisTimer, visibleTimer);
+        // visToInvis = Mathf.Clamp(timer, visibleTimer, invisTimer);
 
         for( int i = 0; i < materials.Length; i++ )
         {
             if (!inRange)
             {
-                clampTime += slowedTime;
-                materials[i].SetFloat(dissolveAmount, clampTime);
+                timer -= slowedTime;
+                materials[i].SetFloat(dissolveAmount, timer);
+
+                transform.localScale = scaleIncrease;
             }
-            else if(inRange)
+            else if (inRange)
             {
-                clampTime -= slowedTime;
-                materials[i].SetFloat(dissolveAmount, clampTime);
+                timer += slowedTime;
+                materials[i].SetFloat(dissolveAmount, timer);
+
+                transform.localScale = scaleDecrease;
             }
 
         }
