@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
   itemType: 0
-  description: A powerful device that can be used to exctract trash from stuck areas
+  itemWeight: 1
+  durability: 500

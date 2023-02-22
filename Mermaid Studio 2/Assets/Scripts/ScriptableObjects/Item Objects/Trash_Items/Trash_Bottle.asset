@@ -14,6 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 4318741066634972711, guid: d15cd39f83955a64f8ada6f36430e056, type: 3}
   itemType: 1
-  description: 'A discarded glass bottle
-
-    Probably used to contain softdrinks.'
+  itemWeight: 1

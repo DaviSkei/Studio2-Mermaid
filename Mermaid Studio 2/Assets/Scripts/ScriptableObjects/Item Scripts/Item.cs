@@ -5,7 +5,7 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     // store the item that this script is attached to
-    public InventoryItem inventoryItem;
+    [SerializeField] ItemObject itemObject;
 
     void Start()
     {
@@ -14,5 +14,9 @@ public class Item : MonoBehaviour
     void Update()
     {
         Physics.gravity = new Vector3 (0, -0.1f, 0);
+    }
+    public ItemObject ItemObject()
+    {
+        return itemObject;
     }
 }

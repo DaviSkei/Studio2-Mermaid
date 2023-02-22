@@ -355,7 +355,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 133
-  playerInventory: {fileID: 0}
+  playerInventory: {fileID: 11400000, guid: 7fa36c03a9df3654d89097edc22d2d0c, type: 2}
 --- !u!114 &7468170106984137700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,7 +375,7 @@ MonoBehaviour:
   constrainFactor: 3.5
   avoidFactor: 4
   collisionDistance: 6
-  velocity: {x: 0.31974933, y: 0.80580306, z: 0.49843925}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!136 &490969162
 CapsuleCollider:
   m_ObjectHideFlags: 0

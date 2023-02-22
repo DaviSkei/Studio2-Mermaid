@@ -18,7 +18,7 @@ public class MoveFish : MonoBehaviour
 
     [SerializeField] LayerMask layerMask;
 
-    [SerializeField] Inventory playerInventory;
+    [SerializeField] InventoryObject playerInventory;
 
     GameObject itemObj;
 
@@ -123,15 +123,15 @@ public class MoveFish : MonoBehaviour
             // if hit gameobject has "Item" script attached show UI
             if (item)
             {
+                Debug.Log(item.name);
     
                 // if player inputs left mouse click, add item data to inventory data
                 // and destroy gameobject with the "item" script attached
-
                 if (mouseClick)
                 {
                     // inventory.AddItem(item.item, 1);
                     // Destroy(itemObj);
-                    playerInventory.inventory.Add(item.inventoryItem);
+                    playerInventory.AddItem(item.ItemObject(), 1, item.ItemObject().itemWeight);
                     Destroy(itemObj);
                 }
             }

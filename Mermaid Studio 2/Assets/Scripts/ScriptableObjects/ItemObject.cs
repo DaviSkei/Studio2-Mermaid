@@ -15,8 +15,6 @@ public abstract class ItemObject : ScriptableObject
     public GameObject prefab;
     // store the type of item
     public ItemType itemType;
-    // description size
-    [TextArea(15, 20)]
-    // store the item description
-    public string description;
+
+    public int itemWeight = 1;
 }

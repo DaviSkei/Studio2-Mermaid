@@ -6,20 +6,29 @@ using UnityEngine;
 public class InventoryObject : ScriptableObject
 // might have to change this back to scriptable object
 {
-    // List for items stored by a certain amount in a list called Container
-    public List<InventorySlot> Container = new List<InventorySlot>();
-    public void AddItem(ItemObject _storedItemObJ, int _amount)
+    // List for items stored by a certain amount in a list called inventoryContainer
+    public List<InventorySlot> inventoryContainer = new List<InventorySlot>();
+
+    [SerializeField] int weight = 0;
+    [SerializeField] int maxWeight = 100;
+
+    private void Awake()
     {
+        inventoryContainer.Capacity = (int)maxWeight;
+    }
+    public void AddItem(ItemObject _storedItemObJ, int _amount, int _weight)
+    {
+        weight += _weight;
         // check if inventory has item or not
         bool hasItem = false;
 
-        // for each number in container, increase value of i
-        for (int i = 0; i < Container.Count; i++)
+        // for each number in inventorycontainer, increase value of i
+        for (int i = 0; i < inventoryContainer.Count; i++)
         {
-            // if there are any number of stored items in container list, has item becomes true
-            if (Container[i].storedItemObj == _storedItemObJ)
+            // if there are any number of stored items in inventorycontainer list, has item becomes true
+            if (inventoryContainer[i].storedItemObj == _storedItemObJ)
             {
-                Container[i].AddAmount(_amount);
+                inventoryContainer[i].AddAmount(_amount);
                 hasItem = true;
                 // break to stop continuosly going through for loop to check the boolean value
                 break;
@@ -28,8 +37,12 @@ public class InventoryObject : ScriptableObject
         // if inventory does not have the item, add a new slot for it
         if (!hasItem)
         {
-            Container.Add(new InventorySlot(_storedItemObJ, _amount));
+            inventoryContainer.Add(new InventorySlot(_storedItemObJ, _amount));
         }
+    }
+    public void ClearWeight()
+    {
+        weight = 0;
     }
 }
 

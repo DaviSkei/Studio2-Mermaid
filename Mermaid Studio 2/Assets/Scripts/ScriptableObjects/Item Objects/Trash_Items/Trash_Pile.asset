@@ -14,8 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 2308947564703704529, guid: 49594aaadb5add64e9d1e61d3ff61b41, type: 3}
   itemType: 1
-  description: 'A pile of trash
-
-    Who knows what hidden gems might hide inside
-
-'
+  itemWeight: 5

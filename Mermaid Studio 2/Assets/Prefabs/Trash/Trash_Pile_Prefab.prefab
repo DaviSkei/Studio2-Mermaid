@@ -510,7 +510,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 423
+  m_VersionIndex: 432
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -605,7 +605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4deaf0f1034b34da9e4b970dacd795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryItem: {fileID: 11400000, guid: bab6a9efa363c52449b0aa80df18630d, type: 2}
+  itemObject: {fileID: 11400000, guid: e7c397c370f43a541907124c26e3a511, type: 2}
 --- !u!65 &465939849
 BoxCollider:
   m_ObjectHideFlags: 0

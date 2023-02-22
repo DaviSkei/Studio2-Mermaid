@@ -15,7 +15,7 @@ public class MovePlayer : MonoBehaviour
     [SerializeField] CinemachineFreeLook camFreeLook;
 
     // [SerializeField] InventoryObject inventory;
-    [SerializeField] Inventory playerInventory;
+    [SerializeField] InventoryObject playerInventory;
 
     float defaultSpeed = 1.5f;
     float startSpeed;
@@ -210,7 +210,7 @@ public class MovePlayer : MonoBehaviour
                 {
                     // inventory.AddItem(item.item, 1);
                     // Destroy(itemObj);
-                    playerInventory.AddItem(item.inventoryItem, item.inventoryItem.itemWeight);
+                    playerInventory.AddItem(item.ItemObject(), 1, item.ItemObject().itemWeight);
                     Destroy(itemObj);
                 }
             }
@@ -228,7 +228,7 @@ public class MovePlayer : MonoBehaviour
     private void OnApplicationQuit()
     {
         // inventory.Container.Clear();
-        playerInventory.inventory.Clear();
+        playerInventory.inventoryContainer.Clear();
         playerInventory.ClearWeight();
     }
 }

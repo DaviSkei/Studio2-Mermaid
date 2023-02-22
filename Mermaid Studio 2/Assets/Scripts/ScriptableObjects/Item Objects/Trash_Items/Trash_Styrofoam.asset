@@ -14,12 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
   itemType: 1
-  description: 'Styrofoam
-
-    Its made of plastic and doesn''t degrade
-
-    Somebody
-    could choke on this
-
-
-'
+  itemWeight: 1

@@ -14,6 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1718648590672320028, guid: 5616eb96d29e8a1469591171e91f5b8a, type: 3}
   itemType: 1
-  description: 'A metalic can
-
-    I wonder if it tastes like sea water'
+  itemWeight: 1
