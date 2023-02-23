@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1952508455528098633}
   - component: {fileID: 1952508455528098632}
   - component: {fileID: 3666123959731708314}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Trash_Can_Prefab
   m_TagString: Pickup
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 1504828274415681022}
   - component: {fileID: 4338398056360740020}
   - component: {fileID: 941441622619693088}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}

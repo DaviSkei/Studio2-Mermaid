@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 465939849}
   - component: {fileID: 465939850}
   - component: {fileID: -4081986130962278556}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Trash_Pile_Prefab
   m_TagString: Pickup
   m_Icon: {fileID: 0}

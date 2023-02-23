@@ -354,7 +354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 133
+    m_Bits: 645
   playerInventory: {fileID: 11400000, guid: 7fa36c03a9df3654d89097edc22d2d0c, type: 2}
 --- !u!114 &7468170106984137700
 MonoBehaviour:
