@@ -70,7 +70,7 @@ Material:
     - _Noise: 2
     - _NormalStrength: 0.811
     - _Normal_Strenght: 100
-    - _Object_Scale: 0.05
+    - _Object_Scale: 2.91
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Riple_Scale: 200
@@ -84,8 +84,8 @@ Material:
     - _TilingScale: 0.05
     - _Transparency: 2.5
     - _WaterTiling: 0.04
-    - _WaveScale: 1
-    - _WaveSpeed: 0.05
+    - _WaveScale: 7.15
+    - _WaveSpeed: 2.8
     - _WaveTiling: 0.334
     - _Wave_Frequency: 0.554
     - _Wave_Intensity: 0

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31e45b806b6506e49956fa1402cf5820, type: 3}
   m_Name: Trash_Bottle
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4318741066634972711, guid: d15cd39f83955a64f8ada6f36430e056, type: 3}
+  itemUI: {fileID: 7001234373322655151, guid: e082e0cc739fd5a42b9e66bf4be916f4, type: 3}
   itemType: 1
   itemWeight: 1
