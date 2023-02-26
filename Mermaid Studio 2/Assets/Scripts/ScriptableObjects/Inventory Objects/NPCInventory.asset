@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5846396cd7c1a204f955247bfea9d4d2, type: 3}
   m_Name: NPCInventory
   m_EditorClassIdentifier: 
-  inventoryContainer:
-  - storedItemObj: {fileID: 11400000, guid: 370753310691b4c40bc1889c99d5070a, type: 2}
-    amount: 1
+  inventoryContainer: []
   weight: 0
   maxWeight: 10000

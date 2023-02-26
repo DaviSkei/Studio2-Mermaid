@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Trash_Bottle
   m_EditorClassIdentifier: 
   itemUI: {fileID: 7001234373322655151, guid: e082e0cc739fd5a42b9e66bf4be916f4, type: 3}
-  itemType: 1
+  itemGameObj: {fileID: 7466529661061272479, guid: e7e006019e37fb44fbe2e619105d8e9a,
+    type: 3}
+  itemType: 0
   itemWeight: 1

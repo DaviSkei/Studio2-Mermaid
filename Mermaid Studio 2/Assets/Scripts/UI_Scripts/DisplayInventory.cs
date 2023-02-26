@@ -10,6 +10,7 @@ public class DisplayInventory : MonoBehaviour
     [SerializeField] InventoryObject pcInventory;
 
     TextMeshProUGUI itemText;
+
     [SerializeField] ItemObject thisItemObject;
 
     Sprite sprite;

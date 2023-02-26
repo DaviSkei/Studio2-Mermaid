@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5846396cd7c1a204f955247bfea9d4d2, type: 3}
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
-  Container: []
+  inventoryContainer: []
+  weight: 0
+  maxWeight: 100

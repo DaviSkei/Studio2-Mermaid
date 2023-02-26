@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: BackPack
   m_EditorClassIdentifier: 
   itemUI: {fileID: 0}
+  itemGameObj: {fileID: 6003654009121957471, guid: 44bf605450e6fb34a86bec7b6632f1eb,
+    type: 3}
   itemType: 1
   itemWeight: 5

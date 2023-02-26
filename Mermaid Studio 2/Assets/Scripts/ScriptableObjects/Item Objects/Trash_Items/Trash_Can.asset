@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Trash_Can
   m_EditorClassIdentifier: 
   itemUI: {fileID: 7001234373322655151, guid: d624d68b0fcd4c740978e8d307bc0111, type: 3}
-  itemType: 1
+  itemGameObj: {fileID: 1718648590672320028, guid: 5616eb96d29e8a1469591171e91f5b8a,
+    type: 3}
+  itemType: 0
   itemWeight: 1

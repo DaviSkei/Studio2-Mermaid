@@ -10,6 +10,7 @@ public class InventoryObject : ScriptableObject
     public List<InventorySlot> inventoryContainer = new List<InventorySlot>();
 
     [SerializeField] int weight = 0;
+    public int Weigth {get{return weight;}}
     [SerializeField] int maxWeight = 100;
 
     private void Awake()
@@ -40,21 +41,21 @@ public class InventoryObject : ScriptableObject
             inventoryContainer.Add(new InventorySlot(_storedItemObJ, _amount));
         }
     }
+    public void Trade(InventoryObject tradeFrom, InventoryObject tradeTo, InventorySlot tradeitem)
+    {
+        tradeFrom.inventoryContainer.Add(tradeitem);
+        tradeTo.inventoryContainer.Add(tradeitem);
+        Debug.Log("traded " + tradeitem);
+    }
     public void ClearWeight()
     {
         weight = 0;
     }
-    public void BackPack()
+    public void ClearAmount()
     {
         for (int i = 0; i < inventoryContainer.Count; i++)
         {
-            if (inventoryContainer[i].storedItemObj.Equals(ItemType.Backpack))
-            {
-                ItemObject backPackItem = inventoryContainer[i].storedItemObj;
-                Debug.Log("I have the backpack. Its called" + backPackItem.GetType());
-                // i wanted to add the backpackobjects weight increase, but havent figured it out yet
-                inventoryContainer.Capacity += 100;
-            }
+            inventoryContainer[i].amount = 0;
         }
     }
 }
@@ -78,9 +79,8 @@ public class InventorySlot
         // the slot amount is equal to itself and value
         amount += value;
     }
-    public ItemType GetItemType(ItemType itemType)
+    public void RemoveAmount(int value)
     {
-        return itemType;
+        amount -= value;
     }
-
 }

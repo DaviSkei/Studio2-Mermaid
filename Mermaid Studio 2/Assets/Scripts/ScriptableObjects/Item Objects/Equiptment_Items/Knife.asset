@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Knife
   m_EditorClassIdentifier: 
   itemUI: {fileID: 0}
+  itemGameObj: {fileID: 12103717439974207, guid: 389d8cb0de42cc74e9ff27448e322267,
+    type: 3}
   itemType: 2
   itemWeight: 1

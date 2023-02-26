@@ -14,10 +14,14 @@ public enum ItemType
 }
 public abstract class ItemObject : ScriptableObject
 {
-    // prefab model for an itemtype
+    // item UI
     public GameObject itemUI;
+    // prefab of the gameobject
+    public GameObject itemGameObj;
     // store the type of item
     public ItemType itemType;
+
+    public int itemAmount = 1;
 
     public int itemWeight = 1;
 }

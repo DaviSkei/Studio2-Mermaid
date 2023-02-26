@@ -16,6 +16,12 @@ public class MovePlayer : MonoBehaviour
 
     // [SerializeField] InventoryObject inventory;
     [SerializeField] InventoryObject playerInventory;
+    [SerializeField] InventoryObject npcInv;
+
+    [SerializeField] int tradedAmount = 0;
+
+    [SerializeField] GameObject playerBackPack;
+    [SerializeField] GameObject playerKnife;
 
     float defaultSpeed = 1.5f;
     float startSpeed;
@@ -171,7 +177,8 @@ public class MovePlayer : MonoBehaviour
     
     public void RayCastManager()
     {
-        bool mouseClick = Input.GetKey(KeyCode.Mouse0);
+        bool mouseClick = Input.GetKeyDown(KeyCode.Mouse0);
+        bool mouseClickUp = Input.GetKeyUp(KeyCode.Mouse0);
         // ray from camera origin, pointing forwards
         Ray ray = new Ray (transform.position, mainCam.forward);
         RaycastHit hit;
@@ -214,30 +221,60 @@ public class MovePlayer : MonoBehaviour
                     Destroy(itemObj);
                 }
             }
+
+            // if ray hits diver npc, trade all of their inventory to the npc inventory
+            var npc = hit.transform.GetComponent<DiverNPC>();
+            if (npc && mouseClick)
+            {
+               for (int i = 0; i < playerInventory.inventoryContainer.Count; i++)
+               {
+                  npcInv.AddItem(playerInventory.inventoryContainer[i].storedItemObj,
+                  playerInventory.inventoryContainer[i].storedItemObj.itemAmount,
+                  playerInventory.inventoryContainer[i].storedItemObj.itemWeight);
+                  if (playerInventory.inventoryContainer[i].storedItemObj.itemType != ItemType.Backpack)
+                  {
+                    playerInventory.ClearAmount();
+                    playerInventory.ClearWeight();
+                  }
+                  tradedAmount++;
+               }
+                
+            }
+            // let up mouse button to clear player inv
+            if (npc && mouseClickUp)
+            {
+                playerInventory.inventoryContainer.RemoveAt(0);
+            }
         }
     }
     private void EquiptmentLogic()
     {
         for (int i = 0; i < playerInventory.inventoryContainer.Count; i++)
         {
-            if (playerInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Backpack)
+            if (playerInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Backpack
+            && tradedAmount == 5)
             {
                 ItemObject backPackItem = playerInventory.inventoryContainer[i].storedItemObj;
                 Debug.Log("I have the backpack.");
                 // i wanted to add the backpackobjects weight increase, but havent figured it out yet
                 playerInventory.inventoryContainer.Capacity += 100;
+
+                playerBackPack.SetActive(true);
             }
-            if (playerInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Knife)
+            if (playerInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Knife
+            && tradedAmount == 10)
             {
                 Debug.Log("I have the Knife.");
             }
-            if (playerInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Rope)
-            {
-                Debug.Log("I have the Rope.");
-            }
-            if (playerInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Shovel)
+            if (playerInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Shovel
+            && tradedAmount == 15)
             {
                 Debug.Log("I have the Shovel.");
+            }
+            if (playerInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Rope
+            && tradedAmount == 20)
+            {
+                Debug.Log("I have the Rope.");
             }
         }
     }
@@ -255,5 +292,8 @@ public class MovePlayer : MonoBehaviour
         // inventory.Container.Clear();
         playerInventory.inventoryContainer.Clear();
         playerInventory.ClearWeight();
+
+        npcInv.inventoryContainer.Clear();
+        npcInv.ClearWeight();
     }
 }
