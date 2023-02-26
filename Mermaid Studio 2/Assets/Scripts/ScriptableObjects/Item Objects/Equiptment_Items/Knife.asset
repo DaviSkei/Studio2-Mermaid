@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baa597a5e8949e742ae01e40a122069b, type: 3}
+  m_Script: {fileID: 11500000, guid: 5563cb3006153354e8b2f1055668e002, type: 3}
   m_Name: Knife
   m_EditorClassIdentifier: 
-  prefab: {fileID: 12103717439974207, guid: 389d8cb0de42cc74e9ff27448e322267, type: 3}
-  itemType: 0
+  itemUI: {fileID: 0}
+  itemType: 2
   itemWeight: 1

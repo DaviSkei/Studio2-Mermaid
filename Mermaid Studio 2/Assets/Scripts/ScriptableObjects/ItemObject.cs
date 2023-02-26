@@ -5,9 +5,11 @@ using UnityEngine;
 public enum ItemType
 {
     // all the item types that will go into inventory. If more are needed, add here
-    Equpitment,
     Trash_Miscellaneous,
-    Backpack
+    Backpack,
+    Knife,
+    Rope,
+    Shovel
 
 }
 public abstract class ItemObject : ScriptableObject

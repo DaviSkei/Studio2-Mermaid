@@ -14,7 +14,7 @@ public class InventoryObject : ScriptableObject
 
     private void Awake()
     {
-        inventoryContainer.Capacity = (int)maxWeight;
+        inventoryContainer.Capacity = maxWeight;
     }
     public void AddItem(ItemObject _storedItemObJ, int _amount, int _weight)
     {
@@ -44,6 +44,19 @@ public class InventoryObject : ScriptableObject
     {
         weight = 0;
     }
+    public void BackPack()
+    {
+        for (int i = 0; i < inventoryContainer.Count; i++)
+        {
+            if (inventoryContainer[i].storedItemObj.Equals(ItemType.Backpack))
+            {
+                ItemObject backPackItem = inventoryContainer[i].storedItemObj;
+                Debug.Log("I have the backpack. Its called" + backPackItem.GetType());
+                // i wanted to add the backpackobjects weight increase, but havent figured it out yet
+                inventoryContainer.Capacity += 100;
+            }
+        }
+    }
 }
 
 [System.Serializable]
@@ -64,6 +77,10 @@ public class InventorySlot
     {
         // the slot amount is equal to itself and value
         amount += value;
+    }
+    public ItemType GetItemType(ItemType itemType)
+    {
+        return itemType;
     }
 
 }

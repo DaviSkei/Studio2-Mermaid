@@ -65,6 +65,8 @@ public class MovePlayer : MonoBehaviour
         Sprint();
 
         RayCastManager();
+
+        EquiptmentLogic();
     }
     void FixedUpdate()
     {
@@ -202,8 +204,6 @@ public class MovePlayer : MonoBehaviour
             // if hit gameobject has "Item" script attached, show UI
             if (item)
             {
-                Debug.Log(item.name);
-    
                 // if player inputs left mouse click, add item data to inventory data
                 // and destroy gameobject with the "item" script attached
                 if (mouseClick)
@@ -213,6 +213,31 @@ public class MovePlayer : MonoBehaviour
                     playerInventory.AddItem(item.ItemObject(), 1, item.ItemObject().itemWeight);
                     Destroy(itemObj);
                 }
+            }
+        }
+    }
+    private void EquiptmentLogic()
+    {
+        for (int i = 0; i < playerInventory.inventoryContainer.Count; i++)
+        {
+            if (playerInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Backpack)
+            {
+                ItemObject backPackItem = playerInventory.inventoryContainer[i].storedItemObj;
+                Debug.Log("I have the backpack.");
+                // i wanted to add the backpackobjects weight increase, but havent figured it out yet
+                playerInventory.inventoryContainer.Capacity += 100;
+            }
+            if (playerInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Knife)
+            {
+                Debug.Log("I have the Knife.");
+            }
+            if (playerInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Rope)
+            {
+                Debug.Log("I have the Rope.");
+            }
+            if (playerInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Shovel)
+            {
+                Debug.Log("I have the Shovel.");
             }
         }
     }

@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 3809493453454390720}
   - component: {fileID: 7628220164615592699}
   - component: {fileID: 1740682493076434545}
+  - component: {fileID: 6554397046575142790}
   m_Layer: 5
   m_Name: Trash_Bottle_UI
   m_TagString: Untagged
@@ -202,7 +203,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f9161c6c9e06dc445ada3ee16d991f90, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -210,5 +211,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
-  m_UseSpriteMesh: 0
+  m_UseSpriteMesh: 1
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6554397046575142790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7001234373322655151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1296c61c947d2543818bc727ec1972f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pcInventory: {fileID: 11400000, guid: 7fa36c03a9df3654d89097edc22d2d0c, type: 2}
+  thisItemObject: {fileID: 11400000, guid: 2c2efb4b7da293045b3294a94ef67558, type: 2}
