@@ -19,8 +19,8 @@ TagManager:
   - Player
   - Fish
   - Trash
-  - 
-  - 
+  - Ground
+  - LayerMask
   - 
   - 
   - 
