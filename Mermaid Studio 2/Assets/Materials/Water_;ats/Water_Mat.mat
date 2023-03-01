@@ -57,6 +57,8 @@ Material:
     - _Depth_Amount: 1
     - _Depth_Strength: 0.5
     - _Displacement: 0.56
+    - _EdgeBlend: 0.9
+    - _Effect_Radius: 20
     - _Float: -51.14
     - _Foam_Amount: 1
     - _Foam_Animation: -300
@@ -70,11 +72,15 @@ Material:
     - _Noise: 2
     - _NormalStrength: 0.811
     - _Normal_Strenght: 100
-    - _Object_Scale: 2.91
+    - _Object_Scale: 1
+    - _Object_Scale_1: 0.07
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Riple_Scale: 200
+    - _Ripple_Amp: 0.06
+    - _Ripple_Density: 0.63
     - _Ripple_Dissolver: 4.44
+    - _Ripple_Frequency: 0.1
     - _Ripple_Intensity: 4
     - _Ripple_Speed: 2.5
     - _Smootheness: 1
@@ -84,8 +90,8 @@ Material:
     - _TilingScale: 0.05
     - _Transparency: 2.5
     - _WaterTiling: 0.04
-    - _WaveScale: 7.15
-    - _WaveSpeed: 2.8
+    - _WaveScale: 0
+    - _WaveSpeed: 0
     - _WaveTiling: 0.334
     - _Wave_Frequency: 0.554
     - _Wave_Intensity: 0
@@ -101,6 +107,7 @@ Material:
     - _DeepColor: {r: 0.05228728, g: 0.21105425, b: 0.4433962, a: 0.84313726}
     - _Foam_Color: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 0}
     - _Ripple_Color: {r: 0, g: 1, b: 0.7387755, a: 1}
+    - _Ripple_Origin: {r: 5, g: 0, b: 10, a: 0}
     - _ShallowColor: {r: 0.17777678, g: 0.4433962, b: 0.44131294, a: 0}
     - _WaterColor: {r: 0, g: 0.6320327, b: 1.3393537, a: 0}
   m_BuildTextureStacks: []

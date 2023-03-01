@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BallTestMat
-  m_Shader: {fileID: -6465566751694194690, guid: da5efadae1ea8214d9678990ed7cb667,
+  m_Shader: {fileID: -6465566751694194690, guid: e2ad8580fa11ee848be1ab3a4c51c9a4,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -103,25 +103,44 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
+    - _Depth_Strength: 0
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _Dissolve_Amount: -2
     - _DstBlend: 0
+    - _EdgeBlend: 0.01
+    - _Effect_Radius: 1.61
     - _EnvironmentReflections: 1
+    - _Foam_Amount: 1
+    - _Foam_Animation: 160
+    - _Foam_Density: 2
+    - _Foam_Scale: 100
+    - _Foam_Speed: 50
+    - _Foam_Thickness: 300
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
+    - _Object_Scale: 0.05
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _Riple_Scale: 0
+    - _Ripple_Amp: 0.2
+    - _Ripple_Density: 1.45
+    - _Ripple_Frequency: 0.3
+    - _Ripple_Intensity: 10
+    - _Ripple_Speed: 1.69
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
+    - _Transparency: 0.36
+    - _WaveScale: 1
+    - _WaveSpeed: 0.2
     - _Wobble_Distance: 0
     - _Wobble_Force_Y: 0
     - _Wobble_Force_Z: 0
@@ -131,7 +150,11 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.8962264, g: 0.063412234, b: 0.063412234, a: 1}
+    - _Color: {r: 0.1441504, g: 1.7207954, b: 2.0631526, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Foam_Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Ripple_Color: {r: 0.02426243, g: 0, b: 1, a: 0}
+    - _Ripple_Origin: {r: 0, g: -1, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _WaterColor: {r: 0, g: 3.9999995, b: 2.145972, a: 0}
   m_BuildTextureStacks: []
