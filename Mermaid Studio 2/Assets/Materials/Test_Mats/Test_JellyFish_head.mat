@@ -113,9 +113,9 @@ Material:
     - _EnvironmentReflections: 1
     - _Foam_Amount: 1
     - _Foam_Animation: 160
-    - _Foam_Density: 2
-    - _Foam_Scale: 100
-    - _Foam_Speed: 50
+    - _Foam_Density: 10.96
+    - _Foam_Scale: 0
+    - _Foam_Speed: 71.43
     - _Foam_Thickness: 300
     - _GlossMapScale: 0
     - _Glossiness: 0
@@ -123,7 +123,10 @@ Material:
     - _Metallic: 0
     - _Object_Scale: 1
     - _OcclusionStrength: 1
+    - _Outline_Strength: 0.73
     - _Parallax: 0.005
+    - _Pos_Blend: 1
+    - _Pos_Radius: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
@@ -136,9 +139,11 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _Speed: 0
     - _SrcBlend: 1
     - _Surface: 0
     - _Transparency: 1
+    - _Value: 1
     - _WaveScale: 0
     - _WaveSpeed: 0
     - _Wobble_Distance: 0
@@ -146,8 +151,12 @@ Material:
     - _Wobble_Force_Z: 0
     - _Wobble_Speed: 0
     - _WorkflowMode: 1
+    - _Y: 0
     - _Y_Constraint: 2
+    - _Y_Wobble: 0
+    - _Z: 0
     - _ZWrite: 1
+    - _Z_Wobble: 0
     - _treshold: 1.52
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
