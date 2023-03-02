@@ -177,8 +177,9 @@ public class MovePlayer : MonoBehaviour
     
     public void RayCastManager()
     {
-        bool mouseClick = Input.GetKeyDown(KeyCode.Mouse0);
+        bool mouseClickDown = Input.GetKeyDown(KeyCode.Mouse0);
         bool mouseClickUp = Input.GetKeyUp(KeyCode.Mouse0);
+        bool mouseClick = Input.GetKey(KeyCode.Mouse0);
         // ray from camera origin, pointing forwards
         Ray ray = new Ray (transform.position, mainCam.forward);
         RaycastHit hit;
@@ -224,7 +225,7 @@ public class MovePlayer : MonoBehaviour
 
             // if ray hits diver npc, trade all of their inventory to the npc inventory
             var npc = hit.transform.GetComponent<DiverNPC>();
-            if (npc && mouseClick)
+            if (npc && mouseClickDown)
             {
                for (int i = 0; i < playerInventory.inventoryContainer.Count; i++)
                {

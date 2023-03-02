@@ -84,7 +84,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
-    - _Blend: 1
+    - _Blend: 0.75
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
@@ -106,7 +106,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _LightAmount: 0.42
+    - _LightAmount: 0.323
     - _Metallic: 0
     - _Object_Scale: 0.05
     - _OcclusionStrength: 1
@@ -122,7 +122,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _Tile: 1.28
+    - _Tile: 0.28
     - _Transparency: 1
     - _WaveScale: 1
     - _WaveSpeed: 0.2

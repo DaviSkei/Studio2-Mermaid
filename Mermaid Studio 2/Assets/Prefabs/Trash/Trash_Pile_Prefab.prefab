@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2308947564703704542}
   - component: {fileID: 2308947564703704543}
   - component: {fileID: 3326723919531890484}
-  - component: {fileID: 465939849}
   - component: {fileID: 465939850}
   - component: {fileID: -4081986130962278556}
   m_Layer: 9
@@ -510,7 +509,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 432
+  m_VersionIndex: 456
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -606,19 +605,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemObject: {fileID: 11400000, guid: e7c397c370f43a541907124c26e3a511, type: 2}
---- !u!65 &465939849
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2308947564703704529}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5.1, y: 1.5, z: 6.1}
-  m_Center: {x: 0.2, y: 1, z: 3}
 --- !u!64 &465939850
 MeshCollider:
   m_ObjectHideFlags: 0
