@@ -218,15 +218,16 @@ public class MovePlayer : MonoBehaviour
                 {
                     // inventory.AddItem(item.item, 1);
                     // Destroy(itemObj);
-                    playerInventory.AddItem(item.ItemObject(), 1, item.ItemObject().itemWeight);
+                    playerInventory.AddItem(item.ItemObject(), item.ItemObject().itemAmount, item.ItemObject().itemWeight);
                     Destroy(itemObj);
                 }
             }
 
             // if ray hits diver npc, trade all of their inventory to the npc inventory
             var npc = hit.transform.GetComponent<DiverNPC>();
-            if (npc && mouseClickDown)
+            if (npc && mouseClickDown && (playerInventory.Weigth >= 1))
             {
+
                for (int i = 0; i < playerInventory.inventoryContainer.Count; i++)
                {
                   npcInv.AddItem(playerInventory.inventoryContainer[i].storedItemObj,
@@ -238,11 +239,12 @@ public class MovePlayer : MonoBehaviour
                     playerInventory.ClearWeight();
                   }
                   tradedAmount++;
+                Debug.Log(playerInventory.Weigth);
                }
                 
             }
             // let up mouse button to clear player inv
-            if (npc && mouseClickUp)
+            if (npc && mouseClickUp && (playerInventory.Weigth >= 1))
             {
                 playerInventory.inventoryContainer.RemoveAt(0);
             }

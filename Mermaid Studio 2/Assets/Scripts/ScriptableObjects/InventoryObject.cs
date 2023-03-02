@@ -41,12 +41,6 @@ public class InventoryObject : ScriptableObject
             inventoryContainer.Add(new InventorySlot(_storedItemObJ, _amount));
         }
     }
-    public void Trade(InventoryObject tradeFrom, InventoryObject tradeTo, InventorySlot tradeitem)
-    {
-        tradeFrom.inventoryContainer.Add(tradeitem);
-        tradeTo.inventoryContainer.Add(tradeitem);
-        Debug.Log("traded " + tradeitem);
-    }
     public void ClearWeight()
     {
         weight = 0;
