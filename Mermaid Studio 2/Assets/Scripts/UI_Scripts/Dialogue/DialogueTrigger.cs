@@ -12,12 +12,16 @@ public class DialogueTrigger : MonoBehaviour
 
     void Start()
     {
-
+        // dialogueManager = GetComponentInChildren<DialogueManager>();
     }
 
     public void TriggerDialogue()
     {
         dialogueManager.StartDialogue(dialogue);
 
+    }
+    public void DeactivateButton()
+    {
+        gameObject.SetActive(false);
     }
 }

@@ -5,9 +5,7 @@ using Cinemachine;
 
 public class MovePlayer : MonoBehaviour
 {
-    // player related
-    // test
-
+    // player and camera components
     Rigidbody rbPlayer;
 
     [SerializeField] Transform mainCam;
@@ -23,25 +21,28 @@ public class MovePlayer : MonoBehaviour
     [SerializeField] GameObject playerBackPack;
     [SerializeField] GameObject playerKnife;
 
+    // Movement variables
     float defaultSpeed = 1.5f;
     float startSpeed;
-    
     float moveSpeedXZ = 3f;
-
     float moveSpeedY = 2f;
-
     float rotationTime = 0.2f;
-
     float rotationSpeed;
-
+    
+    // raycast variables
     [SerializeField] LayerMask layerMask;
 
+    // variables to talk with npc
+    bool inRangeOfNpc;
+    [SerializeField] LayerMask npcLayer;
+    float sphereDistance = 5f;
+
+    // UI Elements
+    [SerializeField] GameObject speak2npcUi;
+
+    // animation variables
     bool isSwimming;
     bool isSwimmingUp;
-    //////////////////////////
-
-    // UI
-    [SerializeField] GameObject CollectTrashUI;
 
     // Variables to swap movement with fish
     bool swapped;
@@ -73,6 +74,8 @@ public class MovePlayer : MonoBehaviour
         RayCastManager();
 
         EquiptmentLogic();
+
+        NpcDialogue();
     }
     void FixedUpdate()
     {
@@ -92,10 +95,6 @@ public class MovePlayer : MonoBehaviour
             camFreeLook.LookAt = this.transform;
             camFreeLook.Follow = this.transform;
             swapped = false;
-        }
-        if (swapped)
-        {
-            
         }
     }
 
@@ -183,14 +182,15 @@ public class MovePlayer : MonoBehaviour
         // ray from camera origin, pointing forwards
         Ray ray = new Ray (transform.position, mainCam.forward);
         RaycastHit hit;
-        // ray distance
-        float distance = 3.5f;
+        float rayDistance = 3.5f;
+
+        inRangeOfNpc = Physics.CheckSphere(transform.position, sphereDistance, npcLayer);
 
         // CollectTrashUI.SetActive(false);
-        if (Physics.Raycast(ray, out hit, distance, layerMask))
+        if (Physics.Raycast(ray, out hit, rayDistance, layerMask))
         {
             // visual line for ray
-            Debug.DrawRay(transform.position, mainCam.forward * distance, Color.red);
+            Debug.DrawRay(transform.position, mainCam.forward * rayDistance, Color.red);
             // store info of the hit gameobject if it has "item" script attached
             
             var item = hit.transform.GetComponent<Item>();
@@ -225,29 +225,43 @@ public class MovePlayer : MonoBehaviour
 
             // if ray hits diver npc, trade all of their inventory to the npc inventory
             var npc = hit.transform.GetComponent<DiverNPC>();
-            if (npc && mouseClickDown && (playerInventory.Weigth >= 1))
-            {
+        
+            // if (npc && mouseClickDown && (playerInventory.Weigth >= 1))
+            // {
 
-               for (int i = 0; i < playerInventory.inventoryContainer.Count; i++)
-               {
-                  npcInv.AddItem(playerInventory.inventoryContainer[i].storedItemObj,
-                  playerInventory.inventoryContainer[i].storedItemObj.itemAmount,
-                  playerInventory.inventoryContainer[i].storedItemObj.itemWeight);
-                  if (playerInventory.inventoryContainer[i].storedItemObj.itemType != ItemType.Backpack)
-                  {
-                    playerInventory.ClearAmount();
-                    playerInventory.ClearWeight();
-                  }
-                  tradedAmount++;
-                Debug.Log(playerInventory.Weigth);
-               }
+            //    for (int i = 0; i < playerInventory.inventoryContainer.Count; i++)
+            //    {
+            //       npcInv.AddItem(playerInventory.inventoryContainer[i].storedItemObj,
+            //       playerInventory.inventoryContainer[i].storedItemObj.itemAmount,
+            //       playerInventory.inventoryContainer[i].storedItemObj.itemWeight);
+            //       if (playerInventory.inventoryContainer[i].storedItemObj.itemType != ItemType.Backpack)
+            //       {
+            //         playerInventory.ClearAmount();
+            //         playerInventory.ClearWeight();
+            //       }
+            //       tradedAmount++;
+            //     Debug.Log(playerInventory.Weigth);
+            //    }
                 
-            }
-            // let up mouse button to clear player inv
-            if (npc && mouseClickUp && (playerInventory.Weigth >= 1))
-            {
-                playerInventory.inventoryContainer.RemoveAt(0);
-            }
+            // }
+            // // let up mouse button to clear player inv
+            // if (npc && mouseClickUp && (playerInventory.Weigth >= 1))
+            // {
+            //     playerInventory.inventoryContainer.RemoveAt(0);
+            // }
+        }
+    }
+    private void NpcDialogue()
+    {
+        if (inRangeOfNpc)
+        {
+            ShowCursor();
+            speak2npcUi.SetActive(true);
+        }
+        else
+        {
+            HideCursor();
+            speak2npcUi.SetActive(false);
         }
     }
     private void EquiptmentLogic()
@@ -298,5 +312,15 @@ public class MovePlayer : MonoBehaviour
 
         npcInv.inventoryContainer.Clear();
         npcInv.ClearWeight();
+    }
+    private void ShowCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+    private void HideCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }
