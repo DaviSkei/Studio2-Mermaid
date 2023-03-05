@@ -4,9 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="New Inventory", menuName = "Inventory System/Inventory")]
 
 public class InventoryObject : ScriptableObject
-// might have to change this back to scriptable object
 {
-    // List for items stored by a certain amount in a list called inventoryContainer
     public List<InventorySlot> inventoryContainer = new List<InventorySlot>();
 
     [SerializeField] int weight = 0;
@@ -23,7 +21,6 @@ public class InventoryObject : ScriptableObject
         // check if inventory has item or not
         bool hasItem = false;
 
-        // for each number in inventorycontainer, increase value of i
         for (int i = 0; i < inventoryContainer.Count; i++)
         {
             // if there are any number of stored items in inventorycontainer list, has item becomes true
@@ -59,14 +56,13 @@ public class InventorySlot
 {
     // variable for the item being stored in a slot
     public ItemObject storedItemObj;
-    // amount of slots
+    // amount of items in a slot
     public int amount;
-    // setting values for when the inventory slots are created
+    
     public InventorySlot(ItemObject _storedItemObJ, int _amount)
     {
         storedItemObj = _storedItemObJ;
         amount = _amount;
-
     }
     public void AddAmount(int value)
     {
