@@ -53,8 +53,7 @@ public class JellyfishBoid : MonoBehaviour
             velocity = slerpVelo.normalized;
     
             transform.position += velocity * Time.deltaTime * speed;
-            transform.LookAt(transform.up + velocity);
-            // transform.Rotate(velocity);
+            transform.LookAt(transform.forward);
     }
     Vector3 avoid()
     {
@@ -75,6 +74,8 @@ public class JellyfishBoid : MonoBehaviour
 
         steer.Normalize();
 
+        
+        transform.Rotate(steer);
         return steer;
     }
 
@@ -99,7 +100,8 @@ public class JellyfishBoid : MonoBehaviour
         steer -= transform.position;
 
         steer.Normalize();
-
+        
+        transform.Rotate(steer);
 
         return steer;
     }
@@ -128,7 +130,10 @@ public class JellyfishBoid : MonoBehaviour
 
         }
         steer /= sibs;
-        steer.Normalize();        //unit, just direction
+        steer.Normalize();
+        
+        transform.Rotate(steer);
+
         return steer;
 
     }
@@ -150,6 +155,8 @@ public class JellyfishBoid : MonoBehaviour
         steer /= sibs;
 
         steer.Normalize();
+        
+        transform.Rotate(steer);
 
         return steer;
     }
