@@ -5,7 +5,6 @@ using UnityEngine;
 public class Boat : MonoBehaviour
 {
     [SerializeField] GameObject[] trashItems;
-
     private float spawnTime;
     private float spawnRotation;
     private int spawnItem;
@@ -17,12 +16,27 @@ public class Boat : MonoBehaviour
     private BoxCollider coll;
 
     [SerializeField] private float boatSpeed = 1;
+
+    private Rigidbody boatRb;
+    private float depthB4Submerged = 1f;
+    private float displacementAmount = 3f;
     // Start is called before the first frame update
     void Start()
     {
         if (GetComponent<BoxCollider>() != null)
         {
             coll = GetComponent<BoxCollider>();
+        }
+        boatRb = GetComponent<Rigidbody>();
+    }
+
+    void FixedUpdate()
+    {
+        if (transform.position.y < 0f)
+        {
+            float displacementMult = Mathf.Clamp01(-transform.position.y / depthB4Submerged) * displacementAmount;
+            boatRb.AddForce(new Vector3(0f, Mathf.Abs(Physics.gravity.y) * displacementMult, 0f), ForceMode.Acceleration);
+
         }
     }
 
@@ -46,7 +60,7 @@ public class Boat : MonoBehaviour
                 timer -= Time.deltaTime;
                 timer = 0;
             }
-            if (timer >= spawnTime)
+            if (timer >= spawnTime && trashItems.Length != 0 )
             {
                 timer = 0f;
                 
