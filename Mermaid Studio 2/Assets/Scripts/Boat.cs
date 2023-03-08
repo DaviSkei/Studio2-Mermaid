@@ -16,27 +16,12 @@ public class Boat : MonoBehaviour
     private BoxCollider coll;
 
     [SerializeField] private float boatSpeed = 1;
-
-    private Rigidbody boatRb;
-    private float depthB4Submerged = 1f;
-    private float displacementAmount = 3f;
     // Start is called before the first frame update
     void Start()
     {
         if (GetComponent<BoxCollider>() != null)
         {
             coll = GetComponent<BoxCollider>();
-        }
-        boatRb = GetComponent<Rigidbody>();
-    }
-
-    void FixedUpdate()
-    {
-        if (transform.position.y < 0f)
-        {
-            float displacementMult = Mathf.Clamp01(-transform.position.y / depthB4Submerged) * displacementAmount;
-            boatRb.AddForce(new Vector3(0f, Mathf.Abs(Physics.gravity.y) * displacementMult, 0f), ForceMode.Acceleration);
-
         }
     }
 
@@ -45,14 +30,12 @@ public class Boat : MonoBehaviour
     {
         Move();
         
-        
             if (currentAmount < maxSpawnAmount)
             {
                 spawnItem = Random.Range(0, trashItems.Length);
                 spawnTime = Random.Range(1f, 3f);
                 spawnRotation = Random.Range(0f, 360f);
                 timer += Time.deltaTime;
-                
             }
             else
             {
