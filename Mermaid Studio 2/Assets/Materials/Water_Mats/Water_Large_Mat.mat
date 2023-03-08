@@ -69,10 +69,10 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Riple_Scale: 7
-    - _Ripple_Amp: 0.01
-    - _Ripple_Density: 57.8
+    - _Ripple_Amp: 0.006
+    - _Ripple_Density: 90.1
     - _Ripple_Dissolver: 4.44
-    - _Ripple_Frequency: 3.33
+    - _Ripple_Frequency: 2.48
     - _Ripple_Intensity: 4
     - _Ripple_Speed: 5
     - _Smootheness: 1
@@ -82,7 +82,7 @@ Material:
     - _TilingScale: 0.05
     - _Transparency: 2.5
     - _WaterTiling: 0.04
-    - _WaveAmplitude: 0.02
+    - _WaveAmplitude: 0
     - _WaveScale: 0.44
     - _WaveSpeed: 1
     - _WaveTiling: 1

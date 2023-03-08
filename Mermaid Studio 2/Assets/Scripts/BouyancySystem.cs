@@ -5,8 +5,8 @@ using UnityEngine;
 public class BouyancySystem : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
-    private float depthB4Submerged = 1f;
-    private float displacementAmount = 3f;
+    [SerializeField] private float depthB4Submerged = 1f;
+    [SerializeField] private float displacementAmount = 3f;
     [SerializeField] int floaterCount = 1;
     [SerializeField] float waterDrag = 0.99f , waterAngularDrag = 0.5f;
 
@@ -16,7 +16,7 @@ public class BouyancySystem : MonoBehaviour
     }
     void FixedUpdate()
     {
-        rb.AddForceAtPosition(Physics.gravity * floaterCount, transform.position , ForceMode.Acceleration);
+        rb.AddForceAtPosition(Physics.gravity/floaterCount, transform.position , ForceMode.Acceleration);
         // waveheight equals the position of this transform on x axis
         float waveHeight = WaveManager.instance.GetWaveHeight(transform.position.x);
 
@@ -26,7 +26,7 @@ public class BouyancySystem : MonoBehaviour
             / depthB4Submerged) * displacementAmount;
 
             rb.AddForceAtPosition(new Vector3(0f, Mathf.Abs(Physics.gravity.y)
-            * displacementMult, 0f), transform.position, ForceMode.Acceleration);
+            * displacementMult, 0f), transform.position, ForceMode.VelocityChange); 
 
             rb.AddForce(displacementMult * -rb.velocity * waterDrag
             * Time.fixedDeltaTime, ForceMode.VelocityChange);

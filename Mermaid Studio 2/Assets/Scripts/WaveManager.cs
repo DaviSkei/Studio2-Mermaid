@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
+    // this script is attached to the wave plane
     public static WaveManager instance;
 
-    public float amplitude =1f, lenght = 2f, speed = 1f, offset = 0f;
+    public float amplitude = 1f, waveLength = 2f, speed = 1f, offsetTime = 0f;
+
+    private MeshRenderer meshRenderer;
+    private Material material;
+
+    private Vector3 rippleOrigin;
+    private float rippleDensity, rippleFrequency, rippleAmplitude, waveSpeed, zAxis, waveAmplitude;
 
     private void Awake()
     {
+        meshRenderer = GetComponentInChildren<MeshRenderer>();
+        material = meshRenderer.material;
+
         if (instance == null)
         {
             instance = this;
@@ -18,20 +28,28 @@ public class WaveManager : MonoBehaviour
         {
             Destroy(this);
         }
+
+        rippleOrigin = material.GetVector("_Ripple_Origin");
+        rippleDensity = material.GetFloat("_Ripple_Density");
+        rippleFrequency = material.GetFloat("_Ripple_Frequency");
+        rippleAmplitude = material.GetFloat("_Ripple_Amp");
+        waveSpeed = material.GetFloat("_WaveSpeed");
+        zAxis = material.GetFloat("_Z_Wave");
+        waveAmplitude = material.GetFloat("_WaveAmplitude");
     }
 
     private void Update()
     {
-        offset += Time.deltaTime * speed;
+        offsetTime += Time.deltaTime * speed;
     }
 
     // method returns wave height of given x coordinate
     public float GetWaveHeight(float xCoordinate)
     {
-        // x coord divided by length, add offset, passed through sin function
-        // the result is the sine multiplied by the amplitude
+        return amplitude * Mathf.Sin(xCoordinate*waveLength + offsetTime);
 
-        // in shader, i think itll will be similar
-        return amplitude * Mathf.Sin(xCoordinate/lenght + offset);
+        // xCoordinate = rippleOrigin.x;
+
+        // return rippleAmplitude * Mathf.Sin(xCoordinate * rippleDensity + rippleFrequency);
     }
 }
