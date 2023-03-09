@@ -29,27 +29,27 @@ public class WaveManager : MonoBehaviour
             Destroy(this);
         }
 
-        rippleOrigin = material.GetVector("_Ripple_Origin");
-        rippleDensity = material.GetFloat("_Ripple_Density");
-        rippleFrequency = material.GetFloat("_Ripple_Frequency");
-        rippleAmplitude = material.GetFloat("_Ripple_Amp");
-        waveSpeed = material.GetFloat("_WaveSpeed");
-        zAxis = material.GetFloat("_Z_Wave");
-        waveAmplitude = material.GetFloat("_WaveAmplitude");
+        rippleOrigin = meshRenderer.material.GetVector("_Ripple_Origin");
+        rippleDensity = meshRenderer.material.GetFloat("_Ripple_Density");
+        rippleFrequency = meshRenderer.material.GetFloat("_Ripple_Frequency");
+        rippleAmplitude = meshRenderer.material.GetFloat("_Ripple_Amp");
+        waveSpeed = meshRenderer.material.GetFloat("_WaveSpeed");
+        zAxis = meshRenderer.material.GetFloat("_Z_Wave");
+        waveAmplitude = meshRenderer.material.GetFloat("_WaveAmplitude");
     }
 
     private void Update()
     {
-        offsetTime += Time.deltaTime * speed;
+        offsetTime += Time.deltaTime * rippleFrequency;
     }
 
     // method returns wave height of given x coordinate
     public float GetWaveHeight(float xCoordinate)
     {
-        return amplitude * Mathf.Sin(xCoordinate*waveLength + offsetTime);
+        // return amplitude * Mathf.Sin(xCoordinate*waveLength + offsetTime);
 
         // xCoordinate = rippleOrigin.x;
 
-        // return rippleAmplitude * Mathf.Sin(xCoordinate * rippleDensity + rippleFrequency);
+        return rippleAmplitude * Mathf.Sin((xCoordinate +40) * rippleDensity + offsetTime);
     }
 }
