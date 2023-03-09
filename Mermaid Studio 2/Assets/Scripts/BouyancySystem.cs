@@ -12,7 +12,7 @@ public class BouyancySystem : MonoBehaviour
 
     // void Start()
     // {
-        
+
     // }
     // void FixedUpdate()
     // {
@@ -37,16 +37,19 @@ public class BouyancySystem : MonoBehaviour
     //     }
     // }
 
-    [SerializeField] private float waterDrag = 3f,
-    waterAngularDrag = 1f, 
-    airDrag = 0f, 
-    airAngularDrag = 0.05f, 
-    floatingPower = 15f,
-    waterHeight = 0f;
+    [SerializeField]
+    private float waterDrag = 3f,
+    waterAngularDrag = 1f,
+    airDrag = 0f,
+    airAngularDrag = 0.05f,
+    floatingPower = 15f;
+
+    WaveManager waveManager;
+    [SerializeField] GameObject ocean;
 
     [SerializeField] private Transform[] floaterPoints;
 
-    [SerializeField] private Rigidbody rb;
+    private Rigidbody rb;
 
     int floatersInWater;
 
@@ -54,23 +57,24 @@ public class BouyancySystem : MonoBehaviour
 
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         Physics.gravity = new Vector3(0f, -500f, 0f);
 
+        waveManager = ocean.GetComponent<WaveManager>();
     }
 
     void FixedUpdate()
     {
-
         floatersInWater = 0;
-        
+
         for (int i = 0; i < floaterPoints.Length; i++)
         {
-            float diff = floaterPoints[i].position.y - waterHeight;
+            float diff = floaterPoints[i].position.y - waveManager.WaveHeight(floaterPoints[i].position);
 
             if (diff < 0)
             {
                 rb.AddForceAtPosition(Vector3.up * floatingPower * Mathf.Abs(diff), floaterPoints[i].position, ForceMode.Force);
-                
+
                 floatersInWater += 1;
 
                 if (!isUnderwater)
@@ -81,7 +85,7 @@ public class BouyancySystem : MonoBehaviour
             }
         }
 
-        if(isUnderwater && floatersInWater == 0)
+        if (isUnderwater && floatersInWater == 0)
         {
             isUnderwater = false;
             SwitchState(isUnderwater);

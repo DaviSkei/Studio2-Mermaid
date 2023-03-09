@@ -4,52 +4,22 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    // this script is attached to the wave plane
-    public static WaveManager instance;
+    private float waveHeight = 0.0008f, waveSpeed = 0.05f, waveFrequency = 6f;
 
-    public float amplitude = 1f, waveLength = 2f, speed = 1f, offsetTime = 0f;
+    Material material;
+    Texture2D displacementTexture;
 
-    private MeshRenderer meshRenderer;
-    private Material material;
-
-    private Vector3 rippleOrigin;
-    private float rippleDensity, rippleFrequency, rippleAmplitude, waveSpeed, zAxis, waveAmplitude;
-
-    private void Awake()
+    void Start()
     {
-        meshRenderer = GetComponentInChildren<MeshRenderer>();
-        material = meshRenderer.material;
-
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else if(instance != this)
-        {
-            Destroy(this);
-        }
-
-        rippleOrigin = meshRenderer.material.GetVector("_Ripple_Origin");
-        rippleDensity = meshRenderer.material.GetFloat("_Ripple_Density");
-        rippleFrequency = meshRenderer.material.GetFloat("_Ripple_Frequency");
-        rippleAmplitude = meshRenderer.material.GetFloat("_Ripple_Amp");
-        waveSpeed = meshRenderer.material.GetFloat("_WaveSpeed");
-        zAxis = meshRenderer.material.GetFloat("_Z_Wave");
-        waveAmplitude = meshRenderer.material.GetFloat("_WaveAmplitude");
+        material = GetComponent<MeshRenderer>().material;
+        displacementTexture = (Texture2D)material.GetTexture("_WaveDisplacement");
     }
 
-    private void Update()
+    public float WaveHeight(Vector3 pos)
     {
-        offsetTime += Time.deltaTime * rippleFrequency;
+        return displacementTexture.GetPixelBilinear
+        (pos.x * waveFrequency, pos.z * waveFrequency + Time.deltaTime * (waveSpeed * -1f)).g * 
+        (waveHeight * -0.5f) * transform.localScale.x;
     }
-
-    // method returns wave height of given x coordinate
-    public float GetWaveHeight(float xCoordinate)
-    {
-        // return amplitude * Mathf.Sin(xCoordinate*waveLength + offsetTime);
-
-        // xCoordinate = rippleOrigin.x;
-
-        return rippleAmplitude * Mathf.Sin((xCoordinate +40) * rippleDensity + offsetTime);
-    }
+    
 }
