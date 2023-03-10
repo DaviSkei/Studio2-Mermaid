@@ -4,33 +4,48 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-// [CreateAssetMenu (fileName ="New DialogueManager", menuName = "DialogueManager")]
 public class DialogueManager : MonoBehaviour
 {
     // this script is made to hold all of the sentence strings we want to display
     // and display them thorugh logic
+    public Dialogue dialogue;
+    public Dialogue startDialogue;
 
     [SerializeField] TextMeshProUGUI dialogueText;
     [SerializeField] Animator animator;
 
     private Queue<string> sentences;
+
+    private bool startOver;
     
     void Start()
     {
         sentences = new Queue<string>();
+        startOver = false;
     }
-    public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue()
     {
         // this method uses a dialogue string to start the queue from 
         animator.SetBool("isOpen", true);
         
         sentences.Clear();
 
-        foreach (string sentence in dialogue.sentences)
+        if (!startOver)
         {
-            sentences.Enqueue(sentence);
+            foreach(string sentence in startDialogue.dialogueStrings)
+            {
+                sentences.Enqueue(sentence);
+            }
         }
 
+        if (startOver)
+        {
+            foreach (string sentence in dialogue.dialogueStrings)
+            {
+                sentences.Enqueue(sentence);
+            }
+        }
+        
         DisplayNextSentence();
     }
     public void DisplayNextSentence()
@@ -42,10 +57,21 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         string sentence = sentences.Dequeue();
-        dialogueText.text = sentence;
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(sentence));
+    }
+    IEnumerator TypeSentence(string sentence)
+    {
+        dialogueText.text = "";
+        foreach (char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return null;
+        }
     }
     public void EndDialogue()
     {
+        startOver = true;
         animator.SetBool("isOpen", false);
     }
 }

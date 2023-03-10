@@ -6,22 +6,23 @@ public class DialogueTrigger : MonoBehaviour
 {
     // this script is for setting the strings in our dialogue type
     // and triggering the dialogue to happen
-    public Dialogue dialogue;
+    // public Dialogue dialogue;
+    // public Dialogue startDialogue;
 
-    [SerializeField] DialogueManager dialogueManager;
+    // [SerializeField] DialogueManager dialogueManager;
 
-    void Start()
-    {
-        // dialogueManager = GetComponentInChildren<DialogueManager>();
-    }
+    // void Start()
+    // {
+    //     // dialogueManager = GetComponentInChildren<DialogueManager>();
+    // }
 
-    public void TriggerDialogue()
-    {
-        dialogueManager.StartDialogue(dialogue);
+    // public void TriggerDialogue()
+    // {
+    //     dialogueManager.StartDialogue(dialogue);
 
-    }
-    public void DeactivateButton()
-    {
-        gameObject.SetActive(false);
-    }
+    // }
+    // public void DeactivateButton()
+    // {
+    //     gameObject.SetActive(false);
+    // }
 }
