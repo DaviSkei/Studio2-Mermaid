@@ -76,12 +76,12 @@ Material:
     - _Object_Scale: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Riple_Scale: 6
+    - _Riple_Scale: 2
     - _Ripple_Amp: 6
-    - _Ripple_Density: 0
+    - _Ripple_Density: 23.7
     - _Ripple_Dissolver: 4.44
     - _Ripple_Frequency: 2
-    - _Ripple_Intensity: 4
+    - _Ripple_Intensity: 2.52
     - _Ripple_Speed: 0.05
     - _Smootheness: 1
     - _Smoothness: 1.29
@@ -92,11 +92,11 @@ Material:
     - _WaterTiling: 0.04
     - _WaveAmplitude: 0
     - _WaveDisplacement: 0.77
-    - _WaveHeight: 0.0008
+    - _WaveHeight: 0.3
     - _WaveScale: 0.44
-    - _WaveSpeed: 0
+    - _WaveSpeed: 0.1
     - _WaveTiling: 1
-    - _Wave_Frequency: 0.554
+    - _Wave_Frequency: 5
     - _Wave_Intensity: 0
     - _Wave_Speed: 5.25
     - _Wave_Strength: 0.701
@@ -105,6 +105,7 @@ Material:
     - _fresnel: 0
     - _metal: 1.7
     - _offset: 0.6
+    - _scale: 61.8
     - _smooth: 1
     m_Colors:
     - _DeepColor: {r: 0.05228728, g: 0.21105425, b: 0.4433962, a: 0.84313726}
