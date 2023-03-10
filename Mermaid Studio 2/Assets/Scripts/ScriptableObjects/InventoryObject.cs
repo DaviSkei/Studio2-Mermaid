@@ -8,7 +8,7 @@ public class InventoryObject : ScriptableObject
     public List<InventorySlot> inventoryContainer = new List<InventorySlot>();
 
     [SerializeField] int weight = 0;
-    public int Weigth {get{return weight;}}
+    public int Weigth {get{return weight;} set { weight = value;}}
     [SerializeField] int maxWeight = 100;
 
     private void Awake()

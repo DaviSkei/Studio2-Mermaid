@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI dialogueText;
     [SerializeField] Animator animator;
+    [SerializeField] Animator inventoryAnimator;
 
     private Queue<string> sentences;
 
@@ -56,6 +57,10 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
+        if (startOver)
+        {
+            inventoryAnimator.SetBool("isOpen", true);
+        }
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
@@ -73,5 +78,6 @@ public class DialogueManager : MonoBehaviour
     {
         startOver = true;
         animator.SetBool("isOpen", false);
+        inventoryAnimator.SetBool("isOpen", false);
     }
 }
