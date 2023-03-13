@@ -38,7 +38,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _WaveDisplacement:
-        m_Texture: {fileID: 2800000, guid: ed0109f417ef3a942b89d0faebbf0321, type: 3}
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -78,7 +78,7 @@ Material:
     - _QueueOffset: 0
     - _Riple_Scale: 2
     - _Ripple_Amp: 6
-    - _Ripple_Density: 23.7
+    - _Ripple_Density: 54.7
     - _Ripple_Dissolver: 4.44
     - _Ripple_Frequency: 2
     - _Ripple_Intensity: 2.52
@@ -90,18 +90,18 @@ Material:
     - _TilingScale: 0.05
     - _Transparency: 2.5
     - _WaterTiling: 0.04
-    - _WaveAmplitude: 0
+    - _WaveAmplitude: 0.1
     - _WaveDisplacement: 0.77
-    - _WaveHeight: 0.3
+    - _WaveHeight: 0.35
     - _WaveScale: 0.44
-    - _WaveSpeed: 0.1
+    - _WaveSpeed: 1.1
     - _WaveTiling: 1
     - _Wave_Frequency: 5
     - _Wave_Intensity: 0
     - _Wave_Speed: 5.25
     - _Wave_Strength: 0.701
     - _Y_Wave: 0
-    - _Z_Wave: 1.54
+    - _Z_Wave: 12.38
     - _fresnel: 0
     - _metal: 1.7
     - _offset: 0.6
@@ -112,7 +112,7 @@ Material:
     - _Foam_Color: {r: 0.8113207, g: 0.8113207, b: 0.8113207, a: 0}
     - _Gradient_Color: {r: 0, g: 0, b: 0, a: 0}
     - _Ripple_Color: {r: 0, g: 1, b: 0.7387755, a: 1}
-    - _Ripple_Origin: {r: 0.5, g: 0, b: 0, a: 0}
+    - _Ripple_Origin: {r: 1.5, g: 0, b: 0, a: 0}
     - _ShallowColor: {r: 0.17777678, g: 0.4433962, b: 0.44131294, a: 0}
     - _Vector3: {r: 0, g: 0, b: 0, a: 0}
     - _WaterColor: {r: 0, g: 0.6320327, b: 1.3393537, a: 0}

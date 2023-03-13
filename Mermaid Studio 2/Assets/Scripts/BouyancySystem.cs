@@ -69,7 +69,7 @@ public class BouyancySystem : MonoBehaviour
 
         for (int i = 0; i < floaterPoints.Length; i++)
         {
-            float diff = floaterPoints[i].position.y - waveManager.WaveHeight(floaterPoints[i].position);
+            float diff = floaterPoints[i].position.y - waveManager.WaveHeight(floaterPoints[i].position.x);
 
             if (diff < 0)
             {

@@ -54,6 +54,7 @@ public class FishBoid : MonoBehaviour
     
             transform.position += velocity * Time.deltaTime * speed;
             transform.LookAt(transform.position + velocity);
+            transform.Rotate(transform.position + velocity);
     }
     Vector3 avoid()
     {
