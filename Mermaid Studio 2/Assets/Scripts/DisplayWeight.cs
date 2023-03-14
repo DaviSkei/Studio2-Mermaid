@@ -27,6 +27,6 @@ public class DisplayWeight : MonoBehaviour
     }
     void UpdateDisplay()
     {
-        weigthText.text = pcInventory.Weigth.ToString();
+        weigthText.text = pcInventory.TotalWeigth.ToString();
     }
 }

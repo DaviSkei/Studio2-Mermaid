@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
   inventoryContainer: []
-  weight: 0
+  totalWeight: 0
   maxWeight: 100

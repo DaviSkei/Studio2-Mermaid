@@ -16,4 +16,5 @@ MonoBehaviour:
   itemGameObj: {fileID: 2308947564703704529, guid: 49594aaadb5add64e9d1e61d3ff61b41,
     type: 3}
   itemType: 0
+  itemAmount: 1
   itemWeight: 5

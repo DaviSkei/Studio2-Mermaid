@@ -4,37 +4,30 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    [SerializeField] private float waveHeight = 0.0008f, waveSpeed = 0.05f, waveFrequency = 6f;
     Vector3 rippleOrigin;
     private float rippleDensity, rippleFrequency, rippleAmplitude;
-    // freq = ripple scale, speed = ripple speed, height = waveheight
 
     Material material;
-    Texture2D displacementTexture;
-
     
     void Start()
     {
         material = GetComponent<MeshRenderer>().material;
-        displacementTexture = (Texture2D)material.GetTexture("_WaveDisplacement");
+
         rippleOrigin = material.GetVector("_Ripple_Origin");
         rippleDensity = material.GetFloat("_Ripple_Density");
         rippleFrequency = material.GetFloat("_Ripple_Frequency");
         rippleAmplitude = material.GetFloat("_Ripple_Amp");
-        Debug.Log(rippleAmplitude);
 
+        rippleFrequency *= Time.deltaTime;
     }
     private void Update()
     {
-        rippleFrequency *= Time.deltaTime;
-        rippleFrequency = Mathf.Clamp(rippleFrequency, 0.1f, 0.1f);
-        Debug.Log(rippleFrequency);
+        rippleFrequency += Time.deltaTime;
     }
 
     public float WaveHeight(float xPos)
     {
         return rippleAmplitude * Mathf.Sin(xPos * rippleDensity) + rippleFrequency;
-
 
         // return (pos.x * waveFrequency, pos.z * waveFrequency + Time.deltaTime * (waveSpeed * -1f)).g * 
         // (waveHeight * -0.5f) * transform.localScale.x;

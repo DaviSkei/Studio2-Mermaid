@@ -7,8 +7,8 @@ public class InventoryObject : ScriptableObject
 {
     public List<InventorySlot> inventoryContainer = new List<InventorySlot>();
 
-    [SerializeField] int weight = 0;
-    public int Weigth {get{return weight;} set { weight = value;}}
+    [SerializeField] int totalWeight = 0;
+    public int TotalWeigth { get { return totalWeight; } set { totalWeight = value; } }
     [SerializeField] int maxWeight = 100;
 
     private void Awake()
@@ -17,16 +17,18 @@ public class InventoryObject : ScriptableObject
     }
     public void AddItem(ItemObject _storedItemObJ, int _amount, int _weight)
     {
-        weight += _weight;
+        totalWeight += _weight;
         // check if inventory has item or not
         bool hasItem = false;
 
-        for (int i = 0; i < inventoryContainer.Count; i++)
+        // maybe need to swap this back to Count later
+        for (int i = 0; i < inventoryContainer.Capacity; i++)
         {
-            // if there are any number of stored items in inventorycontainer list, has item becomes true
+            // if an item already exists in inventory, add its amount and weight instead
             if (inventoryContainer[i].storedItemObj == _storedItemObJ)
             {
                 inventoryContainer[i].AddAmount(_amount);
+                inventoryContainer[i].AddWeight(_weight);
                 hasItem = true;
                 // break to stop continuosly going through for loop to check the boolean value
                 break;
@@ -35,12 +37,20 @@ public class InventoryObject : ScriptableObject
         // if inventory does not have the item, add a new slot for it
         if (!hasItem)
         {
-            inventoryContainer.Add(new InventorySlot(_storedItemObJ, _amount));
+            inventoryContainer.Add(new InventorySlot(_storedItemObJ, _amount, _weight));
         }
     }
+    public void ModifyWeight(int _newWeight)
+    {
+        if (totalWeight >= 1)
+        {
+            totalWeight -= _newWeight;
+        }
+    }
+    
     public void ClearWeight()
     {
-        weight = 0;
+        totalWeight = 0;
     }
     public void ClearAmount()
     {
@@ -58,19 +68,25 @@ public class InventorySlot
     public ItemObject storedItemObj;
     // amount of items in a slot
     public int amount;
+
+    public int weight;
     
-    public InventorySlot(ItemObject _storedItemObJ, int _amount)
+    public InventorySlot(ItemObject _storedItemObJ, int _amount, int _weight)
     {
         storedItemObj = _storedItemObJ;
         amount = _amount;
+        weight = _weight;
     }
     public void AddAmount(int value)
     {
-        // the slot amount is equal to itself and value
         amount += value;
     }
-    public void RemoveAmount(int value)
+    public void AddWeight(int value)
     {
-        amount -= value;
+        weight += value;
+    }
+    public void ModifyAmount(int _newAmount)
+    {
+        amount -= _newAmount;
     }
 }
