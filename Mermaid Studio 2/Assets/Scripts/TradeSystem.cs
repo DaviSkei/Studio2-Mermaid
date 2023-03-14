@@ -19,7 +19,9 @@ public class TradeSystem : MonoBehaviour
             if (item.name == playerInventory.inventoryContainer[i].storedItemObj.name)
             {
                 item = playerInventory.inventoryContainer[i].storedItemObj;
+
                 int amount = playerInventory.inventoryContainer[i].amount;
+
                 int weight = playerInventory.inventoryContainer[i].weight;
 
                 npcInv.AddItem(item, amount, weight);
@@ -27,11 +29,10 @@ public class TradeSystem : MonoBehaviour
                 Debug.Log("item amount = " + amount);
                 Debug.Log("item weight = " + weight);
 
-                if (playerInventory.inventoryContainer[i].storedItemObj.itemType != ItemType.Backpack)
-                {
-                    playerInventory.inventoryContainer[i].ModifyAmount(amount);
-                    playerInventory.ModifyWeight(weight);
-                }
+                playerInventory.inventoryContainer[i].ModifyAmount(amount);
+                playerInventory.inventoryContainer[i].ModifyWeight(weight);
+                playerInventory.ModifyTotalWeight(weight);
+
                 tradedAmount++;
                 Debug.Log("Amount of times traded = " + tradedAmount);
             }
@@ -39,13 +40,12 @@ public class TradeSystem : MonoBehaviour
     }
     private void OnApplicationQuit()
     {
-        // inventory.Container.Clear();
         playerInventory.inventoryContainer.Clear();
-        playerInventory.ClearWeight();
+        playerInventory.ClearTotalWeight();
         playerInventory.ClearAmount();
 
         npcInv.inventoryContainer.Clear();
-        npcInv.ClearWeight();
+        npcInv.ClearTotalWeight();
         npcInv.ClearAmount();
     }
 }

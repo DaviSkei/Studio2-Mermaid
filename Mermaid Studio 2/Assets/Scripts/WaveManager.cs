@@ -6,7 +6,6 @@ public class WaveManager : MonoBehaviour
 {
     Vector3 rippleOrigin;
     private float rippleDensity, rippleFrequency, rippleAmplitude;
-
     Material material;
     
     void Start()

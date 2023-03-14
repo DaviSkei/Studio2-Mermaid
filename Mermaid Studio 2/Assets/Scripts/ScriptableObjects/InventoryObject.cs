@@ -22,7 +22,7 @@ public class InventoryObject : ScriptableObject
         bool hasItem = false;
 
         // maybe need to swap this back to Count later
-        for (int i = 0; i < inventoryContainer.Capacity; i++)
+        for (int i = 0; i < inventoryContainer.Count; i++)
         {
             // if an item already exists in inventory, add its amount and weight instead
             if (inventoryContainer[i].storedItemObj == _storedItemObJ)
@@ -40,7 +40,7 @@ public class InventoryObject : ScriptableObject
             inventoryContainer.Add(new InventorySlot(_storedItemObJ, _amount, _weight));
         }
     }
-    public void ModifyWeight(int _newWeight)
+    public void ModifyTotalWeight(int _newWeight)
     {
         if (totalWeight >= 1)
         {
@@ -48,7 +48,7 @@ public class InventoryObject : ScriptableObject
         }
     }
     
-    public void ClearWeight()
+    public void ClearTotalWeight()
     {
         totalWeight = 0;
     }
@@ -71,6 +71,7 @@ public class InventorySlot
 
     public int weight;
     
+    // an inventory slot holds the item object, by an amount and a weight
     public InventorySlot(ItemObject _storedItemObJ, int _amount, int _weight)
     {
         storedItemObj = _storedItemObJ;
@@ -89,4 +90,9 @@ public class InventorySlot
     {
         amount -= _newAmount;
     }
+    public void ModifyWeight(int _newWeight)
+    {
+        weight -= _newWeight;
+    }
+    
 }
