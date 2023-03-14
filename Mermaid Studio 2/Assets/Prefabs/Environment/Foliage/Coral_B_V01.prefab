@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3775191286844561706}
   - component: {fileID: 2354044114653187936}
   - component: {fileID: 2965584290440101537}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Coral_B_Branch_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 6496787155673165520}
   - component: {fileID: 1929089607982268963}
   - component: {fileID: 677833581124309621}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Coral_B_Branch_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 13331834613021756}
   - component: {fileID: 5930222188192386675}
   - component: {fileID: 1050064941926992193}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Coral_B_Branch_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 4397582396824440438}
   - component: {fileID: 7221857618591595393}
   - component: {fileID: 9043841909895148245}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Coral_B_Branch_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +341,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5027443889279038714}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Coral_B_V01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,7 +381,7 @@ GameObject:
   - component: {fileID: 6472504260240227232}
   - component: {fileID: 8605461143231957724}
   - component: {fileID: 4178870923081384753}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Coral_B_Branch_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -464,7 +464,7 @@ GameObject:
   - component: {fileID: 2022546368437482538}
   - component: {fileID: 1103500687724643618}
   - component: {fileID: 4864512112901693828}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Stem_Coral_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -547,7 +547,7 @@ GameObject:
   - component: {fileID: 2548019689549990085}
   - component: {fileID: 6537374204272241530}
   - component: {fileID: 5974157914050503011}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Coral_B_Branch_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}

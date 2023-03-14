@@ -14,12 +14,10 @@ public class MovePlayer : MonoBehaviour
 
     // [SerializeField] InventoryObject inventory;
     [SerializeField] InventoryObject playerInventory;
-    [SerializeField] InventoryObject npcInv;
-
-    [SerializeField] int tradedAmount = 0;
 
     [SerializeField] GameObject playerBackPack;
     [SerializeField] GameObject playerKnife;
+    [SerializeField] GameObject playerShovel;
 
     // Movement variables
     float defaultSpeed = 1.5f;
@@ -46,8 +44,6 @@ public class MovePlayer : MonoBehaviour
 
     // Variables to swap movement with fish
     bool swapped;
-    GameObject[] swappableBodies;
-    MoveFish control;
 
     // Start is called before the first frame update
     void Start()
@@ -60,10 +56,6 @@ public class MovePlayer : MonoBehaviour
 
         camFreeLook.LookAt = this.transform;
         camFreeLook.Follow = this.transform;
-
-        swappableBodies = GameObject.FindGameObjectsWithTag("Fish");
-        Debug.Log("amount of fish = " + swappableBodies.Length);
-
     }
 
     // Update is called once per frame
@@ -186,69 +178,31 @@ public class MovePlayer : MonoBehaviour
 
         inRangeOfNpc = Physics.CheckSphere(transform.position, sphereDistance, npcLayer);
 
-        // CollectTrashUI.SetActive(false);
         if (Physics.Raycast(ray, out hit, rayDistance, layerMask))
         {
-            // visual line for ray
             Debug.DrawRay(transform.position, mainCam.forward * rayDistance, Color.red);
-            // store info of the hit gameobject if it has "item" script attached
             
             var item = hit.transform.GetComponent<Item>();
+
+            MoveFish fish = hit.transform.gameObject.GetComponent<MoveFish>();
+
             GameObject itemObj = hit.transform.gameObject;
 
-            for (int i = 0; i < swappableBodies.Length; i++)
+            if (fish && Input.GetKey(KeyCode.Q))
             {
-                if (hit.transform.gameObject == swappableBodies[i] && Input.GetKeyDown(KeyCode.Q))
-                {
-                    // camera is going to correct char
-                    camFreeLook.LookAt = swappableBodies[i].transform;
-                    camFreeLook.Follow = swappableBodies[i].transform;
-                    swapped = true;
-                    
-                    control = swappableBodies[i].GetComponent<MoveFish>();
-                    control.SetBool(swapped);
-                }
+                camFreeLook.LookAt = fish.transform;
+                camFreeLook.Follow = fish.transform;
+                swapped = true;
+                fish.SetBool(swapped);
             }
-            // if hit gameobject has "Item" script attached, show UI
             if (item)
             {
-                // if player inputs left mouse click, add item data to inventory data
-                // and destroy gameobject with the "item" script attached
                 if (mouseClick)
                 {
-                    // inventory.AddItem(item.item, 1);
-                    // Destroy(itemObj);
                     playerInventory.AddItem(item.ItemObject(), item.ItemObject().itemAmount, item.ItemObject().itemWeight);
                     Destroy(itemObj);
                 }
             }
-
-            // if ray hits diver npc, trade all of their inventory to the npc inventory
-            var npc = hit.transform.GetComponent<DiverNPC>();
-        
-            // if (npc && mouseClickDown && (playerInventory.Weigth >= 1))
-            // {
-
-            //    for (int i = 0; i < playerInventory.inventoryContainer.Count; i++)
-            //    {
-            //       npcInv.AddItem(playerInventory.inventoryContainer[i].storedItemObj,
-            //       playerInventory.inventoryContainer[i].storedItemObj.itemAmount,
-            //       playerInventory.inventoryContainer[i].storedItemObj.itemWeight);
-            //       if (playerInventory.inventoryContainer[i].storedItemObj.itemType != ItemType.Backpack)
-            //       {
-            //         playerInventory.ClearAmount();
-            //         playerInventory.ClearWeight();
-            //       }
-            //       tradedAmount++;
-            //     Debug.Log(playerInventory.Weigth);
-            //    }
-                
-            // }
-            // // let up mouse button to clear player inv
-            // if (npc && mouseClickUp && (playerInventory.Weigth >= 1))
-            // {
-            //     playerInventory.inventoryContainer.RemoveAt(0);
-            // }
         }
     }
     private void NpcDialogue()
@@ -268,8 +222,7 @@ public class MovePlayer : MonoBehaviour
     {
         for (int i = 0; i < playerInventory.inventoryContainer.Count; i++)
         {
-            if (playerInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Backpack
-            && tradedAmount == 5)
+            if (playerInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Backpack)
             {
                 ItemObject backPackItem = playerInventory.inventoryContainer[i].storedItemObj;
                 Debug.Log("I have the backpack.");
@@ -278,18 +231,15 @@ public class MovePlayer : MonoBehaviour
 
                 playerBackPack.SetActive(true);
             }
-            if (playerInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Knife
-            && tradedAmount == 10)
+            if (playerInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Knife)
             {
                 Debug.Log("I have the Knife.");
             }
-            if (playerInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Shovel
-            && tradedAmount == 15)
+            if (playerInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Shovel)
             {
                 Debug.Log("I have the Shovel.");
             }
-            if (playerInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Rope
-            && tradedAmount == 20)
+            if (playerInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Rope)
             {
                 Debug.Log("I have the Rope.");
             }
@@ -302,16 +252,6 @@ public class MovePlayer : MonoBehaviour
     public bool IsSwimmingUp()
     {
         return isSwimmingUp;
-    }
-
-    private void OnApplicationQuit()
-    {
-        // inventory.Container.Clear();
-        playerInventory.inventoryContainer.Clear();
-        playerInventory.ClearWeight();
-
-        npcInv.inventoryContainer.Clear();
-        npcInv.ClearWeight();
     }
     private void ShowCursor()
     {

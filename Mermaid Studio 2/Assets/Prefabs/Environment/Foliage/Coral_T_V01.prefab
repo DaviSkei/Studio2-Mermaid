@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1202019360121985158}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Coral_T_V01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 4857960648606526272}
   - component: {fileID: 5852114441947495631}
   - component: {fileID: 541783226403540565}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Stem_Coral_T
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 372512262576683415}
   - component: {fileID: 1124975075242293639}
   - component: {fileID: 2623158413157303142}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Coral_T_Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}

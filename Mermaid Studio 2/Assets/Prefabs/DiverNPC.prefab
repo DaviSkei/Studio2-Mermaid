@@ -106,8 +106,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3344189277944694497f6fbbf7b19714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogue:
+    dialogueStrings:
+    - Hello again! Do you have any more items for me?
+    - Thank you, I will make sure to dispose of this trash
+  startDialogue:
+    dialogueStrings:
+    - Hey, you're finally awake.
+    - I've been trying to clean up all the trash around here, but there is too much
+      work for me to do on my own.
+    - In addition, there are cracks in the ocean floor that pose a threat to the
+      sea life, and fishermen throwing their fishnets and crab traps down here to
+      try and capture whatever they can.
+    - There's simply too much for one person to do.
+    - I know this is a lot to ask, but could you help me?
+    - Start by collecting trash you find and bring them to me
+    - I don't have much to offer, but if you help me, I can give you some of my equiptment!
   dialogueText: {fileID: 0}
   animator: {fileID: 0}
+  inventoryAnimator: {fileID: 0}
 --- !u!1 &6379392310657719732
 GameObject:
   m_ObjectHideFlags: 0

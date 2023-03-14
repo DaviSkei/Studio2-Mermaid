@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1213986781112243482}
   - component: {fileID: 8953814531321351445}
   - component: {fileID: 2440781332922244352}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: pPlane1_SeaWeed1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5958592208531919968}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Seaweed_1_V03
   m_TagString: Environment
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 8814666198317791111}
   - component: {fileID: 7418243716509189744}
   - component: {fileID: 5323110692671231963}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SeaWeed1_polySurface2
   m_TagString: Environment
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 3465232496655783404}
   - component: {fileID: 5069674198506988346}
   - component: {fileID: 786048104701842134}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SeaWeed1_pPlane20
   m_TagString: Untagged
   m_Icon: {fileID: 0}

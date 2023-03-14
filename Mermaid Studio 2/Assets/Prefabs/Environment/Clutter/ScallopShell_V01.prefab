@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2042758922601518627}
   - component: {fileID: 3954624829795052316}
   - component: {fileID: 3427330133998315422}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Shell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4937268016079068325}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ScallopShell_V01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 129736277953727152}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: RockLP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,9 +23,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758639768121217034}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -30.582968, y: -0.61, z: 8.95476}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 8.529731, y: 8.529731, z: 8.529731}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4153819414195689770}
@@ -43,7 +43,8 @@ GameObject:
   - component: {fileID: 4153819414195689770}
   - component: {fileID: 5543084791854690862}
   - component: {fileID: 5731783913646702674}
-  m_Layer: 0
+  - component: {fileID: 1232605348}
+  m_Layer: 14
   m_Name: Rock_Simple:Group23205
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,14 +58,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5702938554264155625}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.09205683, y: 0.8903745, z: -0.4223239, w: 0.1428331}
+  m_LocalPosition: {x: 0.35444796, y: 0.09994904, z: 0.13344586}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 129736277953727152}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 46.532, y: 151.135, z: -24.435}
 --- !u!33 &5543084791854690862
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -115,3 +116,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1232605348
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5702938554264155625}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8705511951921876929, guid: 993938891a24b9b469b005d9e90daf9c, type: 3}

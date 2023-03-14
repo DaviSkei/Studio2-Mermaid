@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4704150024328653550}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Coral_H_V01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 6313412840833878837}
   - component: {fileID: 1593043710816279054}
   - component: {fileID: 4223503998257052904}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Coral_H
   m_TagString: Untagged
   m_Icon: {fileID: 0}

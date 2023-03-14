@@ -37,4 +37,15 @@ public class TradeSystem : MonoBehaviour
             }
         }
     }
+    private void OnApplicationQuit()
+    {
+        // inventory.Container.Clear();
+        playerInventory.inventoryContainer.Clear();
+        playerInventory.ClearWeight();
+        playerInventory.ClearAmount();
+
+        npcInv.inventoryContainer.Clear();
+        npcInv.ClearWeight();
+        npcInv.ClearAmount();
+    }
 }
