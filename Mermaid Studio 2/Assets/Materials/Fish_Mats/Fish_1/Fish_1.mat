@@ -120,7 +120,7 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Light_Amount: -0.22
-    - _Mask_Radius: 4.48
+    - _Mask_Radius: 2.12
     - _Metallic: 0
     - _Normal_Strength: 0
     - _OcclusionStrength: 1
