@@ -114,6 +114,7 @@ Material:
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Radius: 0
     - _ReceiveShadows: 1
     - _Ripple_Amp: 0.02
     - _Ripple_Density: 0
@@ -123,10 +124,11 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _Wobble_Distance: 0.98
-    - _Wobble_Speed: 2.39
+    - _Wobble_Distance: 1.73
+    - _Wobble_Radius: 5
+    - _Wobble_Speed: 1.49
     - _WorkflowMode: 1
-    - _Y_Wobble: 0.47
+    - _Y_Wobble: 0.35
     - _ZWrite: 1
     - _Z_Wobble: 2.32
     m_Colors:
@@ -136,4 +138,5 @@ Material:
     - _Ripple_Origin: {r: 0, g: 1.73, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _WaterColor: {r: 5.3403134, g: 0, b: 4.4607325, a: 0}
+    - _Wobble_Origin: {r: 0, g: -9.93, b: 0, a: 0}
   m_BuildTextureStacks: []

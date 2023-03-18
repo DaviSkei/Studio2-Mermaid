@@ -124,12 +124,13 @@ Material:
     - _Transparency: 1
     - _WaveAmplitude: 2.41
     - _WaveSpeed: 4.6
-    - _Wobble_Distance: 1.5
-    - _Wobble_Speed: 2.4
+    - _Wobble_Distance: 1.31
+    - _Wobble_Radius: 5
+    - _Wobble_Speed: 1.67
     - _WorkflowMode: 1
     - _Y_Blend: 2.95
     - _Y_Radius: -0.11
-    - _Y_Wobble: 0.78
+    - _Y_Wobble: 0.88
     - _ZWrite: 1
     - _Z_Wave: 1
     - _Z_Wobble: 0
@@ -142,6 +143,7 @@ Material:
     - _Ripple_Origin: {r: 0, g: 0.83, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _WaterColor: {r: 4, g: 0, b: 0.1254902, a: 0}
+    - _Wobble_Origin: {r: 0, g: -10, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5623596681635768808
 MonoBehaviour:

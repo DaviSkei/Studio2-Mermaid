@@ -47,10 +47,10 @@
             "m_Id": "0950e40e81ff459590c3502172a448ae"
         },
         {
-            "m_Id": "3177a9e45ee84083a7d2a061f606e0b8"
+            "m_Id": "3b0f484ea128499f90b82a10ae24e468"
         },
         {
-            "m_Id": "3b0f484ea128499f90b82a10ae24e468"
+            "m_Id": "3177a9e45ee84083a7d2a061f606e0b8"
         },
         {
             "m_Id": "15fd43ba5f3c40fe9b58e54c9e68c30c"
@@ -5106,10 +5106,10 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 2.0,
+    "m_Value": 5.0,
     "m_FloatType": 1,
     "m_RangeValues": {
-        "x": 0.10000000149011612,
+        "x": 0.0,
         "y": 5.0
     }
 }

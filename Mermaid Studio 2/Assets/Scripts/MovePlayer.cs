@@ -15,10 +15,6 @@ public class MovePlayer : MonoBehaviour
     // [SerializeField] InventoryObject inventory;
     [SerializeField] InventoryObject playerInventory;
 
-    [SerializeField] GameObject playerBackPack;
-    [SerializeField] GameObject playerKnife;
-    [SerializeField] GameObject playerShovel;
-
     // Movement variables
     float defaultSpeed = 1.5f;
     float startSpeed;
@@ -45,6 +41,12 @@ public class MovePlayer : MonoBehaviour
     // Variables to swap movement with fish
     bool swapped;
 
+    // raycasting variables
+    Ray ray;
+    RaycastHit hit;
+    public RaycastHit Hit {get{return hit;}}
+    float rayDistance = 3.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,8 +66,6 @@ public class MovePlayer : MonoBehaviour
         Sprint();
 
         RayCastManager();
-
-        EquiptmentLogic();
 
         NpcDialogue();
     }
@@ -171,10 +171,8 @@ public class MovePlayer : MonoBehaviour
         bool mouseClickDown = Input.GetKeyDown(KeyCode.Mouse0);
         bool mouseClickUp = Input.GetKeyUp(KeyCode.Mouse0);
         bool mouseClick = Input.GetKey(KeyCode.Mouse0);
-        // ray from camera origin, pointing forwards
-        Ray ray = new Ray (transform.position, mainCam.forward);
-        RaycastHit hit;
-        float rayDistance = 3.5f;
+
+        ray = new Ray (transform.position, mainCam.forward);
 
         inRangeOfNpc = Physics.CheckSphere(transform.position, sphereDistance, npcLayer);
 
@@ -216,33 +214,6 @@ public class MovePlayer : MonoBehaviour
         {
             HideCursor();
             speak2npcUi.SetActive(false);
-        }
-    }
-    private void EquiptmentLogic()
-    {
-        for (int i = 0; i < playerInventory.inventoryContainer.Count; i++)
-        {
-            if (playerInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Backpack)
-            {
-                ItemObject backPackItem = playerInventory.inventoryContainer[i].storedItemObj;
-                Debug.Log("I have the backpack.");
-                // i wanted to add the backpackobjects weight increase, but havent figured it out yet
-                playerInventory.inventoryContainer.Capacity += 100;
-
-                playerBackPack.SetActive(true);
-            }
-            if (playerInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Knife)
-            {
-                Debug.Log("I have the Knife.");
-            }
-            if (playerInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Shovel)
-            {
-                Debug.Log("I have the Shovel.");
-            }
-            if (playerInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Rope)
-            {
-                Debug.Log("I have the Rope.");
-            }
         }
     }
     public bool IsSwimming()
