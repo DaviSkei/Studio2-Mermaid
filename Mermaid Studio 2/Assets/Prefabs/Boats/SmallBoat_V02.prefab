@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 6896577564764687353}
   - component: {fileID: 7199813149100554995}
   - component: {fileID: 4797327016096295336}
-  - component: {fileID: 5507186490880383795}
   m_Layer: 0
   m_Name: SmallBoat_V02
   m_TagString: Untagged
@@ -138,7 +137,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2248901092005184863}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4548f7d5ee7ca749bdb6368e1c1acac, type: 3}
   m_Name: 
@@ -158,7 +157,7 @@ BoxCollider:
   m_GameObject: {fileID: 2248901092005184863}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: -1.5, y: -1, z: -3}
   m_Center: {x: 8, y: 0, z: 0}
@@ -178,29 +177,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 32
   m_CollisionDetection: 0
---- !u!114 &5507186490880383795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2248901092005184863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be9e99a7ecdc533448ac99d46aff4071, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waterDrag: 3
-  waterAngularDrag: 1
-  airDrag: 0
-  airAngularDrag: 0.05
-  floatingPower: 10
-  ocean: {fileID: 0}
-  floaterPoints:
-  - {fileID: 7981083658842716376}
-  - {fileID: 7981083658604392663}
-  - {fileID: 7981083659400414925}
-  - {fileID: 7981083659026247389}
 --- !u!1 &2443963315332600176
 GameObject:
   m_ObjectHideFlags: 0

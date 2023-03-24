@@ -136,7 +136,7 @@ Material:
     - _GlossyReflections: 0
     - _LightAmount: 1
     - _Light_Amount: -1
-    - _Main_Tiling: 1
+    - _Main_Tiling: 0.01
     - _Metallic: 0
     - _Object_Scale: 0.05
     - _OcclusionStrength: 1
@@ -158,7 +158,7 @@ Material:
     - _Tiling: 0.01
     - _Top_Mask_Blend: 0.5
     - _Top_Mask_Radius: 1
-    - _Top_Tiling: 2.79
+    - _Top_Tiling: 5
     - _Transparency: 1
     - _Use_Light: 1
     - _WaveScale: 1

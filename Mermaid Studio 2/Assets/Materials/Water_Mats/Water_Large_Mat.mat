@@ -57,7 +57,7 @@ Material:
     m_Floats:
     - _Depth: 1
     - _Depth_Amount: 1
-    - _Depth_Strength: 0.5
+    - _Depth_Strength: 0.497
     - _Displacement: 0.56
     - _EdgeBlend: 0.9
     - _Effect_Radius: 3.26
@@ -77,10 +77,10 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Riple_Scale: 2
-    - _Ripple_Amp: 6
-    - _Ripple_Density: 54.7
+    - _Ripple_Amp: 0.5
+    - _Ripple_Density: 100
     - _Ripple_Dissolver: 4.44
-    - _Ripple_Frequency: 2
+    - _Ripple_Frequency: 1
     - _Ripple_Intensity: 2.52
     - _Ripple_Speed: 0.05
     - _Smootheness: 1
@@ -92,7 +92,7 @@ Material:
     - _WaterTiling: 0.04
     - _WaveAmplitude: 0.1
     - _WaveDisplacement: 0.77
-    - _WaveHeight: 0.35
+    - _WaveHeight: 0
     - _WaveScale: 0.44
     - _WaveSpeed: 1.1
     - _WaveTiling: 1
