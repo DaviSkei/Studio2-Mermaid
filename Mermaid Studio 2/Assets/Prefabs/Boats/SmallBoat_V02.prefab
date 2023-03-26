@@ -94,7 +94,6 @@ GameObject:
   - component: {fileID: 1476726632512577509}
   - component: {fileID: 6896577564764687353}
   - component: {fileID: 7199813149100554995}
-  - component: {fileID: 4797327016096295336}
   m_Layer: 0
   m_Name: SmallBoat_V02
   m_TagString: Untagged
@@ -161,22 +160,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: -1.5, y: -1, z: -3}
   m_Center: {x: 8, y: 0, z: 0}
---- !u!54 &4797327016096295336
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2248901092005184863}
-  serializedVersion: 2
-  m_Mass: 50
-  m_Drag: 0.0001
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 32
-  m_CollisionDetection: 0
 --- !u!1 &2443963315332600176
 GameObject:
   m_ObjectHideFlags: 0

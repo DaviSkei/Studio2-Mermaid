@@ -94,9 +94,10 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _Mask_Radius: 5
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _Outline_Thickness: 0.022
+    - _Outline_Thickness: 0.009
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -113,6 +114,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - _Animation_Origin: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

@@ -15,6 +15,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] Animator inventoryAnimator;
 
+    DiverNPC diver;
+
     private Queue<string> sentences;
 
     private bool startOver;
@@ -23,6 +25,7 @@ public class DialogueManager : MonoBehaviour
     {
         sentences = new Queue<string>();
         startOver = false;
+        diver = transform.parent.GetComponent<DiverNPC>();
     }
     public void StartDialogue()
     {
@@ -30,6 +33,8 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("isOpen", true);
         
         sentences.Clear();
+
+        diver.Swimming = false;
 
         if (!startOver)
         {
@@ -78,5 +83,7 @@ public class DialogueManager : MonoBehaviour
         startOver = true;
         animator.SetBool("isOpen", false);
         inventoryAnimator.SetBool("isOpen", false);
+
+        diver.Swimming = true;
     }
 }

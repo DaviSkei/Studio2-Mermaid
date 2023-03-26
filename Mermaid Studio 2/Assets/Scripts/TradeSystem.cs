@@ -48,6 +48,7 @@ public class TradeSystem : MonoBehaviour
                 playerInventory.ModifyTotalWeight(weight);
 
                 tradedAmount++;
+                Debug.Log("amount of times traded = "  + tradedAmount);
             }
             if (tradedAmount == 5 || tradedAmount == 10 || tradedAmount == 15)
             {
