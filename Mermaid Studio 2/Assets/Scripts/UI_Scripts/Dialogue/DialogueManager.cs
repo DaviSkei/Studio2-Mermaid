@@ -53,7 +53,6 @@ public class DialogueManager : MonoBehaviour
     {
         if (sentences.Count == 0)
         {
-            Debug.Log("No more sentences");
             EndDialogue();
             return;
         }

@@ -45,7 +45,7 @@ public class MovePlayer : MonoBehaviour
     Ray ray;
     RaycastHit hit;
     public RaycastHit Hit {get{return hit;}}
-    float rayDistance = 3.5f;
+    float rayDistance = 5f;
 
     // Start is called before the first frame update
     void Start()

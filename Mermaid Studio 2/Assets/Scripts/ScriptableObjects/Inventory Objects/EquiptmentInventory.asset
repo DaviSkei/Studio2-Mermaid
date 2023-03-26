@@ -12,15 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5846396cd7c1a204f955247bfea9d4d2, type: 3}
   m_Name: EquiptmentInventory
   m_EditorClassIdentifier: 
-  inventoryContainer:
-  - storedItemObj: {fileID: 11400000, guid: f653144e286ebe9418c3978aaaaaf4aa, type: 2}
-    amount: 1
-    weight: 5
-  - storedItemObj: {fileID: 11400000, guid: 370753310691b4c40bc1889c99d5070a, type: 2}
-    amount: 1
-    weight: 1
-  - storedItemObj: {fileID: 11400000, guid: faa9eebed1b2edc40a31a560a2995378, type: 2}
-    amount: 1
-    weight: 1
-  totalWeight: 7
+  inventoryContainer: []
+  totalWeight: 0
   maxWeight: 100
