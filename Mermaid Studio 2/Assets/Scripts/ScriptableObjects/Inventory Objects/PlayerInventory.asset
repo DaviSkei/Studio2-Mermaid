@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryContainer: []
   totalWeight: 0
-  maxWeight: 100
+  maxWeight: 30

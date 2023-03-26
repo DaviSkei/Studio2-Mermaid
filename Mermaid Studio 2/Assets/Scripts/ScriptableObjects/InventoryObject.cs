@@ -10,11 +10,9 @@ public class InventoryObject : ScriptableObject
     [SerializeField] int totalWeight = 0;
     public int TotalWeigth { get { return totalWeight; } set { totalWeight = value; } }
     [SerializeField] int maxWeight = 100;
+    public int MaxWeight { get { return maxWeight; } set { maxWeight = value; } }
 
-    private void Awake()
-    {
-        inventoryContainer.Capacity = maxWeight;
-    }
+    
     public void AddItem(ItemObject _storedItemObJ, int _amount, int _weight)
     {
         totalWeight += _weight;

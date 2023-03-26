@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class EuiptmentLogic : MonoBehaviour
 {
+    // this script should exist on an empty gameobject preferably under the player gameobject
     [SerializeField] InventoryObject equiptmentInventory;
+    [SerializeField] InventoryObject playerInventory;
     private GameObject player;
     MovePlayer movePlayer;
 
@@ -15,6 +17,9 @@ public class EuiptmentLogic : MonoBehaviour
     bool canUseKnife = false;
     bool canUseShovel = false;
 
+    private bool hasBackpack;
+    public bool HasBackpack {get{return hasBackpack;}}
+    
     private bool usingKnife;
     public bool UsingKnife {get{return usingKnife;}}
 
@@ -39,6 +44,7 @@ public class EuiptmentLogic : MonoBehaviour
         CheckInventory();
         KnifeLogic();
         ShovelLogic();
+        BackpackLogic();
     }
     void CheckInventory()
     {
@@ -47,6 +53,7 @@ public class EuiptmentLogic : MonoBehaviour
             if (equiptmentInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Backpack)
             {
                 playerBackPack.SetActive(true);
+                hasBackpack = true;
             }
             if (equiptmentInventory.inventoryContainer[i].storedItemObj.itemType == ItemType.Knife)
             {
@@ -62,67 +69,68 @@ public class EuiptmentLogic : MonoBehaviour
     {
         bool mouseClick = Input.GetKey(KeyCode.Mouse0);
         bool equipKnife = Input.GetKeyDown(KeyCode.Alpha1);
-        bool unEquipKnife = Input.GetKeyUp(KeyCode.Alpha1);
+        bool unEquipKnife = Input.GetKeyUp(KeyCode.Alpha3);
 
-        int keyPressAmount = 0;
-        Debug.Log("knife amounts is " + keyPressAmount);
+
         if (canUseKnife && equipKnife)
         {
             // later, make it so the animation keyframes enable/disable knife and shovel
             playerKnife.SetActive(true);
             usingKnife = true;
-            Debug.Log("knife enabled");
-
-            keyPressAmount = 1;
-
-            if (mouseClick && usingKnife)
-            {
-                isCutting = true;
-            }
-            else
-            {
-                isCutting = false;
-            }
         }
-        if (keyPressAmount == 1 && unEquipKnife)
+        if (mouseClick && usingKnife)
+        {
+            isCutting = true;
+        }
+        else
+        {
+            isCutting = false;
+        }
+        if (unEquipKnife)
         {
             usingKnife = false;
             playerKnife.SetActive(false);
-            Debug.Log("knife disabled");
-            keyPressAmount = 0;
         }
     }
     void ShovelLogic()
     {
         bool mouseClick = Input.GetKey(KeyCode.Mouse0);
         bool equipShovel = Input.GetKeyDown(KeyCode.Alpha2);
-        bool unEquipShovel = Input.GetKeyUp(KeyCode.Alpha2);
+        bool unEquipShovel = Input.GetKeyUp(KeyCode.Alpha3);
 
-        int keyPressAmount = 0;
-        Debug.Log("shovel amounts is " + keyPressAmount);
         if (canUseShovel && equipShovel)
         {
             playerShovel.SetActive(true);
             usingShovel  = true;
-
-            keyPressAmount = 1;
-            Debug.Log("shovel enabled");
-
-            if (mouseClick && usingShovel)
-            {
-                isDigging = true;
-            }
-            else
-            {
-                isDigging = false;
-            }
         }
-        if (keyPressAmount == 1 && unEquipShovel)
+        if (mouseClick && usingShovel)
+        {
+            isDigging = true;
+        }
+        else
+        {
+            isDigging = false;
+        }
+        if (unEquipShovel)
         {
             playerShovel.SetActive(false);
             usingShovel = false;
-            Debug.Log("shovel disabled");
-            keyPressAmount = 0;
+        }
+    }
+    void BackpackLogic()
+    {
+        if (hasBackpack)
+        {
+            playerInventory.MaxWeight = 200;
+        }
+        if(playerInventory.TotalWeigth > playerInventory.MaxWeight)
+        {
+            movePlayer.RbPlayer.useGravity = true;
+            movePlayer.GravityLogic();
+        }
+        else
+        {
+            movePlayer.RbPlayer.useGravity = false;
         }
     }
 }

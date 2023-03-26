@@ -7,6 +7,7 @@ public class MovePlayer : MonoBehaviour
 {
     // player and camera components
     Rigidbody rbPlayer;
+    public Rigidbody RbPlayer {get{return rbPlayer;}}
 
     [SerializeField] Transform mainCam;
 
@@ -164,6 +165,11 @@ public class MovePlayer : MonoBehaviour
             moveSpeedXZ = 3f;
             moveSpeedY = 2f;
         }
+    }
+    // this function is called from EquiptmentLogic script
+    public void GravityLogic()
+    {
+        rbPlayer.AddForce(new Vector3(0, -0.7f, 0), ForceMode.Acceleration);
     }
     
     public void RayCastManager()

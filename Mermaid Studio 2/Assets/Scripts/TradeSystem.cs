@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// This class should only exist on the player character
 public class TradeSystem : MonoBehaviour
 {
+    // this script should exist on an empty gameobject preferably under the player gameobject
     [SerializeField] InventoryObject playerInventory;
     [SerializeField] InventoryObject npcInv;
     [SerializeField] InventoryObject equiptmentInv;
