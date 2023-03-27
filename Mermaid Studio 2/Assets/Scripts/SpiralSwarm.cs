@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class SpiralSwarm : MonoBehaviour
 {
-    [SerializeField] float moveSpeed = 1f, rotateSpeed = 5f;
+    float moveSpeed, rotateSpeed;
 
+    void Start()
+    {
+        moveSpeed = Random.Range(8, 12);
+        rotateSpeed = Random.Range(80, 120);
+    }
     // Update is called once per frame
     void Update()
     {
