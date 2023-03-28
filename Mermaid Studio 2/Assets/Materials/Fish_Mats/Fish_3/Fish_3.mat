@@ -26,7 +26,7 @@ Material:
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -35,7 +35,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 4bbe1aecb473f964fa53be4d8f0665a3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -59,10 +59,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 4bbe1aecb473f964fa53be4d8f0665a3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTexture:
+        m_Texture: {fileID: 2800000, guid: 4bbe1aecb473f964fa53be4d8f0665a3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Main_Texture:
         m_Texture: {fileID: 2800000, guid: 4bbe1aecb473f964fa53be4d8f0665a3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -86,6 +90,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Top_Texture:
+        m_Texture: {fileID: 2800000, guid: 4bbe1aecb473f964fa53be4d8f0665a3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -104,6 +112,8 @@ Material:
     - _AlphaClip: 0
     - _Blend: 0
     - _Blend_Intensity: 1.57
+    - _Bottom_Mask_Blend: 0.5
+    - _Bottom_Mask_Radius: 0.56
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
@@ -119,7 +129,9 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _LightAmount: 0.66
     - _Light_Amount: -0.22
+    - _Main_Tiling: 3.21
     - _Mask_Radius: 2.12
     - _Metallic: 0
     - _Normal_Strength: 0
@@ -129,11 +141,14 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Smootheness: 0
-    - _Smoothness: 0.5
+    - _Smoothness: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
+    - _Top_Mask_Blend: 0.626
+    - _Top_Mask_Radius: 0.78
+    - _Top_Tiling: 2.72
     - _Wobble_Distance: 1
     - _Wobble_Force_X: 0
     - _Wobble_Force_Y: 0.12
@@ -149,11 +164,13 @@ Material:
     m_Colors:
     - _Animation_Origin: {r: 0, g: 0, b: -2.1, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Bottom_Color: {r: 1, g: 1, b: 1, a: 0}
     - _Character_Color: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Emission_Color: {r: 1, g: 1, b: 1, a: 0}
     - _Shadow_Color: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Texture_Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Top_Color: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
