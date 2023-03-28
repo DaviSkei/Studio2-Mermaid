@@ -11,7 +11,6 @@ public class SpiralSwarm : MonoBehaviour
         moveSpeed = Random.Range(8, 12);
         rotateSpeed = Random.Range(80, 120);
     }
-    // Update is called once per frame
     void Update()
     {
         Move();
