@@ -26,7 +26,7 @@ Material:
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -149,6 +149,7 @@ Material:
     - _Wobble_Distance: 0
     - _Wobble_Force_Y: 0
     - _Wobble_Force_Z: 0
+    - _Wobble_Radius: 5
     - _Wobble_Speed: 0
     - _WorkflowMode: 1
     - _Y: 0
@@ -167,4 +168,5 @@ Material:
     - _Ripple_Origin: {r: 0, g: -0.35, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _WaterColor: {r: 0, g: 3.9999995, b: 2.145972, a: 0}
+    - _Wobble_Origin: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

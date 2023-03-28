@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7119416539375166211}
   - component: {fileID: 168694996792901185}
   - component: {fileID: 8440323463764896971}
+  - component: {fileID: 8561307888146071367}
   m_Layer: 14
   m_Name: Barnacle
   m_TagString: Untagged
@@ -83,6 +84,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8561307888146071367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3359203639426864400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c571792d83389ec488fffd38df81b829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6133215873394667101
 GameObject:
   m_ObjectHideFlags: 0

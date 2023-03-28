@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 4857960648606526272}
   - component: {fileID: 5852114441947495631}
   - component: {fileID: 541783226403540565}
+  - component: {fileID: 7632327673848320963}
   m_Layer: 14
   m_Name: Stem_Coral_T
   m_TagString: Untagged
@@ -116,6 +117,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7632327673848320963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5896599378282252996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c571792d83389ec488fffd38df81b829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7072807234861560814
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,6 +140,7 @@ GameObject:
   - component: {fileID: 372512262576683415}
   - component: {fileID: 1124975075242293639}
   - component: {fileID: 2623158413157303142}
+  - component: {fileID: 2693653517619466340}
   m_Layer: 14
   m_Name: Coral_T_Hat
   m_TagString: Untagged
@@ -199,3 +213,15 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2693653517619466340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7072807234861560814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c571792d83389ec488fffd38df81b829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

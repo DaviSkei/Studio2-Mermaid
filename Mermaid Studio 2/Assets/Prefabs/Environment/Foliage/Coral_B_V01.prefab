@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3775191286844561706}
   - component: {fileID: 2354044114653187936}
   - component: {fileID: 2965584290440101537}
+  - component: {fileID: 678507224651148524}
   m_Layer: 14
   m_Name: Coral_B_Branch_2
   m_TagString: Untagged
@@ -83,6 +84,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &678507224651148524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199727666200810768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c571792d83389ec488fffd38df81b829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &401392900872583013
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +107,7 @@ GameObject:
   - component: {fileID: 6496787155673165520}
   - component: {fileID: 1929089607982268963}
   - component: {fileID: 677833581124309621}
+  - component: {fileID: 2907551937329176110}
   m_Layer: 14
   m_Name: Coral_B_Branch_1
   m_TagString: Untagged
@@ -166,6 +180,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2907551937329176110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401392900872583013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c571792d83389ec488fffd38df81b829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3946392611154943183
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +203,7 @@ GameObject:
   - component: {fileID: 13331834613021756}
   - component: {fileID: 5930222188192386675}
   - component: {fileID: 1050064941926992193}
+  - component: {fileID: 6946395939984140257}
   m_Layer: 14
   m_Name: Coral_B_Branch_4
   m_TagString: Untagged
@@ -249,6 +276,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6946395939984140257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3946392611154943183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c571792d83389ec488fffd38df81b829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4921965627366252516
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,6 +299,7 @@ GameObject:
   - component: {fileID: 4397582396824440438}
   - component: {fileID: 7221857618591595393}
   - component: {fileID: 9043841909895148245}
+  - component: {fileID: 2560085295772542001}
   m_Layer: 14
   m_Name: Coral_B_Branch_5
   m_TagString: Untagged
@@ -332,6 +372,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2560085295772542001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4921965627366252516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c571792d83389ec488fffd38df81b829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5660674228821634624
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,6 +433,7 @@ GameObject:
   - component: {fileID: 6472504260240227232}
   - component: {fileID: 8605461143231957724}
   - component: {fileID: 4178870923081384753}
+  - component: {fileID: 3709536975821530134}
   m_Layer: 14
   m_Name: Coral_B_Branch_3
   m_TagString: Untagged
@@ -453,6 +506,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3709536975821530134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6071073205871321195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c571792d83389ec488fffd38df81b829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6725950327551401400
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,6 +529,7 @@ GameObject:
   - component: {fileID: 2022546368437482538}
   - component: {fileID: 1103500687724643618}
   - component: {fileID: 4864512112901693828}
+  - component: {fileID: 8080767183292734569}
   m_Layer: 14
   m_Name: Stem_Coral_B
   m_TagString: Untagged
@@ -536,6 +602,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8080767183292734569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6725950327551401400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c571792d83389ec488fffd38df81b829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8001762653283617215
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,6 +625,7 @@ GameObject:
   - component: {fileID: 2548019689549990085}
   - component: {fileID: 6537374204272241530}
   - component: {fileID: 5974157914050503011}
+  - component: {fileID: 7924595632927040652}
   m_Layer: 14
   m_Name: Coral_B_Branch_6
   m_TagString: Untagged
@@ -619,3 +698,15 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7924595632927040652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8001762653283617215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c571792d83389ec488fffd38df81b829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
