@@ -16,7 +16,7 @@ public class MaterialManager : MonoBehaviour
     // Proximity variables
     private bool inRange;
     private float distance = 10f;
-    private LayerMask layerMask = 1 << 7;
+    private LayerMask layerMask = 1 << 9;
     // Set this to trash layer later
 
     // timer properties

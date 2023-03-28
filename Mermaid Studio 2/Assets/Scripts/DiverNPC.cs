@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class DiverNPC : MonoBehaviour
 {
@@ -10,11 +11,16 @@ public class DiverNPC : MonoBehaviour
     bool swimming;
     public bool Swimming {get{return swimming;} set{swimming = value;}}
     [SerializeField] float moveSpeed = 1, rotateSpeed = 1;
+
+    Transform player;
+
+    [SerializeField] CinemachineVirtualCamera npcCamera;
     // Start is called before the first frame update
     void Start()
     {
         npcAnimator = GetComponent<Animator>();
         swimming = true;
+        player = FindObjectOfType<MovePlayer>().transform;
     }
 
     // Update is called once per frame
@@ -23,6 +29,10 @@ public class DiverNPC : MonoBehaviour
         if (swimming)
         {
             Move();
+        }
+        else
+        {
+            transform.LookAt(player);
         }
         npcAnimator.SetBool(isSwimming, swimming);
     }

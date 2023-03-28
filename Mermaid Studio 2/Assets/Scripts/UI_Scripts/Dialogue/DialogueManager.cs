@@ -20,6 +20,9 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
 
     private bool startOver;
+
+    private bool isTalking;
+    public bool IsTalking {get{return isTalking;}}
     
     void Start()
     {
@@ -35,6 +38,8 @@ public class DialogueManager : MonoBehaviour
         sentences.Clear();
 
         diver.Swimming = false;
+
+        isTalking = true;
 
         if (!startOver)
         {
@@ -85,5 +90,6 @@ public class DialogueManager : MonoBehaviour
         inventoryAnimator.SetBool("isOpen", false);
 
         diver.Swimming = true;
+        isTalking = false;
     }
 }

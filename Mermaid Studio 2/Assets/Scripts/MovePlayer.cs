@@ -48,6 +48,9 @@ public class MovePlayer : MonoBehaviour
     public RaycastHit Hit {get{return hit;}}
     float rayDistance = 5f;
 
+    // Camera swap with NPC 
+    DialogueManager dialogueManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +62,8 @@ public class MovePlayer : MonoBehaviour
 
         camFreeLook.LookAt = this.transform;
         camFreeLook.Follow = this.transform;
+
+        dialogueManager = FindObjectOfType<DialogueManager>();
     }
 
     // Update is called once per frame
@@ -69,6 +74,8 @@ public class MovePlayer : MonoBehaviour
         RayCastManager();
 
         NpcDialogue();
+
+        CameraSwap();
     }
     void FixedUpdate()
     {
@@ -220,6 +227,17 @@ public class MovePlayer : MonoBehaviour
         {
             HideCursor();
             speak2npcUi.SetActive(false);
+        }
+    }
+    private void CameraSwap()
+    {
+        if (dialogueManager.IsTalking)
+        {
+            camFreeLook.enabled = false;
+        }
+        else
+        {
+            camFreeLook.enabled = true;
         }
     }
     public bool IsSwimming()
