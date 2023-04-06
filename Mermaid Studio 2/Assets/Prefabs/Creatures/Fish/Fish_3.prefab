@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8932220329028158730}
   - component: {fileID: 7001476456440785252}
   - component: {fileID: 4761707934926123014}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Small_Fish:ZBrush_defualt_group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2700753480637691681}
   - component: {fileID: 919132147593187764}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fish_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
