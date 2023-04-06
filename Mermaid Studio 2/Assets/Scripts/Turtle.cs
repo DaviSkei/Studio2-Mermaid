@@ -5,8 +5,8 @@ using UnityEngine;
 public class Turtle : MonoBehaviour
 {
     Animator turtleAnimator;
-    [SerializeField] private float moveSpeed = 1;
-    [SerializeField] private float rotateSpeed = 5;
+    [SerializeField] private float moveSpeed = 0.5f;
+    [SerializeField] private float rotateSpeed = 2f;
 
     [SerializeField] private bool isTrapped = false;
 
@@ -77,7 +77,7 @@ public class Turtle : MonoBehaviour
     {
         Vector3 newVelocity = new Vector3(0,0,0);
         newVelocity += Avoid();
-        Vector3 slerpVelo = Vector3.Slerp(velocity, newVelocity, Time.deltaTime *3);
+        Vector3 slerpVelo = Vector3.Slerp(velocity, newVelocity, Time.deltaTime);
     
         velocity = slerpVelo.normalized;
     

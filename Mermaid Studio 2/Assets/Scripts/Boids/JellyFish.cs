@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JellyFish : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 3f,distance = 3f;
+    [SerializeField] private float moveSpeed = 3f,distance = 3f, fastTime;
 
     bool inRange;
     [SerializeField] private LayerMask layerMask;
@@ -21,6 +21,7 @@ public class JellyFish : MonoBehaviour
     {
         didHit = false;
         velocity = new Vector3(0,0,0);
+        fastTime = Time.deltaTime*2;
     }
 
     // Update is called once per frame
@@ -101,7 +102,7 @@ public class JellyFish : MonoBehaviour
     {
         Vector3 newVelocity = new Vector3(0,0,0);
         newVelocity += avoid();
-        Vector3 slerpVelo = Vector3.Slerp(velocity, newVelocity, Time.deltaTime *3);
+        Vector3 slerpVelo = Vector3.Slerp(velocity, newVelocity, fastTime);
     
         velocity = slerpVelo.normalized;
     
