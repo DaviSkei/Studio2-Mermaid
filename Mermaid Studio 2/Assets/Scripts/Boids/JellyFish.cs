@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class JellyFish : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 3f,distance = 3f, fastTime;
+    [SerializeField] private float moveSpeed = 3f,distance = 3f;
+    float fastTime;
 
-    bool inRange;
     [SerializeField] private LayerMask layerMask;
-
-    [SerializeField] Collider[] objects;
 
     bool didHit;
     RaycastHit hit;
