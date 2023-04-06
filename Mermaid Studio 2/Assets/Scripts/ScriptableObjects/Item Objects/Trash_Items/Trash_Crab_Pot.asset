@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e45b806b6506e49956fa1402cf5820, type: 3}
+  m_Name: Trash_Crab_Pot
+  m_EditorClassIdentifier: 
+  itemUI: {fileID: 2457506557233488733, guid: 332bef7933929f642b197c9a06aeccf8, type: 3}
+  itemGameObj: {fileID: 8292687632536342814, guid: 681a588d7518426409cad8bc1f76134b,
+    type: 3}
+  itemType: 0
+  itemAmount: 1
+  itemWeight: 3
