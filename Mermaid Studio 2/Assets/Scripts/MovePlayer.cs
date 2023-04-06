@@ -34,6 +34,7 @@ public class MovePlayer : MonoBehaviour
 
     // UI Elements
     [SerializeField] GameObject speak2npcUi;
+    [SerializeField] Animator inventoryAnimator;
 
     // animation variables
     bool isSwimming;
@@ -76,6 +77,8 @@ public class MovePlayer : MonoBehaviour
         NpcDialogue();
 
         CameraSwap();
+
+        // ShowInventory();
     }
     void FixedUpdate()
     {
@@ -214,6 +217,18 @@ public class MovePlayer : MonoBehaviour
                     Destroy(itemObj);
                 }
             }
+        }
+    }
+    private void ShowInventory()
+    {
+        bool tab = Input.GetKey(KeyCode.Tab);
+        if (tab)
+        {
+            inventoryAnimator.SetBool("isOpen", true);
+        }
+        else
+        {
+            inventoryAnimator.SetBool("isOpen", false);
         }
     }
     private void NpcDialogue()
