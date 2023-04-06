@@ -4,24 +4,43 @@ using UnityEngine;
 
 public class BoidFlock : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 1f;
-    private float startPos = 3;
+    [SerializeField] GameObject boidPrefab;
+    [SerializeField] int boidAmount = 10;
+
+    public GameObject[] boids {get; private set;}
+    [Range(1000, 10000)]
+    [SerializeField] private float flockChangeFrequency = 5000;
+    public float startPos {get; private set;}
+
+    public Vector3 newPos {get; private set;}
+
+    float xPos, yPos, zPos;
+    
     // Start is called before the first frame update
     void Start()
     {
-        float xPos = transform.position.x;
-        float yPos = transform.position.y;
-        float zPos = transform.position.z;
-        foreach (Transform boid in transform)
+        boids = new GameObject[boidAmount];
+        startPos = 3f;
+        xPos = transform.position.x;
+        yPos = transform.position.y;
+        zPos = transform.position.z;
+
+        for (int i = 0; i < boids.Length; i++)
         {
+            boids[i] = Instantiate(boidPrefab, transform.position, Quaternion.identity);
+
             Vector3 pos = new Vector3(Random.Range(xPos, startPos),Random.Range(yPos, startPos),Random.Range(zPos, startPos));
-            boid.transform.position += pos;
+            boids[i].transform.position += pos;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0,0, Time.deltaTime * moveSpeed);
+        if (Random.Range(0, flockChangeFrequency) < 50)
+        {
+            newPos = new Vector3(Random.Range(-startPos, startPos),Random.Range(-startPos, startPos),Random.Range(-startPos, startPos));
+            transform.position += newPos;
+        }
     }
 }
