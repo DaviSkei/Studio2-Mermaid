@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 393365500170749166, guid: d7c0cbb9c66ee5d409909d42f00b15a7,
         type: 3}
       propertyPath: m_Name
-      value: JellyFish_Green
+      value: JellyFish_Green Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1026349548573957716, guid: d7c0cbb9c66ee5d409909d42f00b15a7,
         type: 3}
@@ -66,6 +66,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084435911134653135, guid: d7c0cbb9c66ee5d409909d42f00b15a7,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1145757873420194582, guid: d7c0cbb9c66ee5d409909d42f00b15a7,
         type: 3}

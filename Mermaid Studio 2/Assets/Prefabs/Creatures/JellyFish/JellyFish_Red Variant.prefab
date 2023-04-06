@@ -247,6 +247,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 24.156
       objectReference: {fileID: 0}
+    - target: {fileID: 7372299163779738179, guid: 3ce5a7d3876963e4786a63e7a135349e,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7396484021763101594, guid: 3ce5a7d3876963e4786a63e7a135349e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -310,7 +315,7 @@ PrefabInstance:
     - target: {fileID: 7797587369418933346, guid: 3ce5a7d3876963e4786a63e7a135349e,
         type: 3}
       propertyPath: m_Name
-      value: JellyFish_Red
+      value: JellyFish_Red Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8272179737366403937, guid: 3ce5a7d3876963e4786a63e7a135349e,
         type: 3}

@@ -4,29 +4,43 @@ using UnityEngine;
 
 public class BoidBehaviour : MonoBehaviour
 {
-    [Range(1, 10)]
+    [Range(0.1f, 10f)]
     [SerializeField] private float moveSpeed = 3f, rotateSpeed = 2f;
+    Transform flock;
     BoidFlock boidFlock;
-    Vector3 averageheading, averagePos;
-    float neighbourDist = 5f;
+    Vector3 groupCenter = Vector3.zero;
+    Vector3 groupAvoidance = Vector3.zero;
+    float distance;
+    int groupSize = 0;
+    float neighbourDist = 3f;
 
     bool isTurning = false;
     
+    private string constrainPoint = "ConstrainPoint";
     // Start is called before the first frame update
     void Start()
     {
-        boidFlock = FindObjectOfType<BoidFlock>();
+        flock = transform.parent;
+        boidFlock = flock.GetComponent<BoidFlock>();
     }
 
     void Update()
     {
-        if (Vector3.Distance(transform.position, Vector3.zero) >= boidFlock.startPos)
+        foreach (Transform boid in flock)
         {
-            isTurning = true;
-        }
-        else
-        {
-            isTurning = false;
+            if (boid.name != constrainPoint)
+            {
+                if (Vector3.Distance(boid.transform.position, Vector3.zero) >= boidFlock.startPos)
+                {
+                    isTurning = true;
+                    Debug.Log("im turning");
+                }
+                else
+                {
+                    isTurning = false;
+                    Debug.Log("no turning");
+                }
+            }
         }
         if (isTurning)
         {
@@ -44,26 +58,22 @@ public class BoidBehaviour : MonoBehaviour
     }
     void ApplyRules()
     {
-        Vector3 groupCenter = Vector3.zero;
-        Vector3 groupAvoidance = Vector3.zero;
+        Vector3 constrainPos = boidFlock.constrainPos;
 
-        Vector3 changePos = boidFlock.newPos;
-
-        float distance;
-        int groupSize = 0;
-
-        foreach (GameObject boid in boidFlock.boids)
+        foreach (Transform boid in flock)
         {
-            if (boid != this.transform)
+            if (boid != this.transform && boid.transform.name != constrainPoint)
             {
                 distance = Vector3.Distance(boid.transform.position, this.transform.position);
                 if (distance <= neighbourDist)
                 {
                     groupCenter += boid.transform.position;
                     groupSize++;
-                    if (distance < 3f)
+                    Debug.Log("im grouping");
+                    if (distance < 1f)
                     {
-                        groupAvoidance += this.transform.position - boid.transform.position;
+                        groupAvoidance += (this.transform.position - boid.transform.position);
+                        Debug.Log("im not grouping");
                     }
                 }
             }
@@ -71,7 +81,7 @@ public class BoidBehaviour : MonoBehaviour
 
         if (groupSize > 0)
         {
-            groupCenter = groupCenter/groupSize + (changePos -this.transform.position);
+            groupCenter = groupCenter/groupSize + (constrainPos - this.transform.position);
 
             Vector3 direction = (groupCenter + groupAvoidance) - transform.position;
             if (direction != Vector3.zero)
