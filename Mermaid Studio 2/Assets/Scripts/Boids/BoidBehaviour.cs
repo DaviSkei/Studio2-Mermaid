@@ -9,7 +9,6 @@ public class BoidBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Vector3 pos = new Vector3(Random.Range(-startPos, startPos),Random.Range(-startPos, startPos),Random.Range(-startPos, startPos));
         constrainPos = transform.parent.position;
     }
 
