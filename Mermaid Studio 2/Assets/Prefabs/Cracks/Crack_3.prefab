@@ -260,6 +260,7 @@ GameObject:
   - component: {fileID: 8486074551826476879}
   - component: {fileID: 2142192532}
   - component: {fileID: 2142192531}
+  - component: {fileID: 9020601101652650879}
   m_Layer: 0
   m_Name: Crack_3
   m_TagString: Untagged
@@ -293,11 +294,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9119586365760681461}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.3746419, y: 4.5333533, z: 7.923604}
-  m_Center: {x: -0.043227434, y: 0.71831894, z: 0.5018983}
+  m_Size: {x: 1.1265016, y: 1.949774, z: 7.4711123}
+  m_Center: {x: -0.07971883, y: -0.57347095, z: 0.46540785}
 --- !u!114 &2142192531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,3 +311,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ccc1ceb676c7a4385569958b4bee62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &9020601101652650879
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9119586365760681461}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9951735, y: 2.8139374, z: 8.409355}
+  m_Center: {x: -0.04758668, y: -0.14170754, z: 0.4445963}

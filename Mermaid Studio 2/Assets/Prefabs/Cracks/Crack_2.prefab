@@ -5072,6 +5072,7 @@ GameObject:
   - component: {fileID: 9154468855983789539}
   - component: {fileID: 1694943025}
   - component: {fileID: 1694943024}
+  - component: {fileID: 5977349769253155792}
   m_Layer: 0
   m_Name: Crack_2
   m_TagString: Untagged
@@ -5109,8 +5110,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.286758, y: 3.2930746, z: 6.3918095}
-  m_Center: {x: -0.01899314, y: 0.54385996, z: 0.8878727}
+  m_Size: {x: 7.003789, y: 1.8625088, z: 5.998797}
+  m_Center: {x: -0.034713745, y: -0.17142296, z: 0.8642919}
 --- !u!114 &1694943024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5123,3 +5124,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ccc1ceb676c7a4385569958b4bee62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &5977349769253155792
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8376946272971132761}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.56869, y: 2.8830123, z: 7.476847}
+  m_Center: {x: 0.007860661, y: 0.19650626, z: 0.9117892}
