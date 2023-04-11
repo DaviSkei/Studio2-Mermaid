@@ -116,7 +116,7 @@ Material:
     - _Mask_Radius: 5
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _Outline_Thickness: 0.053
+    - _Outline_Thickness: 0.017
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -126,10 +126,10 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _Wobble_Distance: 0.07
-    - _Wobble_Force_Y: 0
-    - _Wobble_Force_Z: 0.02
-    - _Wobble_Speed: 0.39
+    - _Wobble_Distance: 0.22
+    - _Wobble_Force_Y: 0.287
+    - _Wobble_Force_Z: 0.979
+    - _Wobble_Speed: 1.92
     - _WorkflowMode: 1
     - _Y_Constraint: 1
     - _ZWrite: 1
