@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3637512605960708927}
   - component: {fileID: 1397519560604163182}
   - component: {fileID: 6804552464110066686}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Flounder_Fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4682890984589612552}
-  m_Layer: 0
+  - component: {fileID: 2902601431532423468}
+  m_Layer: 8
   m_Name: Flounder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,3 +131,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!114 &2902601431532423468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5455873619419172018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 090be816e6f0cb34291a7d74a2a0bbf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minMoveSpeed: 2
+  maxMoveSpeed: 6
+  minRotSpeed: 4
+  maxRotSpeed: 8
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 17424

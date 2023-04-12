@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5205097694362492955}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rock_Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 5743921015102310388}
   - component: {fileID: 5743921015102310387}
   - component: {fileID: 5743921015102310386}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: RockPillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

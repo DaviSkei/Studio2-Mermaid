@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7790246719410567028}
   - component: {fileID: 650699382118789640}
   - component: {fileID: 642561173872665487}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: FishingBoat_Boat2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1476726632512577509}
   - component: {fileID: 6896577564764687353}
   - component: {fileID: 7199813149100554995}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SmallBoat_V02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 7467738753556082162}
   - component: {fileID: 2989321052455346686}
   - component: {fileID: 5110210836296503437}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Front_Fence_FishingBoat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 8470714700943980017}
   - component: {fileID: 7540025541616851782}
   - component: {fileID: 3103485847941051843}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: FishingBoat_Door1_Bot_Hinge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 6729672472037137570}
   - component: {fileID: 6951178270619908525}
   - component: {fileID: 364339706940779613}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: FishingBoat_Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +420,7 @@ GameObject:
   - component: {fileID: 2840262823069868653}
   - component: {fileID: 7403513716986025164}
   - component: {fileID: 2550648098686582404}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: FishingBoat_Door_Door1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -503,7 +503,7 @@ GameObject:
   - component: {fileID: 1810969721117631685}
   - component: {fileID: 5086022276970823181}
   - component: {fileID: 1201192859073906459}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: FishingBoat_House_WallsFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +584,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7981083658604392663}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Float_Point (1)
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -615,7 +615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7981083658842716376}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Float_Point
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -646,7 +646,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7981083659026247389}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Float_Point (3)
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -677,7 +677,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7981083659400414925}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Float_Point (2)
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -710,7 +710,7 @@ GameObject:
   - component: {fileID: 561162185273523866}
   - component: {fileID: 8458512611481238206}
   - component: {fileID: 3751826464035022193}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: FishingBoat_Door1_Top_Hinge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -854,6 +854,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: IceboxForBoat_V01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0277be5d8476ca04797ecebed67a3f1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3382902013635670738, guid: 0277be5d8476ca04797ecebed67a3f1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0277be5d8476ca04797ecebed67a3f1b, type: 3}
 --- !u!4 &1476726631971123873 stripped
@@ -929,6 +939,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c19c4e26c503a8e4fab7b273cd6aa6da, type: 2}
+    - target: {fileID: -3245943565484812236, guid: a554913996e6d5b4c97872b614ece33e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: -1323452401691471068, guid: a554913996e6d5b4c97872b614ece33e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -944,11 +959,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: CheatFisherForBoat_V01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a554913996e6d5b4c97872b614ece33e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 1029367862657661689, guid: a554913996e6d5b4c97872b614ece33e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c19c4e26c503a8e4fab7b273cd6aa6da, type: 2}
+    - target: {fileID: 1275052051175185624, guid: a554913996e6d5b4c97872b614ece33e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1456318576863320115, guid: a554913996e6d5b4c97872b614ece33e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 2528649903561920914, guid: a554913996e6d5b4c97872b614ece33e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -959,6 +989,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c19c4e26c503a8e4fab7b273cd6aa6da, type: 2}
+    - target: {fileID: 6684810692082900393, guid: a554913996e6d5b4c97872b614ece33e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8484487088494720472, guid: a554913996e6d5b4c97872b614ece33e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085689496624335161, guid: a554913996e6d5b4c97872b614ece33e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a554913996e6d5b4c97872b614ece33e, type: 3}
 --- !u!4 &1476726631095042603 stripped

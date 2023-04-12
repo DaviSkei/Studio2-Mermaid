@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1026349548573957716}
   - component: {fileID: 6268856257222486102}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: JellyFish_Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,6 +49,9 @@ MonoBehaviour:
   maxMoveSpeed: 4
   minRotSpeed: 2
   maxRotSpeed: 4
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 17424
 --- !u!1 &1088415995123947588
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2444277469914956285}
-  m_Layer: 0
+  - component: {fileID: 5315213272825613204}
+  m_Layer: 13
   m_Name: Seahorse_V01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,6 +33,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5315213272825613204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3071456887400946503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 090be816e6f0cb34291a7d74a2a0bbf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minMoveSpeed: 1
+  maxMoveSpeed: 4
+  minRotSpeed: 1
+  maxRotSpeed: 4
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 17424
 --- !u!1 &5614448899289653208
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,7 +63,7 @@ GameObject:
   - component: {fileID: 8769414675110135487}
   - component: {fileID: 6454094455857183735}
   - component: {fileID: 8578702252530302689}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Seahorse
   m_TagString: Untagged
   m_Icon: {fileID: 0}

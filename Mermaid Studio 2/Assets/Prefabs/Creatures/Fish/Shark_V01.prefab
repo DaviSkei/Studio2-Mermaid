@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5136936254164628292}
-  m_Layer: 0
+  - component: {fileID: 1318224566211724463}
+  m_Layer: 8
   m_Name: Shark_V01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,6 +33,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1318224566211724463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5476870702747265534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 090be816e6f0cb34291a7d74a2a0bbf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minMoveSpeed: 1
+  maxMoveSpeed: 3
+  minRotSpeed: 4
+  maxRotSpeed: 8
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 17424
 --- !u!1 &7218410979235969376
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,7 +63,7 @@ GameObject:
   - component: {fileID: 3502289253908956601}
   - component: {fileID: 2699898870675231019}
   - component: {fileID: 5632020264765509018}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shark
   m_TagString: Untagged
   m_Icon: {fileID: 0}

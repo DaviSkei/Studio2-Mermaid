@@ -133,3 +133,6 @@ MonoBehaviour:
   maxMoveSpeed: 12
   minRotSpeed: 8
   maxRotSpeed: 12
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 17424
