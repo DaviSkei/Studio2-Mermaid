@@ -6,6 +6,11 @@ public class FishNet : MonoBehaviour
 {
     // attach script to fishnets
     private float timer = 0f;
+    public bool isCut {get; private set;}
+    void Awake()
+    {
+        isCut = false;
+    }
     void OnTriggerStay(Collider collider)
     {
         if (collider.transform.GetComponent<MovePlayer>() != null && 
@@ -14,6 +19,7 @@ public class FishNet : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= 5)
             {
+                isCut = true;
                 gameObject.SetActive(false);
             }
         }
