@@ -61,7 +61,7 @@ public class FlatSwarm : MonoBehaviour
         //     return true;
         // }
         // down ray
-        if (Physics.Raycast(transform.position, transform.right, out hit, rayDist, layerMask))
+        if (Physics.Raycast(transform.position, transform.right, out hit, rayDist, layerMask.value))
         {
             Debug.DrawRay(transform.position, transform.right * rayDist, Color.red);
             AccumulateObstalces(hit.point);

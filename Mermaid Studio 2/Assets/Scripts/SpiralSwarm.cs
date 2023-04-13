@@ -21,6 +21,7 @@ public class SpiralSwarm : MonoBehaviour
     Vector3 velocity;
 
     float slowtime;
+    float timer = 0;
 
     void Start()
     {
@@ -39,41 +40,31 @@ public class SpiralSwarm : MonoBehaviour
     { 
         if (RayManager())
         {
+            timer += slowtime;
             newDir += Avoid();
-            velocity = Vector3.Slerp(velocity, newDir, slowtime);
+            velocity = Vector3.Lerp(velocity, newDir, timer);
+            Debug.Log(timer);
             // transform.position += velocity;
             transform.position += velocity.normalized + transform.forward * moveSpeed * Time.deltaTime;
             transform.Rotate(Vector3.up * (rotateSpeed * Time.deltaTime));
         }
         else
         {
+            timer -= slowtime;
+            timer = 0f;
             transform.position += transform.forward * moveSpeed * Time.deltaTime;
             transform.Rotate(Vector3.up * (rotateSpeed * Time.deltaTime));
         }
     }
     bool RayManager()
     {
-        // forward ray
-        // if (Physics.Raycast(transform.position, transform.forward, out hit, rayDist, layerMask))
-        // {
-        //     Debug.DrawRay(transform.position, transform.forward * rayDist, Color.red);
-        //     AccumulateObstalces(hit.point);
-        //     return true;
-        // }
         // down ray
-        if (Physics.Raycast(transform.position, -transform.up, out hit, rayDist, layerMask))
+        if (Physics.Raycast(transform.position, -transform.up, out hit, rayDist, layerMask.value))
         {
             Debug.DrawRay(transform.position, -transform.up * rayDist, Color.red);
             AccumulateObstalces(hit.point);
             return true;
         }
-        // up ray
-        // if (Physics.Raycast(transform.position, transform.up, out hit, rayDist, layerMask))
-        // {
-        //     Debug.DrawRay(transform.position, transform.up* rayDist, Color.red);
-        //     AccumulateObstalces(hit.point);
-        //     return true;
-        // }
         else
         {
             ResetAvoid();
