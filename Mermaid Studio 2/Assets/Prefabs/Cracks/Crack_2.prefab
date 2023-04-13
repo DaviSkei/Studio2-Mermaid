@@ -4823,7 +4823,7 @@ GameObject:
   - component: {fileID: 3091630731605700497}
   - component: {fileID: 8187262951612080211}
   - component: {fileID: 5732655035315615016}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: GroundCrack_GroundCrackWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4989,7 +4989,7 @@ GameObject:
   - component: {fileID: 6372294936121207167}
   - component: {fileID: 8901566349560486063}
   - component: {fileID: 5721627203864191300}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: GroundCrack_GroundCrackFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

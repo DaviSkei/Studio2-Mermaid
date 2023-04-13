@@ -13,7 +13,7 @@ public class SpiralSwarm : MonoBehaviour
 
     RaycastHit hit;
     private float rayDist = 5f;
-    [SerializeField] LayerMask layerMask;
+    LayerMask layerMask = 1<< 10;
 
     private int avoidCount = 0;
     Vector3 avoidObst;
@@ -54,12 +54,12 @@ public class SpiralSwarm : MonoBehaviour
     bool RayManager()
     {
         // forward ray
-        if (Physics.Raycast(transform.position, transform.forward, out hit, rayDist, layerMask))
-        {
-            Debug.DrawRay(transform.position, transform.forward * rayDist, Color.red);
-            AccumulateObstalces(hit.point);
-            return true;
-        }
+        // if (Physics.Raycast(transform.position, transform.forward, out hit, rayDist, layerMask))
+        // {
+        //     Debug.DrawRay(transform.position, transform.forward * rayDist, Color.red);
+        //     AccumulateObstalces(hit.point);
+        //     return true;
+        // }
         // down ray
         if (Physics.Raycast(transform.position, -transform.up, out hit, rayDist, layerMask))
         {
@@ -68,12 +68,12 @@ public class SpiralSwarm : MonoBehaviour
             return true;
         }
         // up ray
-        if (Physics.Raycast(transform.position, transform.up, out hit, rayDist, layerMask))
-        {
-            Debug.DrawRay(transform.position, transform.up* rayDist, Color.red);
-            AccumulateObstalces(hit.point);
-            return true;
-        }
+        // if (Physics.Raycast(transform.position, transform.up, out hit, rayDist, layerMask))
+        // {
+        //     Debug.DrawRay(transform.position, transform.up* rayDist, Color.red);
+        //     AccumulateObstalces(hit.point);
+        //     return true;
+        // }
         else
         {
             ResetAvoid();
