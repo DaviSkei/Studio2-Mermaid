@@ -114,7 +114,7 @@ Material:
     - _Active_Light: 1
     - _AlphaClip: 0
     - _Blend: 0.75
-    - _Blend_Intensity: 2.82
+    - _Blend_Intensity: 3
     - _Bottom_Mask_Blend: 0.36
     - _Bottom_Mask_Blend_1: 0.395
     - _Bottom_Mask_Radius: 0.41
@@ -147,7 +147,7 @@ Material:
     - _GlossyReflections: 0
     - _LightAmount: 0.66
     - _Light_Amount: 0.42
-    - _Main_Tiling: 3.21
+    - _Main_Tiling: 1
     - _Metallic: 0
     - _Noise_Scale: 46.2
     - _Normal_Blend: 0.71
@@ -185,7 +185,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Bottom_Color: {r: 5.2164755, g: 5.2164755, b: 5.2164755, a: 0}
+    - _Bottom_Color: {r: 6.964403, g: 6.964403, b: 6.964403, a: 0}
     - _Character_Color: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
