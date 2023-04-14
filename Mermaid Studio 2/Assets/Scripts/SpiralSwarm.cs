@@ -43,7 +43,6 @@ public class SpiralSwarm : MonoBehaviour
             timer += slowtime;
             newDir += Avoid();
             velocity = Vector3.Lerp(velocity, newDir, timer);
-            Debug.Log(timer);
             // transform.position += velocity;
             transform.position += velocity.normalized + transform.forward * moveSpeed * Time.deltaTime;
             transform.Rotate(Vector3.up * (rotateSpeed * Time.deltaTime));

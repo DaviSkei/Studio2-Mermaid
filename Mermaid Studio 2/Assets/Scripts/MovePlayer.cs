@@ -17,10 +17,10 @@ public class MovePlayer : MonoBehaviour
     [SerializeField] InventoryObject playerInventory;
 
     // Movement variables
-    float defaultSpeed = 1.5f;
+    [SerializeField] float defaultSpeed;
     float startSpeed;
-    float moveSpeedXZ = 3f;
-    float moveSpeedY = 2f;
+    float moveSpeedXZ;
+    float moveSpeedY;
     float rotationTime = 0.2f;
     float rotationSpeed;
     
@@ -38,7 +38,6 @@ public class MovePlayer : MonoBehaviour
 
     // animation variables
     bool isSwimming;
-    bool isSwimmingUp;
 
     // Variables to swap movement with fish
     bool swapped;
@@ -58,6 +57,8 @@ public class MovePlayer : MonoBehaviour
         rbPlayer = GetComponent<Rigidbody>();
 
         startSpeed = defaultSpeed;
+        moveSpeedXZ = defaultSpeed * 2;
+        moveSpeedY = defaultSpeed * 1.5f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -116,21 +117,11 @@ public class MovePlayer : MonoBehaviour
         // if movement does not equal zero, that means we are recieving input to move
         if (movementY != Vector3.zero)
         {
-            isSwimmingUp = true;
-            // tell the controller move function to return the vector 3 value of the Y input
-            // controller.Move(movementY * moveSpeedY * Time.deltaTime);
             rbPlayer.AddForce(movementY * moveSpeedY * Time.deltaTime, ForceMode.VelocityChange);
         }
-        else if (movementY == Vector3.zero)
-        {
-            isSwimmingUp = false;
-        }
-        
         // if movement on x or z axis is not nothing
         if (movementZX != Vector3.zero)
-        {
-            isSwimming = true;
-            
+        {            
             float targetAngle = Mathf.Atan2(movementZX.x, movementZX.z)
             * Mathf.Rad2Deg + mainCam.eulerAngles.y;
 
@@ -153,7 +144,11 @@ public class MovePlayer : MonoBehaviour
                 defaultSpeed = moveSpeedXZ;
             }
         }
-        else if ( movementZX == Vector3.zero)
+        if (movementZX != Vector3.zero || movementY != Vector3.zero)
+        {
+            isSwimming = true;
+        }
+        else
         {
             isSwimming = false;
             defaultSpeed = startSpeed;
@@ -258,10 +253,6 @@ public class MovePlayer : MonoBehaviour
     public bool IsSwimming()
     {
         return isSwimming;
-    }
-    public bool IsSwimmingUp()
-    {
-        return isSwimmingUp;
     }
     private void ShowCursor()
     {

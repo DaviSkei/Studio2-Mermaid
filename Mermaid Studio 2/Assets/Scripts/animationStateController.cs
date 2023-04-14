@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class animationStateController : MonoBehaviour
 {
-    Animator YBotAnimator;
+    Animator animator;
     MovePlayer player;
     EuiptmentLogic euiptmentLogic;
     
@@ -20,17 +20,14 @@ public class animationStateController : MonoBehaviour
     void Start()
     {
         player = transform.parent.GetComponent<MovePlayer>();
-        YBotAnimator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         euiptmentLogic = transform.parent.GetComponentInChildren<EuiptmentLogic>();
     }
 
     void Update()
     {
-        YBotAnimator.SetBool(isSwimming, player.IsSwimming());
-        YBotAnimator.SetBool(isSwimmingUp, player.IsSwimmingUp());
-        YBotAnimator.SetBool(usingKnife, euiptmentLogic.UsingKnife);
-        YBotAnimator.SetBool(isCutting, euiptmentLogic.IsCutting);
-        YBotAnimator.SetBool(usingShovel, euiptmentLogic.UsingShovel);
-        YBotAnimator.SetBool(isDigging, euiptmentLogic.IsDigging);
+        animator.SetBool(isSwimming, player.IsSwimming());
+        animator.SetBool(isCutting, euiptmentLogic.IsCutting);
+        animator.SetBool(isDigging, euiptmentLogic.IsDigging);
     }
 }
