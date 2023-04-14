@@ -18,6 +18,14 @@ public class Turtle : MonoBehaviour
     {
         turtleAnimator = GetComponent<Animator>();
         net = GetComponentInChildren<FishNet>();
+        if(isTrapped)
+        {
+            net.gameObject.SetActive(true);
+        }
+        else
+        {
+            net.gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -27,13 +35,13 @@ public class Turtle : MonoBehaviour
         {
             TrappedLogic();
         }
+        else
+        {
+            Move();
+        }
         if (net.isCut)
         {
             isTrapped = false;
-            if (!isTrapped)
-            {
-                Move();
-            }
         }
     }
     private void TrappedLogic()
