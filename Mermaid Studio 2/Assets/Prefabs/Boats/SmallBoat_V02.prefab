@@ -144,8 +144,10 @@ MonoBehaviour:
   trashItems:
   - {fileID: 1718648590672320028, guid: 5616eb96d29e8a1469591171e91f5b8a, type: 3}
   - {fileID: 7466529661061272479, guid: e7e006019e37fb44fbe2e619105d8e9a, type: 3}
-  - {fileID: 2308947564703704529, guid: 49594aaadb5add64e9d1e61d3ff61b41, type: 3}
-  maxSpawnAmount: 7
+  - {fileID: 602134166641881284, guid: a6707180372639346b62931fe0e27c3f, type: 3}
+  - {fileID: 8292687632536342814, guid: 681a588d7518426409cad8bc1f76134b, type: 3}
+  - {fileID: 1427075848408660477, guid: e98e7d21c826cbb4e8afd44798a98750, type: 3}
+  maxSpawnAmount: 12
   boatSpeed: 1
 --- !u!65 &7199813149100554995
 BoxCollider:

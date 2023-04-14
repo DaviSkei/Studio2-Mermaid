@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Trash_Pile
   m_EditorClassIdentifier: 
   itemUI: {fileID: 7001234373322655151, guid: 5a07bc1dbc94fb1429df47138c3a966d, type: 3}
-  itemGameObj: {fileID: 2308947564703704529, guid: 49594aaadb5add64e9d1e61d3ff61b41,
+  itemGameObj: {fileID: 1164699706164302127, guid: e14a6796ad25a1f438edc231c8f61a37,
     type: 3}
   itemType: 0
   itemAmount: 1
-  itemWeight: 5
+  itemWeight: 20
