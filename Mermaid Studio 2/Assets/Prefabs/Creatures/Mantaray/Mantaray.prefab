@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6397773094685291708}
   - component: {fileID: 2823369842490922781}
   m_Layer: 13
-  m_Name: Mantaray 1
+  m_Name: Mantaray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

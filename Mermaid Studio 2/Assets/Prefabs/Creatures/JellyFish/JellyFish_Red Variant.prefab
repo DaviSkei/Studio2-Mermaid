@@ -207,6 +207,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d1fa85177bb1038448099a65278a8bcc, type: 2}
+    - target: {fileID: 4592660335044896986, guid: 3ce5a7d3876963e4786a63e7a135349e,
+        type: 3}
+      propertyPath: maxRotSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4592660335044896986, guid: 3ce5a7d3876963e4786a63e7a135349e,
+        type: 3}
+      propertyPath: minRotSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4592660335044896986, guid: 3ce5a7d3876963e4786a63e7a135349e,
+        type: 3}
+      propertyPath: maxMoveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4592660335044896986, guid: 3ce5a7d3876963e4786a63e7a135349e,
+        type: 3}
+      propertyPath: minMoveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5297265700407148452, guid: 3ce5a7d3876963e4786a63e7a135349e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
