@@ -15,7 +15,7 @@ public class MaterialManager : MonoBehaviour
 
     // Proximity variables
     private bool inRange;
-    private float distance = 10f;
+    private float distance = 15f;
     private LayerMask layerMask = 1 << 9;
     // Set this to trash layer later
 
@@ -29,6 +29,9 @@ public class MaterialManager : MonoBehaviour
     // scale properties
     Vector3 minScale;
     Vector3 maxScale;
+
+    [Header("check off if you want to use scale effect")]
+    [SerializeField] bool changeScale;
 
     // Start is called before the first frame update
     void Start()
@@ -71,39 +74,23 @@ public class MaterialManager : MonoBehaviour
                 timer -= slowedTime;
                 materials[i].SetFloat(dissolveAmount, timer);
 
-                transform.localScale = scaleIncrease;
+                if (changeScale)
+                {
+                    transform.localScale = scaleIncrease;
+                }
             }
             else if (inRange)
             {
                 timer += slowedTime;
                 materials[i].SetFloat(dissolveAmount, timer);
 
-                transform.localScale = scaleDecrease;
+                if (changeScale)
+                {
+                    transform.localScale = scaleDecrease;
+                }
             }
 
-        }
-
-        // for (int i = 0; i < materials.Length; i++)
-        // {
-        //     if (!inRange)
-        //     {
-        //         visibleTimer -= slowedTime;
-        //         materials[i].SetFloat(dissolveAmount, visibleTimer);
-
-        //         invisTimer -= invisTimer;
-        //         invisTimer = -3f;
-        //         transform.localScale = scaleIncrease;
-        //     }
-        //     if (inRange)
-        //     {  
-        //         invisTimer += slowedTime;
-        //         materials[i].SetFloat(dissolveAmount, invisTimer);
-
-        //         visibleTimer -= visibleTimer;
-        //         visibleTimer = 3f;
-        //         transform.localScale = scaleDecrease;
-        //     }
-        // }     
+        }     
     }
 }
 

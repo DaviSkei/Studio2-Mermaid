@@ -120,12 +120,12 @@ PrefabInstance:
     - target: {fileID: 6268856257222486102, guid: d7c0cbb9c66ee5d409909d42f00b15a7,
         type: 3}
       propertyPath: maxMoveSpeed
-      value: 12
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6268856257222486102, guid: d7c0cbb9c66ee5d409909d42f00b15a7,
         type: 3}
       propertyPath: minMoveSpeed
-      value: 8
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6683275884553609791, guid: d7c0cbb9c66ee5d409909d42f00b15a7,
         type: 3}

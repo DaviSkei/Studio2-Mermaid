@@ -210,22 +210,22 @@ PrefabInstance:
     - target: {fileID: 4592660335044896986, guid: 3ce5a7d3876963e4786a63e7a135349e,
         type: 3}
       propertyPath: maxRotSpeed
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4592660335044896986, guid: 3ce5a7d3876963e4786a63e7a135349e,
         type: 3}
       propertyPath: minRotSpeed
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4592660335044896986, guid: 3ce5a7d3876963e4786a63e7a135349e,
         type: 3}
       propertyPath: maxMoveSpeed
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4592660335044896986, guid: 3ce5a7d3876963e4786a63e7a135349e,
         type: 3}
       propertyPath: minMoveSpeed
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5297265700407148452, guid: 3ce5a7d3876963e4786a63e7a135349e,
         type: 3}

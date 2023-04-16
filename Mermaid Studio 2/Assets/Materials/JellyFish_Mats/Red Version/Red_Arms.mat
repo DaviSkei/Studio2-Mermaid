@@ -124,13 +124,13 @@ Material:
     - _Transparency: 1
     - _WaveAmplitude: 2.41
     - _WaveSpeed: 4.6
-    - _Wobble_Distance: 1.31
+    - _Wobble_Distance: 2.47
     - _Wobble_Radius: 5
     - _Wobble_Speed: 1.67
     - _WorkflowMode: 1
     - _Y_Blend: 2.95
     - _Y_Radius: -0.11
-    - _Y_Wobble: 0.88
+    - _Y_Wobble: 0.69
     - _ZWrite: 1
     - _Z_Wave: 1
     - _Z_Wobble: 0

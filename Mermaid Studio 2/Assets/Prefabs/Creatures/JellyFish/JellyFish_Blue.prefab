@@ -45,13 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 090be816e6f0cb34291a7d74a2a0bbf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minMoveSpeed: 2
-  maxMoveSpeed: 4
-  minRotSpeed: 2
-  maxRotSpeed: 4
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 17424
+  minMoveSpeed: 1
+  maxMoveSpeed: 3
+  minRotSpeed: 1
+  maxRotSpeed: 3
 --- !u!1 &1088415995123947588
 GameObject:
   m_ObjectHideFlags: 0

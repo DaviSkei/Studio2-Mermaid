@@ -97,7 +97,7 @@ Material:
     - _Mask_Radius: 2.12
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _Outline_Thickness: 0.051
+    - _Outline_Thickness: 0.024
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0

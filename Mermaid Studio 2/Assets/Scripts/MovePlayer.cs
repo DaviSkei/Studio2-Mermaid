@@ -62,6 +62,8 @@ public class MovePlayer : MonoBehaviour
         startSpeed = defaultSpeed;
         moveSpeedXZ = defaultSpeed * 2;
         moveSpeedY = defaultSpeed * 1.5f;
+        Debug.Log("default speed = " + defaultSpeed + " XY = " + moveSpeedXZ);
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -81,8 +83,6 @@ public class MovePlayer : MonoBehaviour
         NpcDialogue();
 
         CameraSwap();
-
-        // ShowInventory();
     }
     void FixedUpdate()
     {
@@ -139,15 +139,6 @@ public class MovePlayer : MonoBehaviour
             Vector3 camDirection = Quaternion.Euler(0, targetAngleY, 0f) * Vector3.forward;
             
             rbPlayer.AddForce(camDirection.normalized * defaultSpeed * Time.deltaTime, ForceMode.VelocityChange);
-
-            // movespeed increases over time
-            defaultSpeed += moveSpeedXZ * Time.deltaTime;
-
-            // once the speed reaches the limit we want, then set it to become that limit
-            if (defaultSpeed > moveSpeedXZ)
-            {
-                defaultSpeed = moveSpeedXZ;
-            }
         }
         if (movementZX != Vector3.zero || movementY != Vector3.zero)
         {
@@ -167,15 +158,16 @@ public class MovePlayer : MonoBehaviour
         bool sprintInput = Input.GetKey(KeyCode.LeftShift);
         if (sprintInput)
         {
-            // fast swim animation bool true
-            moveSpeedXZ = 7f;
-            moveSpeedY = 4f;
+            defaultSpeed += moveSpeedXZ * Time.deltaTime;
+
+            if (defaultSpeed > moveSpeedXZ)
+            {
+                defaultSpeed = moveSpeedXZ;
+            }
         }
-        if (!sprintInput)
+        else
         {
-            // fast swim animation bool false
-            moveSpeedXZ = 3f;
-            moveSpeedY = 2f;
+            defaultSpeed = startSpeed;
         }
     }
     // this function is called from EquiptmentLogic script
@@ -219,18 +211,6 @@ public class MovePlayer : MonoBehaviour
                     Destroy(itemObj);
                 }
             }
-        }
-    }
-    private void ShowInventory()
-    {
-        bool tab = Input.GetKey(KeyCode.Tab);
-        if (tab)
-        {
-            inventoryAnimator.SetBool("isOpen", true);
-        }
-        else
-        {
-            inventoryAnimator.SetBool("isOpen", false);
         }
     }
     private void NpcDialogue()
