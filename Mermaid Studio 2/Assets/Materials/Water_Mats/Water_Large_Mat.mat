@@ -57,7 +57,7 @@ Material:
     m_Floats:
     - _Depth: 1
     - _Depth_Amount: 1
-    - _Depth_Strength: 0.497
+    - _Depth_Strength: 0.251
     - _Displacement: 0.56
     - _EdgeBlend: 0.9
     - _Effect_Radius: 3.26

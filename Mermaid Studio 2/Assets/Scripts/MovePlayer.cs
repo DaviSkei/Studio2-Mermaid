@@ -51,6 +51,9 @@ public class MovePlayer : MonoBehaviour
     // Camera swap with NPC 
     DialogueManager dialogueManager;
 
+    // swimming particles
+    [SerializeField] GameObject swimParticles;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -114,6 +117,7 @@ public class MovePlayer : MonoBehaviour
 
         Vector3 movementY = new Vector3(0f, vertical, 0f).normalized;
 
+
         // if movement does not equal zero, that means we are recieving input to move
         if (movementY != Vector3.zero)
         {
@@ -122,17 +126,18 @@ public class MovePlayer : MonoBehaviour
         // if movement on x or z axis is not nothing
         if (movementZX != Vector3.zero)
         {            
-            float targetAngle = Mathf.Atan2(movementZX.x, movementZX.z)
+            float targetAngleY = Mathf.Atan2(movementZX.x, movementZX.z)
             * Mathf.Rad2Deg + mainCam.eulerAngles.y;
+            
 
             // smooths the rotation movement on the player between its current rotation, to its intended rotation
             // which is based on the movement inputs
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref rotationSpeed, rotationTime);
+            float angleY = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngleY, ref rotationSpeed, rotationTime);
 
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            transform.rotation = Quaternion.Euler(0,angleY, 0);
 
-            Vector3 camDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            // controller.Move(camDirection.normalized * defaultSpeed * Time.deltaTime);
+            Vector3 camDirection = Quaternion.Euler(0, targetAngleY, 0f) * Vector3.forward;
+            
             rbPlayer.AddForce(camDirection.normalized * defaultSpeed * Time.deltaTime, ForceMode.VelocityChange);
 
             // movespeed increases over time
@@ -147,11 +152,13 @@ public class MovePlayer : MonoBehaviour
         if (movementZX != Vector3.zero || movementY != Vector3.zero)
         {
             isSwimming = true;
+            swimParticles.SetActive(true);
         }
         else
         {
             isSwimming = false;
             defaultSpeed = startSpeed;
+            swimParticles.SetActive(false);
         }
     }
     
