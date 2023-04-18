@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 240
+  controlID: 242
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -277,8 +277,8 @@ MonoBehaviour:
     y: 0
     width: 438
     height: 939
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 26}
   m_Panes:
   - {fileID: 26}
@@ -15002,10 +15002,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 96}
-      m_SelectedIDs: 9285ffff
+      scrollPos: {x: 0, y: 272}
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: d6faffff4c7f00003282000014880000
+      m_ExpandedIDs: 42b0e6ffd6faffff947a0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -15299,9 +15299,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -26.250538, y: 4.990885, z: 93.08052}
+    m_Target: {x: -296.34872, y: -15.284328, z: -70.07054}
     speed: 2
-    m_Value: {x: -26.250538, y: 4.990885, z: 93.08052}
+    m_Value: {x: 21.153017, y: 6.356759, z: -209.68831}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -15348,13 +15348,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.135
   m_Rotation:
-    m_Target: {x: 0.08160403, y: 0.2316379, z: -0.019502232, w: 0.9691832}
+    m_Target: {x: 0.107605174, y: -0.7916691, z: 0.14602908, w: 0.5834376}
     speed: 2
-    m_Value: {x: 0.08160356, y: 0.23163654, z: -0.019502118, w: 0.96917754}
+    m_Value: {x: -0.04254221, y: -0.9400981, z: 0.12768988, w: -0.31321082}
   m_Size:
-    m_Target: 12.61367
+    m_Target: 63.784336
     speed: 2
-    m_Value: 12.61367
+    m_Value: 12.1538105
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -15666,23 +15666,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Prefabs/Environment/Rocks
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Prefabs/Environment/Rocks
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\David\OneDrive\Documents\Github Projects\Studio2-Mermaid\Mermaid
     Studio 2
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 31}
-    m_SelectedIDs: 7a9c0000
-    m_LastClickedID: 40058
-    m_ExpandedIDs: 000000007a9c00007c9c00007e9c0000809c0000
+    scrollPos: {x: 0, y: 399}
+    m_SelectedIDs: 70ad0000
+    m_LastClickedID: 44400
+    m_ExpandedIDs: 000000006496000066960000689600006a960000c2960000c4960000da960000ba280200
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -15710,7 +15710,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000007a9c00007c9c00007e9c0000809c0000
+    m_ExpandedIDs: 000000006496000066960000689600006a960000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -15737,7 +15737,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000e48f000080b20000b23800000000000042ac00009cc40100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
