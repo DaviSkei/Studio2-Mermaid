@@ -14,7 +14,7 @@ public class SpiralSwarm : MonoBehaviour
     [SerializeField] float minRotSpeed = 8, maxRotSpeed = 12;
 
     RaycastHit hit;
-    private float rayDist = 7f;
+    private float rayDist = 10f;
     LayerMask layerMask = 1<< 10;
     void Start()
     {
@@ -22,7 +22,7 @@ public class SpiralSwarm : MonoBehaviour
         rotateSpeed = Random.Range(minRotSpeed, maxRotSpeed);
 
         multRotSpeed = rotateSpeed * 6;
-        slowRotSpeed = rotateSpeed * 0.2f;
+        slowRotSpeed = rotateSpeed * 0.1f;
     }
     void Update()
     {
@@ -49,6 +49,11 @@ public class SpiralSwarm : MonoBehaviour
     }
     bool RayManager()
     {
+        // forward ray
+        if (Physics.Raycast(transform.position, transform.forward, out hit, rayDist, layerMask.value))
+        {
+            return true;
+        }
         // down ray
         if (Physics.Raycast(transform.position, -transform.up, out hit, rayDist, layerMask.value))
         {

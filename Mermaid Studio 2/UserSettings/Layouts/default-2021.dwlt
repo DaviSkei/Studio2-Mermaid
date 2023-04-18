@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Scene
   m_RootView: {fileID: 4}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 194
+  controlID: 240
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 287
+  controlID: 22
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -15002,10 +15002,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 7cb20000
+      scrollPos: {x: 0, y: 96}
+      m_SelectedIDs: 9285ffff
       m_LastClickedID: 0
-      m_ExpandedIDs: 8aa1f7ff8817f8ffd8cdf8fff4a8f9ff20c6f9ff3888fbff343efcff34ddfcff30d4fdffd4faffff
+      m_ExpandedIDs: d6faffff4c7f00003282000014880000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -15299,9 +15299,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -4.366312, y: -3.5493176, z: 10.587881}
+    m_Target: {x: -26.250538, y: 4.990885, z: 93.08052}
     speed: 2
-    m_Value: {x: -4.366312, y: -3.5493176, z: 10.587881}
+    m_Value: {x: -26.250538, y: 4.990885, z: 93.08052}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -15348,13 +15348,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.135
   m_Rotation:
-    m_Target: {x: 0.13678905, y: -0.81137395, z: 0.21020639, w: 0.52799726}
+    m_Target: {x: 0.08160403, y: 0.2316379, z: -0.019502232, w: 0.9691832}
     speed: 2
-    m_Value: {x: 0.13710375, y: -0.81057835, z: 0.21000028, w: 0.52921194}
+    m_Value: {x: 0.08160356, y: 0.23163654, z: -0.019502118, w: 0.96917754}
   m_Size:
-    m_Target: 4.564139
+    m_Target: 12.61367
     speed: 2
-    m_Value: 4.5469527
+    m_Value: 12.61367
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -15666,23 +15666,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\David\OneDrive\Documents\Github Projects\Studio2-Mermaid\Mermaid
     Studio 2
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 351}
-    m_SelectedIDs: 7ab20000
-    m_LastClickedID: 45690
-    m_ExpandedIDs: 0000000076b2000078b200007ab200007cb20000ceb20000e6b2000044b3000046b3000052b30000
+    scrollPos: {x: 0, y: 31}
+    m_SelectedIDs: 7a9c0000
+    m_LastClickedID: 40058
+    m_ExpandedIDs: 000000007a9c00007c9c00007e9c0000809c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -15710,7 +15710,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000076b2000078b200007ab200007cb20000
+    m_ExpandedIDs: 000000007a9c00007c9c00007e9c0000809c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -15737,7 +15737,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000e48f000080b20000b23800000000000042ac00009cc40100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -15826,7 +15826,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 33090
+  m_LastSelectedObjectID: -31342
 --- !u!114 &26
 MonoBehaviour:
   m_ObjectHideFlags: 52
