@@ -34,6 +34,7 @@ public class MovePlayer : MonoBehaviour
 
     // UI Elements
     [SerializeField] GameObject speak2npcUi;
+    [SerializeField] GameObject miniMap;
     [SerializeField] Animator inventoryAnimator;
 
     // animation variables
@@ -76,6 +77,14 @@ public class MovePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.M))
+        {
+            miniMap.SetActive(true);
+        }
+        else
+        {
+            miniMap.SetActive(false);
+        }
         Sprint();
 
         RayCastManager();
