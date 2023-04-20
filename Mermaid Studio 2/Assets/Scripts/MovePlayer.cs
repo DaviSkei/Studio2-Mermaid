@@ -27,14 +27,7 @@ public class MovePlayer : MonoBehaviour
     // raycast variables
     [SerializeField] LayerMask layerMask;
 
-    // variables to talk with npc
-    bool inRangeOfNpc;
-    [SerializeField] LayerMask npcLayer;
-    float sphereDistance = 5f;
-
     // UI Elements
-    [SerializeField] GameObject speak2npcUi;
-    [SerializeField] GameObject miniMap;
     [SerializeField] Animator inventoryAnimator;
 
     // animation variables
@@ -77,19 +70,9 @@ public class MovePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.M))
-        {
-            miniMap.SetActive(true);
-        }
-        else
-        {
-            miniMap.SetActive(false);
-        }
         Sprint();
 
         RayCastManager();
-
-        NpcDialogue();
 
         CameraSwap();
     }
@@ -193,8 +176,6 @@ public class MovePlayer : MonoBehaviour
 
         ray = new Ray (transform.position, mainCam.forward);
 
-        inRangeOfNpc = Physics.CheckSphere(transform.position, sphereDistance, npcLayer);
-
         if (Physics.Raycast(ray, out hit, rayDistance, layerMask))
         {
             Debug.DrawRay(transform.position, mainCam.forward * rayDistance, Color.red);
@@ -222,19 +203,6 @@ public class MovePlayer : MonoBehaviour
             }
         }
     }
-    private void NpcDialogue()
-    {
-        if (inRangeOfNpc)
-        {
-            ShowCursor();
-            speak2npcUi.SetActive(true);
-        }
-        else
-        {
-            HideCursor();
-            speak2npcUi.SetActive(false);
-        }
-    }
     private void CameraSwap()
     {
         if (dialogueManager.IsTalking)
@@ -250,12 +218,12 @@ public class MovePlayer : MonoBehaviour
     {
         return isSwimming;
     }
-    private void ShowCursor()
+    public void ShowCursor()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
-    private void HideCursor()
+    public void HideCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

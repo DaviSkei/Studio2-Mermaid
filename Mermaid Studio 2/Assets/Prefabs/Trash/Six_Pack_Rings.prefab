@@ -43,10 +43,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602134166641881284}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.030506, y: 1.1451108, z: 4.037651}
+  m_Size: {x: 6.87, y: 1.63, z: 4.37}
   m_Center: {x: -0.029022217, y: 0.07255542, z: -0.009674072}
 --- !u!54 &5789339757066182072
 Rigidbody:
@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 539948864723406074}
   - component: {fileID: 5086999705411546550}
   - component: {fileID: 4345880280848819106}
+  - component: {fileID: 7330470515655998219}
   m_Layer: 9
   m_Name: Pack_Rings
   m_TagString: Untagged
@@ -161,3 +162,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7330470515655998219
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8516400828250103517}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.000451, y: 0.07762301, z: 4.0005145}
+  m_Center: {x: 0, y: 0.038811505, z: 0}

@@ -14,8 +14,8 @@ public class EuiptmentLogic : MonoBehaviour
     [SerializeField] GameObject playerKnife;
     [SerializeField] GameObject playerShovel;
 
-    bool canUseKnife = false;
-    bool canUseShovel = false;
+    public bool canUseKnife {get; private set;}
+    public bool canUseShovel {get; private set;}
 
     private bool hasBackpack;
     public bool HasBackpack {get{return hasBackpack;}}
@@ -36,6 +36,9 @@ public class EuiptmentLogic : MonoBehaviour
     {
         player = FindObjectOfType<MovePlayer>().gameObject;
         movePlayer = player.GetComponent<MovePlayer>();
+
+        canUseKnife = false;
+        canUseShovel = false;
     }
 
     // Update is called once per frame
@@ -71,10 +74,8 @@ public class EuiptmentLogic : MonoBehaviour
         bool equipKnife = Input.GetKeyDown(KeyCode.Alpha1);
         bool unEquipKnife = Input.GetKeyUp(KeyCode.Alpha3);
 
-
         if (canUseKnife && equipKnife)
         {
-            // later, make it so the animation keyframes enable/disable knife and shovel
             playerKnife.SetActive(true);
             usingKnife = true;
         }
