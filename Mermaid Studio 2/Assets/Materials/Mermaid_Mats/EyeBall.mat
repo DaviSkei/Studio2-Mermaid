@@ -122,7 +122,7 @@ Material:
     m_Colors:
     - _Animation_Origin: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Character_Color: {r: 0, g: 0, b: 0, a: 0}
+    - _Character_Color: {r: 1.7411011, g: 1.7411011, b: 1.7411011, a: 0}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Shadow_Color: {r: 0.7176471, g: 0.7176471, b: 0.7176471, a: 0}

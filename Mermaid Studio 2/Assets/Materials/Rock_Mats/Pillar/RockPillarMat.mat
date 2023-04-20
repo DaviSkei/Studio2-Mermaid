@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: RockPillarMat
-  m_Shader: {fileID: -6465566751694194690, guid: 06f421a78dd50d14fbfc748191f6513e,
+  m_Shader: {fileID: -6465566751694194690, guid: eca240db4a44fda498527abd64609897,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -100,6 +100,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Activate_Highlight: 1
     - _Active_Light: 1
     - _AlphaClip: 0
     - _Blend: 0
@@ -150,6 +151,7 @@ Material:
     - _Bottom_Color: {r: 6.964404, g: 6.964404, b: 6.964404, a: 0}
     - _Color: {r: 6.3156404, g: 0.86424553, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Highlight_color: {r: 8, g: 2.792157, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Top_Color: {r: 1.5686275, g: 0.78431374, b: 0.078431375, a: 0}
   m_BuildTextureStacks: []

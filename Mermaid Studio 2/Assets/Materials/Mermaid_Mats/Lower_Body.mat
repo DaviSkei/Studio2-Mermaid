@@ -135,7 +135,7 @@ Material:
     m_Colors:
     - _Animation_Origin: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Character_Color: {r: 0, g: 0, b: 0, a: 0}
+    - _Character_Color: {r: 0, g: 0.056160405, b: 0.103773594, a: 0}
     - _Color: {r: 0, g: 0.012387925, b: 0.16780007, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Shadow_Color: {r: 0.7176471, g: 0.7176471, b: 0.7176471, a: 0}
