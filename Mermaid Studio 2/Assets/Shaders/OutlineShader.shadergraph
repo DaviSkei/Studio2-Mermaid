@@ -26,6 +26,9 @@
         },
         {
             "m_Id": "0d82dbe3a0c64c48af0ead26219cae56"
+        },
+        {
+            "m_Id": "e1ca509387e04b1698e6bb353b895fa4"
         }
     ],
     "m_Keywords": [],
@@ -176,6 +179,9 @@
         },
         {
             "m_Id": "d18717a5a7484daf96cd2070b6088f44"
+        },
+        {
+            "m_Id": "980d4a55d1a6485085352863c390e850"
         }
     ],
     "m_GroupDatas": [
@@ -533,6 +539,20 @@
                     "m_Id": "e86f4d6146544c1c95c6cb2736b27553"
                 },
                 "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "980d4a55d1a6485085352863c390e850"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "e50c2ffdd1684f3da5a622cc674d16a0"
+                },
+                "m_SlotId": 1
             }
         },
         {
@@ -922,6 +942,9 @@
         },
         {
             "m_Id": "0d82dbe3a0c64c48af0ead26219cae56"
+        },
+        {
+            "m_Id": "e1ca509387e04b1698e6bb353b895fa4"
         }
     ]
 }
@@ -3454,6 +3477,21 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "86dae51bd8b54af589bd8420a0d81791",
+    "m_Id": 0,
+    "m_DisplayName": "Mask Multiplier",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
     "m_ObjectId": "87d01aa432a148d3af3ba3d2e6a0c976",
     "m_Id": 2,
@@ -3857,6 +3895,41 @@
         "e31": 0.0,
         "e32": 0.0,
         "e33": 1.0
+    }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "980d4a55d1a6485085352863c390e850",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -2759.0,
+            "y": -839.0,
+            "width": 154.0,
+            "height": 34.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "86dae51bd8b54af589bd8420a0d81791"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "e1ca509387e04b1698e6bb353b895fa4"
     }
 }
 
@@ -4975,6 +5048,33 @@
     "m_PreviewMode": 0,
     "m_CustomColors": {
         "m_SerializableColors": []
+    }
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "e1ca509387e04b1698e6bb353b895fa4",
+    "m_Guid": {
+        "m_GuidSerialized": "f0885fb3-6323-49ab-911b-f880e991d07d"
+    },
+    "m_Name": "Mask Multiplier",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Mask Multiplier",
+    "m_DefaultReferenceName": "_Mask_Multiplier",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 2.0,
+    "m_FloatType": 1,
+    "m_RangeValues": {
+        "x": 1.0,
+        "y": 50.0
     }
 }
 
