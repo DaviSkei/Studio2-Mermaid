@@ -26,7 +26,7 @@ Material:
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -96,6 +96,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Activate_Highlight: 0
     - _Active_Light: 1
     - _AlphaClip: 0
     - _Blend: 0
@@ -112,6 +113,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _Highlight_Intensity: 3
     - _Light_Amount: -0.34
     - _Mask_Radius: 5
     - _Metallic: 0
@@ -126,17 +128,18 @@ Material:
     - _SrcBlend: 1
     - _Surface: 0
     - _Wobble_Distance: 0.16
-    - _Wobble_Force_Y: 0.492
-    - _Wobble_Force_Z: 0.665
-    - _Wobble_Speed: 1.8
+    - _Wobble_Force_Y: 1
+    - _Wobble_Force_Z: 1
+    - _Wobble_Speed: 10
     - _WorkflowMode: 1
-    - _Y_Constraint: 1
+    - _Y_Constraint: 0
     - _ZWrite: 1
     m_Colors:
-    - _Animation_Origin: {r: 0, g: 0, b: 0, a: 0}
+    - _Animation_Origin: {r: 0, g: 0, b: 1, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Character_Color: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Highlight_color: {r: 1, g: 1, b: 1, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
