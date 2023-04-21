@@ -113,6 +113,7 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Light_Amount: 0.42
+    - _Mask_Multiplier: 2
     - _Mask_Radius: 5
     - _Metallic: 0
     - _OcclusionStrength: 1
