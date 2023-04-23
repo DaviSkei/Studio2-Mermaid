@@ -39,8 +39,10 @@ public class MovePlayer : MonoBehaviour
     // raycasting variables
     Ray ray;
     RaycastHit hit;
-    public RaycastHit Hit {get{return hit;}}
+
     float rayDistance = 5f;
+
+    public bool canPickUp {get; private set;}
 
     // Camera swap with NPC 
     DialogueManager dialogueManager;
@@ -56,7 +58,6 @@ public class MovePlayer : MonoBehaviour
         startSpeed = defaultSpeed;
         moveSpeedXZ = defaultSpeed * 2;
         moveSpeedY = defaultSpeed * 1.5f;
-        Debug.Log("default speed = " + defaultSpeed + " XY = " + moveSpeedXZ);
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -175,6 +176,7 @@ public class MovePlayer : MonoBehaviour
         bool mouseClick = Input.GetKey(KeyCode.Mouse0);
 
         ray = new Ray (transform.position, mainCam.forward);
+        canPickUp = false;
 
         if (Physics.Raycast(ray, out hit, rayDistance, layerMask))
         {
@@ -182,9 +184,10 @@ public class MovePlayer : MonoBehaviour
             
             var item = hit.transform.GetComponent<Item>();
 
-            MoveFish fish = hit.transform.gameObject.GetComponent<MoveFish>();
 
             GameObject itemObj = hit.transform.gameObject;
+            
+            MoveFish fish = hit.transform.gameObject.GetComponent<MoveFish>();
 
             if (fish && Input.GetKey(KeyCode.Q))
             {
@@ -195,6 +198,7 @@ public class MovePlayer : MonoBehaviour
             }
             if (item)
             {
+                canPickUp = true;
                 if (mouseClick)
                 {
                     playerInventory.AddItem(item.ItemObject(), item.ItemObject().itemAmount, item.ItemObject().itemWeight);
