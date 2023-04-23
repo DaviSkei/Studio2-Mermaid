@@ -181,6 +181,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Foam_Color: {r: 1, g: 1, b: 1, a: 0}
     - _Highlight_color: {r: 1, g: 1, b: 1, a: 0}
+    - _Light_Color: {r: 0.32082152, g: 0, b: 0, a: 0}
     - _Ripple_Color: {r: 0.02426243, g: 0, b: 1, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Top_Color: {r: 1.5686275, g: 0.78431374, b: 0.078431375, a: 0}
