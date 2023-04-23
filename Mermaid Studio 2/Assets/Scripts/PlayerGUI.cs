@@ -20,6 +20,8 @@ public class PlayerGUI : MonoBehaviour
     [SerializeField] GameObject equipShovel;
     [SerializeField] GameObject holdLMB;
 
+    [SerializeField] GameObject pickUpTrash;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +39,16 @@ public class PlayerGUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             holdLMB.SetActive(false);
-        }  
+        }
+
+        if (player.canPickUp)
+        {
+            pickUpTrash.SetActive(true);
+        }
+        else
+        {
+            pickUpTrash.SetActive(false);
+        }
     }
     private void NpcDialogue()
     {
