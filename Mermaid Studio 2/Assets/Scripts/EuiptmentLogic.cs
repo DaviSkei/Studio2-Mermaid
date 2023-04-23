@@ -13,6 +13,7 @@ public class EuiptmentLogic : MonoBehaviour
     [SerializeField] GameObject playerBackPack;
     [SerializeField] GameObject playerKnife;
     [SerializeField] GameObject playerShovel;
+    [SerializeField] GameObject dustParticle;
 
     public bool canUseKnife {get; private set;}
     public bool canUseShovel {get; private set;}
@@ -107,10 +108,12 @@ public class EuiptmentLogic : MonoBehaviour
         if (mouseClick && usingShovel)
         {
             isDigging = true;
+            dustParticle.SetActive(true);
         }
         else
         {
             isDigging = false;
+            dustParticle.SetActive(false);
         }
         if (unEquipShovel)
         {

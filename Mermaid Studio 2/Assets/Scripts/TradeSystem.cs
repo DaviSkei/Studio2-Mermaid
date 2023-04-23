@@ -8,14 +8,13 @@ public class TradeSystem : MonoBehaviour
     [SerializeField] InventoryObject playerInventory;
     [SerializeField] InventoryObject npcInv;
     [SerializeField] InventoryObject equiptmentInv;
-    public GameObject equiptmentScreen;
+    [SerializeField] GameObject equiptmentScreen;
 
     [SerializeField] ItemObject backpack;
     [SerializeField] ItemObject knife;
     [SerializeField] ItemObject shovel;
 
     int tradedAmount = 0;
-    bool canTradeEquiptment;
 
     void Start()
     {
@@ -39,9 +38,6 @@ public class TradeSystem : MonoBehaviour
                 int weight = playerInventory.inventoryContainer[i].weight;
 
                 npcInv.AddItem(item, amount, weight);
-                // Debug.Log("Item name = " + item);
-                // Debug.Log("item amount = " + amount);
-                // Debug.Log("item weight = " + weight);
 
                 playerInventory.inventoryContainer[i].ModifyAmount(amount);
                 playerInventory.inventoryContainer[i].ModifyWeight(weight);
