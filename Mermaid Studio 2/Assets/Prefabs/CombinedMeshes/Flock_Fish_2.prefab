@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7637867104273902857}
   - component: {fileID: 8282208256394500979}
   - component: {fileID: 2765536076426957512}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Flock_Fish_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

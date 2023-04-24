@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1827331689227330627}
   - component: {fileID: 5937961964484356814}
   - component: {fileID: 6835629846066862749}
-  m_Layer: 0
+  - component: {fileID: 610898831835220744}
+  m_Layer: 14
   m_Name: SeaWeed_3.3_Group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,3 +98,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeScale: 0
+--- !u!65 &610898831835220744
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6551492049851597670}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 1.541365, z: 4}
+  m_Center: {x: -0.14631242, y: 0.7706825, z: 0.12788141}

@@ -40,7 +40,7 @@ public class MovePlayer : MonoBehaviour
     Ray ray;
     RaycastHit hit;
 
-    float rayDistance = 5f;
+    float rayDistance = 6f;
 
     public bool canPickUp {get; private set;}
 
@@ -49,6 +49,8 @@ public class MovePlayer : MonoBehaviour
 
     // swimming particles
     [SerializeField] GameObject swimParticles;
+
+    private float timer = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -179,11 +181,10 @@ public class MovePlayer : MonoBehaviour
         canPickUp = false;
 
         if (Physics.Raycast(ray, out hit, rayDistance, layerMask))
-        {
-            Debug.DrawRay(transform.position, mainCam.forward * rayDistance, Color.red);
-            
-            var item = hit.transform.GetComponent<Item>();
+        {   
+            Item item = hit.transform.GetComponent<Item>();
 
+            DissolveController dissolve = hit.transform.GetComponent<DissolveController>();
 
             GameObject itemObj = hit.transform.gameObject;
             
@@ -201,8 +202,15 @@ public class MovePlayer : MonoBehaviour
                 canPickUp = true;
                 if (mouseClick)
                 {
+                    dissolve.InRange = false;
                     playerInventory.AddItem(item.ItemObject(), item.ItemObject().itemAmount, item.ItemObject().itemWeight);
-                    Destroy(itemObj);
+                    timer += Time.deltaTime;
+                    if (timer > 0.3f)
+                    {
+                        Destroy(itemObj);
+                        timer -= Time.deltaTime;
+                        timer *= 0;
+                    }
                 }
             }
         }

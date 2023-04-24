@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 2841577945350576168}
   - component: {fileID: 7664251597362667434}
   - component: {fileID: 2661818473026876599}
-  m_Layer: 0
+  - component: {fileID: 3588973658535710043}
+  m_Layer: 14
   m_Name: Group_Small_Coral
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,3 +98,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeScale: 0
+--- !u!65 &3588973658535710043
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5828660916843555569}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 1, z: 3}
+  m_Center: {x: -0.56794524, y: 0.4340985, z: -0.8056456}

@@ -14,7 +14,8 @@ public class MaterialManager : MonoBehaviour
     private string dissolveAmount = "_Dissolve_Amount";
 
     // Proximity variables
-    private bool inRange;
+    private bool inTrigger;
+    public bool InTrigger {get{return inTrigger;} set { inTrigger = value;}}
     private float distance = 15f;
     private LayerMask layerMask = 1 << 9;
     // Set this to trash layer later
@@ -47,11 +48,10 @@ public class MaterialManager : MonoBehaviour
             materials = skinnedMeshRend.materials;
         }
 
-        slowedTime = Time.deltaTime/6;
+        slowedTime = Time.deltaTime/3;
         maxScale = transform.localScale;
         minScale = maxScale/10f;
-        scaleTime = Time.deltaTime/5;
-
+        scaleTime = Time.deltaTime/4;
     }
     private void Update()
     {
@@ -59,17 +59,16 @@ public class MaterialManager : MonoBehaviour
     }
     private void VisibilityControl()
     {
-        inRange = Physics.CheckSphere(transform.position, distance, layerMask.value);
+        // inTrigger = Physics.CheckSphere(transform.position, distance, layerMask.value);
 
         Vector3 scaleDecrease = Vector3.Lerp(transform.localScale, minScale, scaleTime);
         Vector3 scaleIncrease = Vector3.Lerp(transform.localScale, maxScale, scaleTime);
 
         timer = Mathf.Clamp(timer, invisTimer, visibleTimer);
-        // visToInvis = Mathf.Clamp(timer, visibleTimer, invisTimer);
 
         for( int i = 0; i < materials.Length; i++ )
         {
-            if (!inRange)
+            if (!inTrigger)
             {
                 timer -= slowedTime;
                 materials[i].SetFloat(dissolveAmount, timer);
@@ -79,7 +78,7 @@ public class MaterialManager : MonoBehaviour
                     transform.localScale = scaleIncrease;
                 }
             }
-            else if (inRange)
+            else if (inTrigger)
             {
                 timer += slowedTime;
                 materials[i].SetFloat(dissolveAmount, timer);
@@ -89,7 +88,6 @@ public class MaterialManager : MonoBehaviour
                     transform.localScale = scaleDecrease;
                 }
             }
-
         }     
     }
 }

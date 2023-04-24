@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3968185997310867792}
   - component: {fileID: 3968185997310867793}
   - component: {fileID: 3968185997310867806}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SeaHorse_Group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
