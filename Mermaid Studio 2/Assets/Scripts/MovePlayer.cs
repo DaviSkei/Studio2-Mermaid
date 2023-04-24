@@ -202,7 +202,7 @@ public class MovePlayer : MonoBehaviour
                 canPickUp = true;
                 if (mouseClick)
                 {
-                    dissolve.InRange = false;
+                    dissolve.hitByPlayer = true;
                     playerInventory.AddItem(item.ItemObject(), item.ItemObject().itemAmount, item.ItemObject().itemWeight);
                     timer += Time.deltaTime;
                     if (timer > 0.3f)

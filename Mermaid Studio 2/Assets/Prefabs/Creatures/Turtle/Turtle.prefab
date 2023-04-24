@@ -747,7 +747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0.5
   rotateSpeed: 2
-  isTrapped: 0
+  isTrapped: 1
 --- !u!1 &1818413407439457087
 GameObject:
   m_ObjectHideFlags: 0

@@ -31,8 +31,8 @@ public class MaterialManager : MonoBehaviour
     Vector3 minScale;
     Vector3 maxScale;
 
-    [Header("check off if you want to use scale effect")]
-    [SerializeField] bool changeScale;
+    // [Header("check off if you want to use scale effect")]
+    // [SerializeField] bool changeScale;
 
     // Start is called before the first frame update
     void Start()
@@ -61,8 +61,8 @@ public class MaterialManager : MonoBehaviour
     {
         // inTrigger = Physics.CheckSphere(transform.position, distance, layerMask.value);
 
-        Vector3 scaleDecrease = Vector3.Lerp(transform.localScale, minScale, scaleTime);
-        Vector3 scaleIncrease = Vector3.Lerp(transform.localScale, maxScale, scaleTime);
+        // Vector3 scaleDecrease = Vector3.Lerp(transform.localScale, minScale, scaleTime);
+        // Vector3 scaleIncrease = Vector3.Lerp(transform.localScale, maxScale, scaleTime);
 
         timer = Mathf.Clamp(timer, invisTimer, visibleTimer);
 
@@ -73,20 +73,20 @@ public class MaterialManager : MonoBehaviour
                 timer -= slowedTime;
                 materials[i].SetFloat(dissolveAmount, timer);
 
-                if (changeScale)
-                {
-                    transform.localScale = scaleIncrease;
-                }
+                // if (changeScale)
+                // {
+                //     transform.localScale = scaleIncrease;
+                // }
             }
             else if (inTrigger)
             {
                 timer += slowedTime;
                 materials[i].SetFloat(dissolveAmount, timer);
 
-                if (changeScale)
-                {
-                    transform.localScale = scaleDecrease;
-                }
+                // if (changeScale)
+                // {
+                //     transform.localScale = scaleDecrease;
+                // }
             }
         }     
     }
