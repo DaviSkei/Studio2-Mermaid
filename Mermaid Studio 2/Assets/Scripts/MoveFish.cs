@@ -121,9 +121,14 @@ public class MoveFish : MonoBehaviour
             {
                 if (mouseClick)
                 {
-                    // dissolve.hitByPlayer = true;
+                    dissolve.hitByPlayer = true;
                     playerInventory.AddItem(item.ItemObject(), item.ItemObject().itemAmount, item.ItemObject().itemWeight);
-                    Destroy(itemObj);
+                    if (timer >= 0.1f)
+                    {
+                        Destroy(itemObj);
+                        timer -= Time.deltaTime;
+                        timer *= 0;
+                    }
                 }
             }
         }

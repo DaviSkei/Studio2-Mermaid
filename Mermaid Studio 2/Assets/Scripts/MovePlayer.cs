@@ -180,12 +180,13 @@ public class MovePlayer : MonoBehaviour
 
         ray = new Ray (transform.position, mainCam.forward);
         canPickUp = false;
+        isGrabbing = false;
 
         if (Physics.Raycast(ray, out hit, rayDistance, layerMask))
         {   
             Item item = hit.transform.GetComponent<Item>();
 
-            // DissolveController dissolve = hit.transform.GetComponent<DissolveController>();
+            DissolveController dissolve = hit.transform.GetComponent<DissolveController>();
 
             GameObject itemObj = hit.transform.gameObject;
             
@@ -201,13 +202,21 @@ public class MovePlayer : MonoBehaviour
             if (item)
             {
                 canPickUp = true;
+                if (mouseClickDown)
+                {
+                    playerInventory.AddItem(item.ItemObject(), item.ItemObject().itemAmount, item.ItemObject().itemWeight);
+                }
                 if (mouseClick)
                 {
+                    dissolve.hitByPlayer = true;
                     isGrabbing = true;
-
-                    // dissolve.hitByPlayer = true;
-                    playerInventory.AddItem(item.ItemObject(), item.ItemObject().itemAmount, item.ItemObject().itemWeight);
-                    Destroy(itemObj);
+                    timer += Time.deltaTime;
+                    if (timer >= 0.2)
+                    {
+                        Destroy(itemObj);
+                        timer -= Time.deltaTime;
+                        timer *= 0;
+                    }  
                 }
             }
             else
