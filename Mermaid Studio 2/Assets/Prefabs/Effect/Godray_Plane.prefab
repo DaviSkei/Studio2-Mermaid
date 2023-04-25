@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6633420572541372960}
   - component: {fileID: 235348185868025845}
   - component: {fileID: 90752844148822206}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: GodRay_Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1593249480459744148}
   - component: {fileID: 1267449432602091830}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Godray_Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
