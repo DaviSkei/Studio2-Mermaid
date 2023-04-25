@@ -94,10 +94,11 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _Mask_Multiplier: 2
     - _Mask_Radius: 2.12
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _Outline_Thickness: 0.033
+    - _Outline_Thickness: 0.017
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -107,7 +108,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _Wobble_Distance: 1
+    - _Wobble_Distance: 0.4
     - _Wobble_Force_Y: 0.12
     - _Wobble_Force_Z: 1
     - _Wobble_Speed: 4

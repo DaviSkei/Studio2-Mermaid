@@ -12,8 +12,6 @@ public class MoveFish : MonoBehaviour
 
     Rigidbody rbFish;
 
-    // CinemachineFreeLook cam;
-
     Camera mainCam;
 
     [SerializeField] LayerMask layerMask;
@@ -23,21 +21,20 @@ public class MoveFish : MonoBehaviour
     GameObject itemObj;
 
     // vars for player control
-    float moveSpeed = 5f;
+    float moveSpeed = 10f;
     float rotationSpeed;
     float rotationTime = 0.2f;
 
     bool ctrlByPlayer = false;
+    SpiralSwarm fishControl;
 
-    FishBoid fishBoid;
+    float timer = 0;
 
     void Start()
     {
-        // cam = Transform.FindObjectOfType<CinemachineFreeLook>();
-
         mainCam = Camera.main;
 
-        fishBoid = GetComponent<FishBoid>();
+        fishControl = GetComponent<SpiralSwarm>();
     }
 
     // Update is called once per frame
@@ -48,13 +45,13 @@ public class MoveFish : MonoBehaviour
         if (ctrlByPlayer == true)
         {
             ControlMove();
-            fishBoid.enabled = false;
+            fishControl.enabled = false;
         }
         if (return2Player)
         {
             Destroy(rbFish);
             ctrlByPlayer = false;
-            fishBoid.enabled = true;
+            fishControl.enabled = true;
         }
     }
     private void ControlMove()
@@ -110,27 +107,22 @@ public class MoveFish : MonoBehaviour
         Ray ray = new Ray (transform.position, transform.forward);
         RaycastHit hit;
         // ray distance
-        float distance = 3f;
+        float distance = 5f;
 
         if (Physics.Raycast(ray, out hit, distance, layerMask))
         {
-            // visual line for ray
-            Debug.DrawRay(transform.position, hit.point * distance, Color.red);
             // store info of the hit gameobject if it has "item" script attached
-            var item = hit.transform.GetComponent<Item>();
+            Item item = hit.transform.GetComponent<Item>();
             itemObj = hit.transform.gameObject;
+
+            DissolveController dissolve = hit.transform.GetComponent<DissolveController>();
     
-            // if hit gameobject has "Item" script attached show UI
             if (item)
             {
-    
-                // if player inputs left mouse click, add item data to inventory data
-                // and destroy gameobject with the "item" script attached
                 if (mouseClick)
                 {
-                    // inventory.AddItem(item.item, 1);
-                    // Destroy(itemObj);
-                    playerInventory.AddItem(item.ItemObject(), 1, item.ItemObject().itemWeight);
+                    // dissolve.hitByPlayer = true;
+                    playerInventory.AddItem(item.ItemObject(), item.ItemObject().itemAmount, item.ItemObject().itemWeight);
                     Destroy(itemObj);
                 }
             }

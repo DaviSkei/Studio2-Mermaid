@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5563cb3006153354e8b2f1055668e002, type: 3}
   m_Name: Knife
   m_EditorClassIdentifier: 
-  itemUI: {fileID: 0}
+  itemUI: {fileID: 7001234373322655151, guid: 239968dc81ac03145a3929b5a1ff0c02, type: 3}
   itemGameObj: {fileID: 12103717439974207, guid: 389d8cb0de42cc74e9ff27448e322267,
     type: 3}
   itemType: 2
+  itemAmount: 1
   itemWeight: 1

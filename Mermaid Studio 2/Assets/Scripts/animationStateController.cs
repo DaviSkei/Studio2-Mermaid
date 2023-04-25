@@ -10,6 +10,7 @@ public class animationStateController : MonoBehaviour
     
 
     string isSwimming = "isSwimming";
+    string isGrabbing = "isGrabbing";
     string isSwimmingUp = "isSwimmingUp";
 
     string usingKnife = "usingKnife";
@@ -27,6 +28,7 @@ public class animationStateController : MonoBehaviour
     void Update()
     {
         animator.SetBool(isSwimming, player.IsSwimming());
+        animator.SetBool(isGrabbing, player.isGrabbing);
         animator.SetBool(isCutting, euiptmentLogic.IsCutting);
         animator.SetBool(isDigging, euiptmentLogic.IsDigging);
     }

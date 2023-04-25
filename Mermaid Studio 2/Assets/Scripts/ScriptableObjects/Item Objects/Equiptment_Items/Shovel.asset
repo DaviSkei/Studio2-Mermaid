@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9650b01610cba64d880a06c4b4623cd, type: 3}
   m_Name: Shovel
   m_EditorClassIdentifier: 
-  itemUI: {fileID: 0}
+  itemUI: {fileID: 7001234373322655151, guid: ea583b4ceab78384a8a48c0b282e090e, type: 3}
+  itemGameObj: {fileID: 1884416578956951025, guid: ac69dc75e6400b148a1bb02a290d3b1c,
+    type: 3}
   itemType: 4
+  itemAmount: 1
   itemWeight: 1

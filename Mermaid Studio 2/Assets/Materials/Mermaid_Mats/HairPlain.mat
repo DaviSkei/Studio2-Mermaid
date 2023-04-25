@@ -96,7 +96,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Activate_Highlight: 1
+    - _Activate_Highlight: 0
     - _Active_Light: 1
     - _AlphaClip: 0
     - _Blend: 0

@@ -32,6 +32,7 @@ public class MovePlayer : MonoBehaviour
 
     // animation variables
     bool isSwimming;
+    public bool isGrabbing {get; private set;}
 
     // Variables to swap movement with fish
     bool swapped;
@@ -184,7 +185,7 @@ public class MovePlayer : MonoBehaviour
         {   
             Item item = hit.transform.GetComponent<Item>();
 
-            DissolveController dissolve = hit.transform.GetComponent<DissolveController>();
+            // DissolveController dissolve = hit.transform.GetComponent<DissolveController>();
 
             GameObject itemObj = hit.transform.gameObject;
             
@@ -202,16 +203,16 @@ public class MovePlayer : MonoBehaviour
                 canPickUp = true;
                 if (mouseClick)
                 {
-                    dissolve.hitByPlayer = true;
+                    isGrabbing = true;
+
+                    // dissolve.hitByPlayer = true;
                     playerInventory.AddItem(item.ItemObject(), item.ItemObject().itemAmount, item.ItemObject().itemWeight);
-                    timer += Time.deltaTime;
-                    if (timer > 0.3f)
-                    {
-                        Destroy(itemObj);
-                        timer -= Time.deltaTime;
-                        timer *= 0;
-                    }
+                    Destroy(itemObj);
                 }
+            }
+            else
+            {
+                isGrabbing = false;
             }
         }
     }

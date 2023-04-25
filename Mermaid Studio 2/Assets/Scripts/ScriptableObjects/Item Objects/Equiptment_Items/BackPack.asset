@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988a08b58992d454fa6e7b4e1fa3bcbd, type: 3}
   m_Name: BackPack
   m_EditorClassIdentifier: 
-  itemUI: {fileID: 0}
+  itemUI: {fileID: 7001234373322655151, guid: 2b56106a27a0d9a4e8c4d35df9aa07dd, type: 3}
   itemGameObj: {fileID: 6003654009121957471, guid: 44bf605450e6fb34a86bec7b6632f1eb,
     type: 3}
   itemType: 1
+  itemAmount: 1
   itemWeight: 5
