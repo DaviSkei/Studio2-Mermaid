@@ -15,7 +15,6 @@ public class MaterialManager : MonoBehaviour
 
     // Proximity variables
     private bool inTrigger;
-    public bool InTrigger {get{return inTrigger;} set { inTrigger = value;}}
     private float distance = 15f;
     private LayerMask layerMask = 1 << 9;
     // Set this to trash layer later
@@ -49,7 +48,7 @@ public class MaterialManager : MonoBehaviour
     }
     private void VisibilityControl()
     {
-        // inTrigger = Physics.CheckSphere(transform.position, distance, layerMask.value);
+        inTrigger = Physics.CheckSphere(transform.position, distance, layerMask.value);
 
         timer = Mathf.Clamp(timer, invisTimer, visibleTimer);
 

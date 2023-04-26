@@ -58,7 +58,7 @@ public class Boat : MonoBehaviour
     }
     void Move()
     {
-        // change trans right to forward once pivot gets fixed
         transform.position += -transform.right * boatSpeed * Time.deltaTime;
+        transform.Rotate(Vector3.up * (2 * Time.deltaTime));
     }
 }

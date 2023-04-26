@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2058722707340496038}
-  - component: {fileID: 1952508455528098639}
   - component: {fileID: 1952508455528098632}
   - component: {fileID: 3666123959731708314}
   - component: {fileID: 3508659834871775887}
+  - component: {fileID: 3785834546575666875}
   m_Layer: 9
   m_Name: Trash_Can_Prefab
   m_TagString: Pickup
@@ -36,19 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1952508455528098639
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1718648590672320028}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5.85, y: 8.37, z: 6.17}
-  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &1952508455528098632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,6 +77,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27ee78df2d429042b159276d8e8afb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitByPlayer: 0
+--- !u!135 &3785834546575666875
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718648590672320028}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 7
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7661773235127365317
 GameObject:
   m_ObjectHideFlags: 0

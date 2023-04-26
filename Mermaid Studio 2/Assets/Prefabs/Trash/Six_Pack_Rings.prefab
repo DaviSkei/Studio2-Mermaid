@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 220928689852967550}
-  - component: {fileID: 1680206808934248904}
   - component: {fileID: 5789339757066182072}
   - component: {fileID: 7308241446810042842}
   - component: {fileID: 3480621862571477404}
+  - component: {fileID: 7747493860421536358}
   m_Layer: 9
   m_Name: Six_Pack_Rings
   m_TagString: Pickup
@@ -36,19 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1680206808934248904
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 602134166641881284}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 10.63, y: 4.67, z: 7.69}
-  m_Center: {x: -0.029022217, y: 0.07255542, z: -0.009674072}
 --- !u!54 &5789339757066182072
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -90,6 +77,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27ee78df2d429042b159276d8e8afb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitByPlayer: 0
+--- !u!135 &7747493860421536358
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602134166641881284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 7
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8516400828250103517
 GameObject:
   m_ObjectHideFlags: 0

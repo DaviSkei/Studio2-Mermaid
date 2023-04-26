@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1767149660069143367}
-  - component: {fileID: 3639749064096117649}
   - component: {fileID: 6534982773511099129}
   - component: {fileID: 1985785650860724455}
   - component: {fileID: 3221074382416405616}
+  - component: {fileID: 8229216261247180690}
   m_Layer: 9
   m_Name: Oil_Barrel
   m_TagString: Pickup
@@ -36,20 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &3639749064096117649
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1427075848408660477}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 2
-  m_Height: 5.07
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.08664882, z: 0.018241882}
 --- !u!54 &6534982773511099129
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -91,6 +77,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27ee78df2d429042b159276d8e8afb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitByPlayer: 0
+--- !u!135 &8229216261247180690
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427075848408660477}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7944409168286089508
 GameObject:
   m_ObjectHideFlags: 0

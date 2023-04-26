@@ -51,9 +51,13 @@ public class MovePlayer : MonoBehaviour
     // swimming particles
     [SerializeField] GameObject swimParticles;
 
-    private float timer = 0;
+    Collider[] colliders;
+    bool inRange;
+    float rangeDist = 250f;
+    float colliderDist = 300f;
+    [Header("add things that should spawn when close to player")]
+    [SerializeField] LayerMask spawnabaleLayermask;
 
-    // Start is called before the first frame update
     void Start()
     {
         rbPlayer = GetComponent<Rigidbody>();
@@ -79,6 +83,8 @@ public class MovePlayer : MonoBehaviour
         RayCastManager();
 
         CameraSwap();
+
+        // SpawnObjects();
     }
     void FixedUpdate()
     {
@@ -100,6 +106,23 @@ public class MovePlayer : MonoBehaviour
             swapped = false;
         }
     }
+    // void SpawnObjects()
+    // {
+    //     colliders = Physics.OverlapSphere(transform.position, colliderDist, spawnabaleLayermask, QueryTriggerInteraction.Collide);
+    //     inRange = Physics.CheckSphere(transform.position, rangeDist, spawnabaleLayermask, QueryTriggerInteraction.Collide);
+
+    //     for (int i = 0; i < colliders.Length; i++)
+    //     {
+    //         if (inRange)
+    //         {
+    //             colliders[i].transform.gameObject.SetActive(true);
+    //         }
+    //         else
+    //         {
+    //             colliders[i].transform.gameObject.SetActive(false);
+    //         }
+    //     }
+    // }
 
     private void Move()
     {
@@ -186,8 +209,6 @@ public class MovePlayer : MonoBehaviour
         {   
             Item item = hit.transform.GetComponent<Item>();
 
-            DissolveController dissolve = hit.transform.GetComponent<DissolveController>();
-
             GameObject itemObj = hit.transform.gameObject;
             
             MoveFish fish = hit.transform.gameObject.GetComponent<MoveFish>();
@@ -204,19 +225,12 @@ public class MovePlayer : MonoBehaviour
                 canPickUp = true;
                 if (mouseClickDown)
                 {
-                    playerInventory.AddItem(item.ItemObject(), item.ItemObject().itemAmount, item.ItemObject().itemWeight);
                 }
                 if (mouseClick)
                 {
-                    dissolve.hitByPlayer = true;
+                    playerInventory.AddItem(item.ItemObject(), item.ItemObject().itemAmount, item.ItemObject().itemWeight);
                     isGrabbing = true;
-                    timer += Time.deltaTime;
-                    if (timer >= 0.2)
-                    {
-                        Destroy(itemObj);
-                        timer -= Time.deltaTime;
-                        timer *= 0;
-                    }  
+                    Destroy(itemObj); 
                 }
             }
             else

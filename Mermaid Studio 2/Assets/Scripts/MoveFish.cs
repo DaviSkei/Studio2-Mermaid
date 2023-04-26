@@ -28,8 +28,6 @@ public class MoveFish : MonoBehaviour
     bool ctrlByPlayer = false;
     SpiralSwarm fishControl;
 
-    float timer = 0;
-
     void Start()
     {
         mainCam = Camera.main;
@@ -114,21 +112,13 @@ public class MoveFish : MonoBehaviour
             // store info of the hit gameobject if it has "item" script attached
             Item item = hit.transform.GetComponent<Item>();
             itemObj = hit.transform.gameObject;
-
-            DissolveController dissolve = hit.transform.GetComponent<DissolveController>();
     
             if (item)
             {
                 if (mouseClick)
                 {
-                    dissolve.hitByPlayer = true;
                     playerInventory.AddItem(item.ItemObject(), item.ItemObject().itemAmount, item.ItemObject().itemWeight);
-                    if (timer >= 0.1f)
-                    {
-                        Destroy(itemObj);
-                        timer -= Time.deltaTime;
-                        timer *= 0;
-                    }
+                    Destroy(itemObj);
                 }
             }
         }

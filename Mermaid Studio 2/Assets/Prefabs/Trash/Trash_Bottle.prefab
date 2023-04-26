@@ -109,9 +109,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7842351924153796901}
   - component: {fileID: 1032234336346257128}
-  - component: {fileID: 659865600314058228}
   - component: {fileID: 6731217347630337692}
   - component: {fileID: 6983724728705062665}
+  - component: {fileID: 1869930758093991143}
   m_Layer: 9
   m_Name: Trash_Bottle
   m_TagString: Pickup
@@ -149,20 +149,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemObject: {fileID: 11400000, guid: 2c2efb4b7da293045b3294a94ef67558, type: 2}
---- !u!136 &659865600314058228
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7466529661061272479}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 3.88
-  m_Height: 11.38
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!54 &6731217347630337692
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -191,6 +177,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27ee78df2d429042b159276d8e8afb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitByPlayer: 0
+--- !u!135 &1869930758093991143
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7466529661061272479}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 7
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &7736930152726591888
 PrefabInstance:
   m_ObjectHideFlags: 0
