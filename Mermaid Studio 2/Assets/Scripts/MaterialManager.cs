@@ -15,7 +15,8 @@ public class MaterialManager : MonoBehaviour
 
     // Proximity variables
     private bool inTrigger;
-    private float distance = 15f;
+    // public bool InTrigger {get{return inTrigger;} set{inTrigger = value;}}
+    private float distance = 40f;
     private LayerMask layerMask = 1 << 9;
     // Set this to trash layer later
 

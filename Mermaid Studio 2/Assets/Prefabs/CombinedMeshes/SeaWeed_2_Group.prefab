@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7991702631097779297}
   - component: {fileID: 3779406351789441292}
   - component: {fileID: 5662366640141037651}
-  - component: {fileID: 8965247335518960839}
   m_Layer: 14
   m_Name: SeaWeed_2_Group
   m_TagString: Untagged
@@ -97,16 +96,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c571792d83389ec488fffd38df81b829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &8965247335518960839
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 455992410225869349}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 30, y: 4, z: 30}
-  m_Center: {x: 0.2655533, y: 1.0199742, z: 0.31758517}

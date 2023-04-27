@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 8683072808057182748}
   - component: {fileID: 8683072808057182747}
   - component: {fileID: 8683072808057182746}
-  - component: {fileID: 8683072808057182745}
   m_Layer: 0
   m_Name: Coral_Vent_Group_Body
   m_TagString: Untagged
@@ -130,16 +129,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c571792d83389ec488fffd38df81b829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &8683072808057182745
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8683072808057182743}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 30, y: 6, z: 30}
-  m_Center: {x: -0.854105, y: 1.8987514, z: 0.47434473}

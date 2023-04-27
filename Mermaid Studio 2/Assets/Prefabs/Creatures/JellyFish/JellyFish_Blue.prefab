@@ -309,7 +309,6 @@ GameObject:
   - component: {fileID: 6007012390734291653}
   - component: {fileID: 7623350286524906654}
   - component: {fileID: 1145757873420194582}
-  - component: {fileID: 4048478316649799917}
   m_Layer: 13
   m_Name: Body2_JellyFish
   m_TagString: Untagged
@@ -382,19 +381,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &4048478316649799917
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2249453696905336078}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 3.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3134281501883045607
 GameObject:
   m_ObjectHideFlags: 0

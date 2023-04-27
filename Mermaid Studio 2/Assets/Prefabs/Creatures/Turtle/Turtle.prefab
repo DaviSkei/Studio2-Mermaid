@@ -373,7 +373,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.06714729
+  m_Radius: 0.08
   m_Height: 0.15648815
   m_Direction: 1
   m_Center: {x: -0.00057177746, y: -0.025509477, z: 0.0060037225}
@@ -1172,6 +1172,7 @@ GameObject:
   - component: {fileID: 5369264281159246830}
   - component: {fileID: 4364043875494357395}
   - component: {fileID: 5369264281159246831}
+  - component: {fileID: 7991267858435905212}
   m_Layer: 13
   m_Name: Turtle1_1_LowPoly:Mesh
   m_TagString: Untagged
@@ -1279,11 +1280,24 @@ MeshCollider:
   m_GameObject: {fileID: 2960186523655598806}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8631056821906689948, guid: 88f4607c7a67f274aaedc6c13be44468, type: 3}
+--- !u!135 &7991267858435905212
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2960186523655598806}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.025
+  m_Center: {x: 0.000011137687, y: -0.00081330165, z: 0.011865506}
 --- !u!1 &3004062125712958692
 GameObject:
   m_ObjectHideFlags: 0

@@ -213,6 +213,8 @@ public class MovePlayer : MonoBehaviour
             
             MoveFish fish = hit.transform.gameObject.GetComponent<MoveFish>();
 
+            // DissolveController dissolve = hit.transform.GetComponent<DissolveController>();
+
             if (fish && Input.GetKey(KeyCode.Q))
             {
                 camFreeLook.LookAt = fish.transform;
@@ -223,11 +225,9 @@ public class MovePlayer : MonoBehaviour
             if (item)
             {
                 canPickUp = true;
-                if (mouseClickDown)
-                {
-                }
                 if (mouseClick)
                 {
+                    // dissolve.ChangeInTrigger();
                     playerInventory.AddItem(item.ItemObject(), item.ItemObject().itemAmount, item.ItemObject().itemWeight);
                     isGrabbing = true;
                     Destroy(itemObj); 
